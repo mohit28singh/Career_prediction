@@ -1,30 +1,10 @@
 
 
-<!DOCTYPE html>
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/s.css">
-<link rel="stylesheet" href="css/font-awesome.min.css">
-<html lang="en">
+{% extends 'base.html' %} 
+{% load static %}
 
-		<!-- Hero-area -->
-		<div class="hero-area section">
-
-			<!-- Backgound Image -->
-			<div class="bg-image bg-parallax overlay" style="background-image:url(./img/bgc2.jpg); " ></div>
-			<!-- /Backgound Image -->
-
-			<div class="container">
-				<div class="row">
-					<div class="col-md-10 col-md-offset-1 text-center">
-						<ul class="hero-area-tree">
-							<li><a href="main.html">Home</a></li>
-							<li><a href="blog.php">Knowledge Network</a></li>
-							<li>API Integration Specialist</li>
-						</ul>
-						<h1 class="white-text">API Integration Specialist</h1>
-					</div>
-				</div>
-			</div>
+{% block content%}
+ 
 
 		</div>
 		<!-- /Hero-area -->
@@ -133,4 +113,4 @@
 		<!-- /Blog -->
 
 		
-</html>
+{%endblock%}
