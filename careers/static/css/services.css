@@ -1,0 +1,186 @@
+/* Background styling */
+body {
+    background-color: #f5f5f5;
+}
+/* Form styling */
+.form-control:focus {
+    border-color: #FF4136;
+    box-shadow:brown;
+}
+.form-select:focus {
+    border-color: #FF4136;
+    box-shadow: none;
+}
+/* Button styling */
+.btn--radius-2 {
+    border-radius: 25px;
+    padding: 12px 30px;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #FF4136;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+.btn--radius-2:hover {
+    background-color: #fff;
+    color: #3dff36;
+}
+/* Header section styling */
+.heading-section h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+}
+/* Form section styling */
+.form-group {
+    margin-bottom: 25px;
+}
+.form-label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+.form-select {
+    height: 50px;
+}
+/* Rating section styling */
+.mb-5 {
+    margin-bottom: 5rem !important;
+}
+.mb-4 {
+    margin-bottom: 4rem !important;
+}
+.mt-5 {
+    margin-top: 5rem !important;
+}
+/* Container and row styling */
+.container {
+    margin-top: 50px;
+}
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+/* Col sizing */
+.col-md-8 {
+    flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+}
+.col-md-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.col-sm-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+.col-sm-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+/* Text styling */
+.text-center {
+    text-align: center;
+}
+/* Background and padding styling for form */
+.bg-light {
+    background-color: #fff;
+    padding: 40px;
+}
+/* Background styling */
+body {
+    background-color: #f5f5f5;
+}
+/* Form styling */
+.form-control:focus {
+    border-color: #FF4136;
+    box-shadow: none;
+}
+.form-select:focus {
+    border-color: #FF4136;
+    box-shadow: none;
+}
+/* Button styling */
+.btn--radius-2 {
+    border-radius: 25px;
+    padding: 12px 30px;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #36d7ff;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+.btn--radius-2:hover {
+    background-color: #fff;
+    color: #FF4136;
+}
+/* Header section styling */
+.heading-section h2 {
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+}
+/* Form section styling */
+.form-group {
+    margin-bottom: 25px;
+}
+.form-label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+.form-select {
+    height: 50px;
+}
+/* Rating section styling */
+.mb-5 {
+    margin-bottom: 5rem !important;
+}
+.mb-4 {
+    margin-bottom: 4rem !important;
+}
+.mt-5 {
+    margin-top: 5rem !important;
+}
+/* Container and row styling */
+.container {
+    margin-top: 50px;
+}
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+/* Col sizing */
+.col-md-8 {
+    flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+}
+.col-md-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.col-sm-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+.col-sm-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+/* Text styling */
+.text-center {
+    text-align: center;
+}
+/* Background and padding styling for form */
+.bg-light {
+    background-color: #ffffff;
+    padding: 40px;
+}

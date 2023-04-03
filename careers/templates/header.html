@@ -1,0 +1,55 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Counsling Website</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="mobile">
+    <nav>
+        <div class="container nav-wrapper">
+            <div class="brand">
+                
+                <span><strong>CAREERAPEX</strong></span>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-list">
+                <li class="active">
+                    <a href="/">Home</a>
+                </li>
+                <li><a href="/about">About</a></li>
+                <li>
+                    <a href="#">Services</a>
+                    <ul class="dropdown-list">
+                        <li><a href="{% url 'careerprediction' %}">Career Prediction</a></li>
+                        <li><a href="{% url 'course' %}">Courses</a></li>
+                        <li><a href="#">Resume Analyzer</a></li>
+                        <li><a href="{% url 'knowledge' %}">Knowledge Network</a></li>
+                        
+                    </ul>
+                </li>
+                
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                <li><a href="{% url 'signup' %}">SignUp</a></li>   
+                <li><a href="{% url 'login' %}">Login</a></li>
+                {% endif %}
+                
+            </ul>
+        </div>
+    </nav>
+    <script src="{% static 'js/app.js' %}"></script>
+</body>
+
+</html>

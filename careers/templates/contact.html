@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">
+    {% endblock %}
+    <section>
+    <h1>Contact Us</h1>
+    <p>Get in touch with us using the form below:</p>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea><br>
+        <input type="submit" value="Send">
+    </form>
+    <div class="col-md-5 col-md-offset-1">
+        <h4>Contact Information</h4>
+        <ul class="contact-details">
+            <li><i class="fa fa-envelope"></i>mohitsingh281998@gmail.com</li>
+            <li><i class="fa fa-envelope"></i>prachisingh2342000@gmail.com</li>
+            <li><i class="fa fa-phone"></i>7705085301</li>
+            <li><i class="fa fa-map-marker"></i>Lucknow</li>
+        </ul>
+
+        <!-- contact map -->
+        <div id="contact-map"></div>
+        <!-- /contact map -->
+
+    </div>
+    <!-- contact information -->
+
+</div>
+<!-- /row -->
+
+</div>
+<!-- /container -->
+
+</div>
+<!-- /Contact -->
+
+</section>
+{% endblock %}

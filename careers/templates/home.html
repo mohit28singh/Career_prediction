@@ -1,0 +1,31 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block content%}
+ 
+  
+ 
+ <section >
+  <header>
+    
+    <div class="container header__container">
+      <div class="header__left">
+        {% if user.is_authenticated %}
+        <b><p>Welcome, {{ user.username }}!</p></b>
+      {% endif %}
+        <h1>Discover Yourself And Your Ideal Career</h1>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque consectetur est quam aut explicabo recusandae. Odit totam temporibus, ipsa suscipit quas dolore distinctio repellendus quibusdam animi sed ducimus, recusandae rerum.
+          </p>
+           <a href="" class="btn">Get Started</a>
+      </div> 
+      <div class="header__right">
+        <div class="header__right-image">
+          <img src="static/img/bg.jpeg" alt=" ">
+        </div>
+      </div> 
+    </div>
+  
+  </header>
+</section> 
+
+{% endblock%}
