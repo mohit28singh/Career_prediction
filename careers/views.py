@@ -95,7 +95,7 @@ def Software_developer(request):
     return render (request,'Software_developer.html')
 def Software_tester(request):
     return render (request,'Software_tester.html')
-def Technical_wri (request):
+def Technical_wri(request):
     return render (request,'Technical_writer.html')
 def Graphic_Designer(request):
     return render (request,'Graphic_Designer.html')
