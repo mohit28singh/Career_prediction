@@ -1,31 +1,9 @@
 
+{% extends 'base.html' %} 
+{% load static %}
 
-<!DOCTYPE html>
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/s.css">
-<link rel="stylesheet" href="css/font-awesome.min.css">
-<html lang="en">
-
-		<!-- Hero-area -->
-		<div class="hero-area section">
-
-			<!-- Backgound Image -->
-			<div class="bg-image bg-parallax overlay" style="background-image:url(./img/bgc2.jpg); " ></div>
-			<!-- /Backgound Image -->
-
-			<div class="container">
-				<div class="row">
-					<div class="col-md-10 col-md-offset-1 text-center">
-						<ul class="hero-area-tree">
-							<li><a href="main.php">Home</a></li>
-							<li><a href="blog.php">Knowledge Network</a></li>
-							<li>Software Tester</li>
-						</ul>
-						<h1 class="white-text">Software Tester</h1>
-					</div>
-				</div>
-			</div>
-
+{% block content%}
+			
 		</div>
 		<!-- /Hero-area -->
 
@@ -60,13 +38,13 @@
 							<p style="font-size:16px;">To be successful as a software tester, one should have a working knowledge of software and test design, the capability to run through tests, and the ability to analyze the results. Ultimately, the software tester should be result-driven, have good communication skills, and up-to-date knowledge of software programming and software test design.</p>
 							
 							<ol style="font-size:16px;">
-                                <li><b>1. </b>Up-to-date knowledge of software test design and testing methodologies.</li>
-                                <li><b>2. </b>Working knowledge of test techniques and compatibility with various software programs.</li>
-                                <li><b>3. </b>Working knowledge of programming.</li>
-                                <li><b>4. </b>Excellent communication and critical thinking skills.</li>
-                                <li><b>5. </b>Good organizational skills and detail-oriented mindset.</li>
-                                <li><b>6. </b>A passion for working with technology.</li>
-                            </ol>
+								<li>Up-to-date knowledge of software test design and testing methodologies.</li>
+								<li>Working knowledge of test techniques and compatibility with various software programs.</li>
+								<li>Working knowledge of programming.</li>
+								<li>Excellent communication and critical thinking skills.</li>
+								<li>Good organizational skills and detail-oriented mindset.</li>
+								<li>A passion for working with technology.</li>
+							</ol> 
                             </div>
                             <!-- /row -->
 
@@ -82,15 +60,15 @@
 							<h2>Duties and Responsibilities</h2>
 							
 							<ol style="font-size:16px;">
-                            <li><b>1. </b>Reviewing software requirements and preparing test scenarios.</li>
-                                <li><b>2. </b>Executing tests on software usability.</li>
-                                <li><b>3. </b>Analyzing test results on database impacts, errors or bugs, and usability.</li>
-                                <li><b>4. </b>Preparing reports on all aspects related to the software testing carried out and reporting to the design team.</li>
-                                <li><b>5. </b>Interacting with clients to understand product requirements.</li>
-                                <li><b>6. </b>Participating in design reviews and providing input on requirements, product design, and potential problems.</li>
-                                <li><b>7. </b>Execute all levels of testing (System, Integration, and Regression).</li>
-                                <li><b>8. </b>Provide timely solutions.</li>
-                            </ol>
+								<li><b>Reviewing software requirements and preparing test scenarios.</b></li>
+								<li><b>Executing tests on software usability.</b></li>
+								<li><b>Analyzing test results on database impacts, errors or bugs, and usability.</b></li>
+								<li><b>Preparing reports on all aspects related to the software testing carried out and reporting to the design team.</b></li>
+								<li><b>Interacting with clients to understand product requirements.</b></li>
+								<li><b>Participating in design reviews and providing input on requirements, product design, and potential problems.</b></li>
+								<li><b>Execute all levels of testing (System, Integration, and Regression).</b></li>
+								<li><b>Provide timely solutions.</b></li>
+							</ol>
                             </div>
                             <!-- /row -->
 
@@ -104,15 +82,15 @@
                             <!-- row -->
                             <div class="row">
 							<h2>Companies offering Software Tester role</h2>
-    
 							<ol style="font-size:16px;">
-                                <li><b>1. LTI - Larsen & Toubro Infotech </b> </li>
-                                <li><b>2. Wipro </b></li>
-                                <li><b>3. Spiceworks</b></li>
-                                <li><b>4. Tata Consultancy Services</b></li>
-                                <li><b>5. Intel Technology India Pvt Ltd </b></li>
-                                <li><b>6. AT & T communications Services India</b></li>
-                            </ol>
+								<li><b>LTI - Larsen & Toubro Infotech</b></li>
+								<li><b>Wipro</b></li>
+								<li><b>Spiceworks</b></li>
+								<li><b>Tata Consultancy Services</b></li>
+								<li><b>Intel Technology India Pvt Ltd</b></li>
+								<li><b>AT &amp; T communications Services India</b></li>
+							</ol>
+							
                             </div>
                             <!-- /row -->
                     
@@ -134,4 +112,4 @@
 		<!-- /Blog -->
 
 		
-</html>
+{%endblock%}

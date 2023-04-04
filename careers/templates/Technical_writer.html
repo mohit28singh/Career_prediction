@@ -1,32 +1,7 @@
+{% extends 'base.html' %} 
+{% load static %}
 
-
-<!DOCTYPE html>
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/s.css">
-<link rel="stylesheet" href="css/font-awesome.min.css">
-<html lang="en">
-<!-- <?php include 'header.php'?> -->
-		<!-- Hero-area -->
-		<div class="hero-area section">
-
-			<!-- Backgound Image -->
-			<div class="bg-image bg-parallax overlay" style="background-image:url(./img/bgc2.jpg); " ></div>
-			<!-- /Backgound Image -->
-
-			<div class="container">
-				<div class="row">
-					<div class="col-md-10 col-md-offset-1 text-center">
-						<ul class="hero-area-tree">
-							<li><a href="main.php">Home</a></li>
-							<li><a href="blog.php">Knowledge Network</a></li>
-							<li>Technical Writer</li>
-						</ul>
-						<h1 class="white-text">Technical Writer</h1>
-					</div>
-				</div>
-			</div>
-
-		</div>
+{% block content%}
 		<!-- /Hero-area -->
 
 		<!-- Blog -->
@@ -57,13 +32,13 @@
 							<h2>Skills required</h2>
 							<p style="font-size:16px;">Based on our research, we identified the following core skills one must possess to get a job as an Technical Writer.</p>
 							<ol style="font-size:16px;">
-                                <li><b>1.</b> Ability to translate highly technical information into easily understandable information for customers.</li>
-                                <li><b>2.</b> Creative skills and usage of photographs, drawings, diagrams, animation, and charts that increase users understanding.</li>
-                                <li><b>3.</b> Excellent written skills in English.</li>
-                                <li><b>4.</b> Excellent communication and teamwork skills, including willingness and ability to consult with subject matter experts from engineering, support, and product management.</li>
-                                <li><b>5.</b> Enjoys working as part of a team in a collaborative environment.</li>
-                                <li><b>6.</b> Attention to detail with a creative eye.</li>
-                            </ol>
+                                <li>Ability to translate highly technical information into easily understandable information for customers.</li>
+                                <li>Creative skills and usage of photographs, drawings, diagrams, animation, and charts that increase users understanding.</li>
+                                <li>Excellent written skills in English.</li>
+                                <li>Excellent communication and teamwork skills, including willingness and ability to consult with subject matter experts from engineering, support, and product management.</li>
+                                <li>Enjoys working as part of a team in a collaborative environment.</li>
+                                <li>Attention to detail with a creative eye.</li>
+                            </ol> 
                             </div>
                             <!-- /row -->
 
@@ -80,13 +55,14 @@
 							<p style="font-size:16px;">Technical writers create paper-based and digital operating instructions, how-to manuals, assembly instructions, and “frequently asked questions” pages to help technical support staff, consumers, and other users within a company or an industry.</p>
 							
 							<ol style="font-size:16px;">
-                                <li><b>1.</b> Write for a variety of audiences, from non-technical end users to programmers, system administrators, and integrators.</li>
-                                <li><b>2.</b> Prepare, review, revise, and maintain technical documents, including software and systems engineering, system operations, testing, and user documentation.</li>
-                                <li><b>3.</b> Gather and analyze technical and product information from various sources to document new or changing product functionality.</li>
-                                <li><b>4.</b> Test both the product and its documentation for accuracy and consistency.</li>
-                                <li><b>5.</b> Identify problem areas or structural deficiencies and proactively contribute to their improvement.</li>
-                                <li><b>6.</b> Update existing docs to reflect changes to functionality.</li>
-                            </ol>
+								<li><b></b>Write for a variety of audiences, from non-technical end users to programmers, system administrators, and integrators.</li>
+								<li><b></b>Prepare, review, revise, and maintain technical documents, including software and systems engineering, system operations, testing, and user documentation.</li>
+								<li><b></b>Gather and analyze technical and product information from various sources to document new or changing product functionality.</li>
+								<li><b></b>Test both the product and its documentation for accuracy and consistency.</li>
+								<li><b></b>Identify problem areas or structural deficiencies and proactively contribute to their improvement.</li>
+								<li><b></b>Update existing docs to reflect changes to functionality.</li>
+							</ol>
+							
                             </div>
                             <!-- /row -->
 
@@ -102,15 +78,16 @@
 							<h2>Companies offering Technical Writer role</h2>
 
 							<ol style="font-size:16px;">
-                                <li><b>1. Oracle</b> </li>
-                                <li><b>2. Wipro</b></li>
-                                <li><b>3. Cognizant</b></li>
-                                <li><b>4. Tata Consultancy Services</b></li>
-                                <li><b>5. Cisco</b></li>
-                                <li><b>6. Cyient</b></li>
-                                <li><b>7. Capgemini</b></li>
-                                <li><b>8. HCL Technologies</b></li>
-                            </ol>
+								<li><b>Oracle</b></li>
+								<li><b>Wipro</b></li>
+								<li><b>Cognizant</b></li>
+								<li><b>Tata Consultancy Services</b></li>
+								<li><b>Cisco</b></li>
+								<li><b>Cyient</b></li>
+								<li><b>Capgemini</b></li>
+								<li><b>HCL Technologies</b></li>
+							</ol>
+							
                             </div>
                             <!-- /row -->
 
@@ -130,4 +107,4 @@
 		<!-- /Blog -->
 
 		
-</html>
+{%endblock%}

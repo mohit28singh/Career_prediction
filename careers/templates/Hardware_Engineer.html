@@ -1,27 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<?php include 'header.php'?>
-		<!-- Hero-area -->
-		<div class="hero-area section">
+{% extends 'base.html' %} 
+{% load static %}
 
-			<!-- Backgound Image -->
-			<div class="bg-image bg-parallax overlay" style="background-image:url(./img/bgc2.jpg); " ></div>
-			<!-- /Backgound Image -->
-
-			<div class="container">
-				<div class="row">
-					<div class="col-md-10 col-md-offset-1 text-center">
-						<ul class="hero-area-tree">
-							<li><a href="main.php">Home</a></li>
-							<li><a href="blog.php">Knowledge Network</a></li>
-							<li>Hardware Engineer</li>
-						</ul>
-						<h1 class="white-text">Hardware Engineer</h1>
-					</div>
-				</div>
-			</div>
-
-		</div>
+{% block content%}
 		<!-- /Hero-area -->
 
 		<!-- Blog -->
@@ -53,12 +33,12 @@
 							<p style="font-size:16px;">A strong background in math, science, and computer science is a must for aspiring hardware engineers. They also, however, should be adept communicators capable of conveying instructions in verbal and written forms. Other critical skills include</p>
 							
 							<ol style="font-size:16px;">
-                                <li><b>1. Teamwork - </b>designing a product involves collaborating with other relevant parties, such as software engineers</li>
-                                <li><b>2. Creativity – </b>thinking outside the box results in innovative designs and novel solutions to problems</li>
-                                <li><b>3. Problem-solving skills – </b>the ability to approach complex issues with curiosity and determination rather than frustration serves hardware engineers well</li>
-                                <li><b>4. Analytic thinking – </b>logically examining the steps taken and the outcome helps hardware engineers make corrections and produce better results</li>
-                                <li><b>5. Multitasking – </b>hardware engineers may work on different projects simultaneously and need to be aware of competing deadlines and priorities</li>
-                            </ol>
+								<li>Teamwork - designing a product involves collaborating with other relevant parties, such as software engineers</li>
+								<li>Creativity – thinking outside the box results in innovative designs and novel solutions to problems</li>
+								<li>Problem-solving skills – the ability to approach complex issues with curiosity and determination rather than frustration serves hardware engineers well</li>
+								<li>Analytic thinking – logically examining the steps taken and the outcome helps hardware engineers make corrections and produce better results</li>
+								<li>Multitasking – hardware engineers may work on different projects simultaneously and need to be aware of competing deadlines and priorities</li>
+							</ol>
                             </div>
                             <!-- /row -->
 
@@ -74,9 +54,9 @@
 							<h2>Duties and Responsibilities</h2>
 							
 							<ol style="font-size:16px;">
-                            <li><b>1. </b>Design Hardware</li>
-                                <li><b>2. </b>Test and Document Progress</li>
-                                <li><b>3. </b>Collaborate with Colleagues</li>
+                            <li> Design Hardware</li>
+                                <li>Test and Document Progress</li>
+                                <li>Collaborate with Colleagues</li>
                             </ol>
                             </div>
                             <!-- /row -->
@@ -91,15 +71,14 @@
                             <!-- row -->
                             <div class="row">
 							<h2>Companies offering Hardware Engineer role</h2>
-    
 							<ol style="font-size:16px;">
-                                <li><b>1. Apple</b> </li>
-                                <li><b>2. Google</b></li>
-                                <li><b>3. Intel Corporation</b></li>
-                                <li><b>4. IBM</b></li>
-                                <li><b>5. Oracle</b></li>
-                                <li><b>6. Larsen & Toubro</b></li>
-                            </ol>
+								<li><b>Apple</b></li>
+								<li><b>Google</b></li>
+								<li><b>Intel Corporation</b></li>
+								<li><b>IBM</b></li>
+								<li><b>Oracle</b></li>
+								<li><b>Larsen &amp; Toubro</b></li>
+							</ol>
                             </div>
                             <!-- /row -->
                     
@@ -120,4 +99,4 @@
 		</div>
 		<!-- /Blog -->
 
-</html>
+{%endblock%}

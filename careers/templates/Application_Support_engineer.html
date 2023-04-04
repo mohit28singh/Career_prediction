@@ -1,27 +1,10 @@
-<!DOCTYPE html>
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/s.css">
-<link rel="stylesheet" href="css/font-awesome.min.css">
-<html lang="en">
 
-<div class="hero-area section">
+{% extends 'base.html' %} 
+{% load static %}
 
-    <!-- Backgound Image -->
-    <div class="bg-image bg-parallax overlay" style="background-image:url(./img/bgc2.jpg); " ></div>
-    <!-- /Backgound Image -->
+{% block content%}
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1 text-center">
-                <ul class="hero-area-tree">
-                    <li><a href="main.php">Home</a></li>
-                    <li><a href="blog.php">Knowledge Network</a></li>
-                    <li>Application Support Engineer</li>
-                </ul>
-                <h1 class="white-text">Application Support Engineer</h1>
-            </div>
-        </div>
-    </div>
+
 
 </div>
 <!-- /Hero-area -->
@@ -54,15 +37,17 @@
                     <h2>Skills required</h2>
                     <p style="font-size:16px;">A successful Application Support Engineer is not your stereotypical anti-social tech person. In addition to possessing a wealth of technical knowledge, they must also have the interpersonal skills to help users of said application.</p>
                     <p style="font-size:16px;">Based on our research, we identified the following core skills one must possess to get a job as an Application Support Engineer.</p>
-                    <ol style="font-size:16px;">
-                        <li><b>1.</b> Working knowledge of SQL Databases & basic network configuration</li>
-                        <li><b>2.</b> Working Knowledge of IT Hardware and Software</li>
-                        <li><b>3.</b> Ability to learn and master employer-specific software</li>
-                        <li><b>4.</b> Complex problem solving</li>
-                        <li><b>5.</b> Written and verbal communication skills</li>
-                        <li><b>6.</b> Ability to diagnose & address application issues</li>
-                    </ol>
-                    </div>
+                    <div>
+                        <ol>
+                          <li><strong>Working knowledge of SQL Databases &amp; basic network configuration</strong></li>
+                          <li><strong>Working Knowledge of IT Hardware and Software</strong></li>
+                          <li><strong>Ability to learn and master employer-specific software</strong></li>
+                          <li><strong>Complex problem solving</strong></li>
+                          <li><strong>Written and verbal communication skills</strong></li>
+                          <li><strong>Ability to diagnose &amp; address application issues</strong></li>
+                        </ol>
+                      </div>
+                      
                     <!-- /row -->
 
                     <!-- row -->
@@ -77,13 +62,14 @@
                     <h2>Duties and Responsibilities</h2>
                     <p style="font-size:16px;">The role of Application Support Engineer is one of the more generalized positions in the IT world. A good Application Support Engineer needs to have at least a working knowledge of database management, different operating systems and different programming languages. We scoured several Application Support Engineer job postings in order to compile the following list of core responsibilities.</p>
                     
-                    <ol style="font-size:16px;">
-                        <li><b>1.</b> Identifying and Evaluate Technology Solutions</li>
-                        <li><b>2.</b> Problem Solve and Troubleshoot</li>
-                        <li><b>3.</b> Onboard New Users</li>
-                        <li><b>4.</b> Identify Potential Issues</li>
-                        <li><b>5.</b> Work with Cross-Functional Teams</li>
-                    </ol>
+                    <ol style="font-size: 16px;">
+                        <li><strong>Identifying and evaluating technology solutions</strong></li>
+                        <li><strong>Problem solving and troubleshooting</strong></li>
+                        <li><strong>Onboarding new users</strong></li>
+                        <li><strong>Identifying potential issues</strong></li>
+                        <li><strong>Working with cross-functional teams</strong></li>
+                      </ol>
+                      
                     </div>
                     <!-- /row -->
 
@@ -98,13 +84,14 @@
                     <div class="row">
                     <h2>Companies offering Application Support Engineer role</h2>
 
-                    <ol style="font-size:16px;">
-                        <li><b>1. Accenture </b> </li>
-                        <li><b>2. IBM</b></li>
-                        <li><b>3. VivaConnect Pvt. Ltd.</b></li>
-                        <li><b>4. Zwayam</b></li>
-                        <li><b>5. Augnito</b></li>
-                    </ol>
+                    <ol style="font-size: 16px;">
+                        <li><strong>Accenture</strong></li>
+                        <li><strong>IBM</strong></li>
+                        <li><strong>VivaConnect Pvt. Ltd.</strong></li>
+                        <li><strong>Zwayam</strong></li>
+                        <li><strong>Augnito</strong></li>
+                      </ol>
+                      
                     </div>
                     <!-- /row -->
 
@@ -122,3 +109,4 @@
 
 </div>
 <!-- /Blog -->
+{%endblock%}

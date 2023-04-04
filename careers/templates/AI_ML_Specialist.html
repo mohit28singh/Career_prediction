@@ -1,36 +1,18 @@
 
 
-<!DOCTYPE html>
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/s.css">
-<link rel="stylesheet" href="css/font-awesome.min.css">
-<html lang="en">
 
-		<!-- Hero-area -->
-		<div class="hero-area section">
+{% extends 'base.html' %} 
+{% load static %}
 
-			<!-- Backgound Image -->
-			<div class="bg-image bg-parallax overlay" style="background-image:url(./img/bgc2.jpg); " ></div>
-			<!-- /Backgound Image -->
+{% block content%}
+{% comment %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/knowledge.css' %}">
+{%endblock%} {% endcomment %}
 
-			<div class="container">
-				<div class="row">
-					<div class="col-md-10 col-md-offset-1 text-center">
-						<ul class="hero-area-tree">
-							<li><a href="main.html">Home</a></li>
-							<li><a href="blog.html">Knowledge Network</a></li>
-							<li>AI/ML Specialists</li>
-						</ul>
-						<h1 class="white-text">AI/ML Specialists</h1>
-					</div>
-				</div>
-			</div>
-
-		</div>
 		<!-- /Hero-area -->
 
 		<!-- Blog -->
-		<div id="blog" class="section">
+		<div id="blog" class="section1">
 
 			<!-- container -->
 			<div class="container">
@@ -58,13 +40,13 @@
 							<p style="font-size:16px;"> AI/ML specialist is a software specialist with a strong mathematics background and a knowledge of coding, who’s core responsibilities are Designing and developing machine learning and deep learning systems, Running machine learning tests and experiments, Implementing appropriate ML algorithms.</p>
 							<p style="font-size:16px;">Based on our research, we identified the following core skills one must possess to get a job as an AI/ML Specialist.</p>
 							<ol style="font-size:16px;">
-                                <li><b>1.</b> Programming skills needed</li>
-                                <li><b>2.</b> Computer science fundamentals and programming</li>
-                                <li><b>3.</b> Distributed computing</li>
-                                <li><b>4.</b> Machine learning algorithms and libraries</li>
-                                <li><b>5.</b> Software engineering and system design</li>
-                                <li><b>6.</b> Strong knowledge of data</li>
-                            </ol>
+                                <li>Programming skills needed</li>
+                                <li>Computer science fundamentals and programming</li>
+                                <li>Distributed computing</li>
+                                <li>Machine learning algorithms and libraries</li>
+                                <li>Software engineering and system design</li>
+                                <li>Strong knowledge of data</li>
+                            </ol> 
                             </div>
                             <!-- /row -->
 
@@ -81,12 +63,12 @@
 							<p style="font-size:16px;">A AI/ML Specialist produces a tailor-made solution for each problem. The only way to achieve optimal results is to carefully process the data and select the best algorithm for the given context. </p>
 							
 							<ol style="font-size:16px;">
-                                <li><b>1.</b> Understanding business objectives and developing models that help to achieve them, along with metrics to track their progress</li>
-                                <li><b>2.</b> Understand company and client challenges and how integrating AI capabilities can help create solutions</li>
-                                <li><b>3.</b> Develop machine learning applications according to requirements</li>
-                                <li><b>4.</b> Select appropriate datasets and data representation methods</li>
-                                <li><b>5.</b> Analyze and explain AI and machine learning (ML) solutions while setting and maintaining high ethical standards</li>
-                                <li><b>6.</b> Designing machine learning systems and self-running artificial intelligence (AI) software to automate predictive models. </li>
+                                <li>Understanding business objectives and developing models that help to achieve them, along with metrics to track their progress</li>
+                                <li>Understand company and client challenges and how integrating AI capabilities can help create solutions</li>
+                                <li>Develop machine learning applications according to requirements</li>
+                                <li>Select appropriate datasets and data representation methods</li>
+                                <li>Analyze and explain AI and machine learning (ML) solutions while setting and maintaining high ethical standards</li>
+                                <li>Designing machine learning systems and self-running artificial intelligence (AI) software to automate predictive models. </li>
                             </ol>
                             </div>
                             <!-- /row -->
@@ -102,16 +84,16 @@
                             <div class="row">
 							<h2>Companies offering AI/ML Specialist role</h2>
 
-							<ol style="font-size:16px;">
-                                <li><b>1. Microsoft</b> </li>
-                                <li><b>2. Google</b></li>
-                                <li><b>3. Nokia</b></li>
-                                <li><b>4. JP Morgan</b></li>
-                                <li><b>5. Cisco</b></li>
-                                <li><b>6. Amazon</b></li>
-                                <li><b>7. Apple</b></li>
-                                <li><b>8. IBM</b></li>
-                            </ol>
+							<ol style="font-size: 16px;">
+                                <li><strong>Microsoft</strong></li>
+                                <li><strong>Google</strong></li>
+                                <li><strong>Nokia</strong></li>
+                                <li><strong>JP Morgan</strong></li>
+                                <li><strong>Cisco</strong></li>
+                                <li><strong>Amazon</strong></li>
+                                <li><strong>Apple</strong></li>
+                                <li><strong>IBM</strong></li>
+                              </ol>
                             </div>
                             <!-- /row -->
 
@@ -131,4 +113,4 @@
 		<!-- /Blog -->
 
 		
-</html>
+{% endblock%}

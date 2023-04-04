@@ -1,29 +1,9 @@
 
+{% extends 'base.html' %} 
+{% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<?php include 'header.php'?>
-		<!-- Hero-area -->
-		<div class="hero-area section">
+{% block content%}
 
-			<!-- Backgound Image -->
-			<div class="bg-image bg-parallax overlay" style="background-image:url(./img/bgc2.jpg); " ></div>
-			<!-- /Backgound Image -->
-
-			<div class="container">
-				<div class="row">
-					<div class="col-md-10 col-md-offset-1 text-center">
-						<ul class="hero-area-tree">
-							<li><a href="main.php">Home</a></li>
-							<li><a href="blog.php">Knowledge Network</a></li>
-							<li>Information Security Specialist</li>
-						</ul>
-						<h1 class="white-text">Information Security Specialist</h1>
-					</div>
-				</div>
-			</div>
-
-		</div>
 		<!-- /Hero-area -->
 
 		<!-- Blog -->
@@ -56,13 +36,13 @@
 							<p style="font-size:16px;">As an Information Security Specialist one will work to identify and mitigate against any security threats, weaknesses, bugs or exploits impacting on your organisations cyber security. This work could include software and hardware modifications and other changes such at educating your systems users in best practice methodologies with regard to data and IT Security.</p>
 							
 							<ol style="font-size:16px;">
-                                <li><b>1. </b>Knowledge of current security risks and protocols.</li>
-                                <li><b>2. </b>Willingness to work on-call in the event of a security breech or other emergency.</li>
-                                <li><b>3. </b>Good analytic and problem solving skills.</li>
-                                <li><b>4. </b>Ability to work under close supervision, as well as the ability to take independent initiative when needed.</li>
-                                <li><b>5. </b>You will need to be organised, efficient and able to work unsupervised under your own initiative</li>
-                                <li><b>6. </b>Understanding of relevant scripting and source code programming languages, such as C#, C++, .NET, Java, Perl, PHP, Python or Ruby On Rails etc. that you will be using</li>
-                            </ol>
+								<li>Knowledge of current security risks and protocols.</li>
+								<li>Willingness to work on-call in the event of a security breech or other emergency.</li>
+								<li>Good analytic and problem solving skills.</li>
+								<li>Ability to work under close supervision, as well as the ability to take independent initiative when needed.</li>
+								<li>You will need to be organised, efficient and able to work unsupervised under your own initiative</li>
+								<li>Understanding of relevant scripting and source code programming languages, such as C#, C++, .NET, Java, Perl, PHP, Python or Ruby On Rails etc. that you will be using</li>
+							</ol>
                             </div>
                             <!-- /row -->
 
@@ -78,15 +58,15 @@
 							<h2>Duties and Responsibilities</h2>
 							
 							<ol style="font-size:16px;">
-                                <li><b>1. </b>Analyze existing security systems and make recommendations for changes or improvements.</li>
-                                <li><b>2. </b>Prepare reports and action plans in the event that a security breech does occur.</li>
-                                <li><b>3. </b>Organize and conduct tests and “ethical hacks” of the existing security architecture.</li>
-                                <li><b>4. </b>Monitor the network and provide early warning of abnormalities or problems.</li>
-                                <li><b>5. </b>Upgrade systems regularly to remain competitive in the field of security.</li>
-                                <li><b>6. </b>Communicate the system status and keep users informed of downtime or changes to the system.</li>
-                                <li><b>7. </b>Keep technical knowledge current through continuing education.</li>
-                                <li><b>8. </b>Provide system updates and write code fixes.</li>
-                            </ol>
+								<li>Analyze existing security systems and make recommendations for changes or improvements.</li>
+								<li>Prepare reports and action plans in the event that a security breech does occur.</li>
+								<li>Organize and conduct tests and “ethical hacks” of the existing security architecture.</li>
+								<li>Monitor the network and provide early warning of abnormalities or problems.</li>
+								<li>Upgrade systems regularly to remain competitive in the field of security.</li>
+								<li>Communicate the system status and keep users informed of downtime or changes to the system.</li>
+								<li>Keep technical knowledge current through continuing education.</li>
+								<li>Provide system updates and write code fixes.</li>
+							</ol>
                             </div>
                             <!-- /row -->
 
@@ -100,15 +80,14 @@
                             <!-- row -->
                             <div class="row">
 							<h2>Companies offering Information Security Specialist role</h2>
-    
 							<ol style="font-size:16px;">
-                                <li><b>1. Amdocs </b> </li>
-                                <li><b>2. American Express </b></li>
-                                <li><b>3. Adobe</b></li>
-                                <li><b>4. IBM</b></li>
-                                <li><b>5. Larsen and Tourbo Infotech Limited</b></li>
-                                <li><b>6. Deutsche Bank</b></li>
-                            </ol>
+								<li>Amdocs</li>
+								<li>American Express</li>
+								<li>Adobe</li>
+								<li>IBM</li>
+								<li>Larsen and Tourbo Infotech Limited</li>
+								<li>Deutsche Bank</li>
+							</ol>
                             </div>
                             <!-- /row -->
                     
@@ -129,4 +108,4 @@
 		</div>
 		<!-- /Blog -->
 
-</html>
+{%endblock%}

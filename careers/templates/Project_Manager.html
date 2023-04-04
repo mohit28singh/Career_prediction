@@ -1,32 +1,10 @@
 
 
-<!DOCTYPE html>
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/s.css">
-<link rel="stylesheet" href="css/font-awesome.min.css">
-<html lang="en">
+{% extends 'base.html' %} 
+{% load static %}
 
-		<!-- Hero-area -->
-		<div class="hero-area section">
-
-			<!-- Backgound Image -->
-			<div class="bg-image bg-parallax overlay" style="background-image:url(./img/bgc2.jpg); " ></div>
-			<!-- /Backgound Image -->
-
-			<div class="container">
-				<div class="row">
-					<div class="col-md-10 col-md-offset-1 text-center">
-						<ul class="hero-area-tree">
-							<li><a href="main.php">Home</a></li>
-							<li><a href="blog.php">Knowledge Network</a></li>
-							<li>Project Manager</li>
-						</ul>
-						<h1 class="white-text">Project Manager</h1>
-					</div>
-				</div>
-			</div>
-
-		</div>
+{% block content%}
+ 
 		<!-- /Hero-area -->
 
 		<!-- Blog -->
@@ -64,12 +42,12 @@
 							<p style="font-size:16px;">Project Managers should possess high levels of the below skills to perform well in the role:</p>
 							
 							<ol style="font-size:16px;">
-                            <li><b>1. </b>Written and verbal communication skills</li>
-                                <li><b>2. </b>Capacity to manage high stress situations</li>
-                                <li><b>3. </b>Ability to multi-task and manage various project elements simultaneously</li>
-                                <li><b>4. </b>Leadership skills</li>
-                                <li><b>5. </b>Big-picture thinking and vision</li>
-                                <li><b>6. </b>Attention to detail</li>
+                                <li><b>Written and verbal communication skills</b></li>
+                                <li><b>Capacity to manage high stress situations</b></li>
+                                <li><b>Ability to multi-task and manage various project elements simultaneously</b></li>
+                                <li><b>Leadership skills</b></li>
+                                <li><b>Big-picture thinking and vision</b></li>
+                                <li><b>Attention to detail</b></li>
                             </ol>
                             </div>
                             <!-- /row -->
@@ -79,10 +57,10 @@
 							<h2>Educational Requirements</h2>
                             <p style="font-size:16px;">A Project Manager job description could include degrees in any of the following fields:</p>
 							<ol style="font-size:16px;">
-                            <li><b>1. </b>Engineering</li>
-                                <li><b>2. </b>IT or Computer Science</li>
-                                <li><b>3. </b>Business or Business Administration</li>
-                                <li><b>4. </b>Management</li>
+                                <li><b>Engineering</b></li>
+                                <li><b>IT or Computer Science</b></li>
+                                <li><b>Business or Business Administration</b></li>
+                                <li><b>Management</b></li>
                             </ol>
                             </div>
                             <!-- /row -->
@@ -92,15 +70,14 @@
 							<h2>Duties and Responsibilities</h2>
                             <p style="font-size:16px;">As a role that focuses on completing a project as efficiently and promptly as possible, expect to see any of the following duties and responsibilities in a Project Manager job description:</p>
 							<ol style="font-size:16px;">
-                            <li><b>1. </b>Leading project planning sessions</li>
-                                <li><b>2. </b>Coordinating staff and internal resources</li>
-                                <li><b>3. </b>Managing relationships with clients and stakeholders</li>
-                                <li><b>4. </b>Designing and signing off on contracts</li>
-                                <li><b>5. </b>Overseeing all incoming and outgoing project documentation</li>
-                                <li><b>6. </b>Conducting project review and creating detailed reports for executive staff</li>
-                                <li><b>7. </b>Optimising and improving processes and the overall approach where necessary</li>
-                                <li><b>8. </b>Managing large and diverse teams</li>
-                        
+                                <li><b>Leading project planning sessions</b></li>
+                                <li><b>Coordinating staff and internal resources</b></li>
+                                <li><b>Managing relationships with clients and stakeholders</b></li>
+                                <li><b>Designing and signing off on contracts</b></li>
+                                <li><b>Overseeing all incoming and outgoing project documentation</b></li>
+                                <li><b>Conducting project review and creating detailed reports for executive staff</b></li>
+                                <li><b>Optimising and improving processes and the overall approach where necessary</b></li>
+                                <li><b>Managing large and diverse teams</b></li>
                             </ol>
                             </div>
                             <!-- /row -->
@@ -117,13 +94,14 @@
 							<h2>Companies offering Project Manager role</h2>
     
 							<ol style="font-size:16px;">
-                                <li><b>1. Cisco Systems</b> </li>
-                                <li><b>2. Deloite</b></li>
-                                <li><b>3. IBM</b></li>
-                                <li><b>4. AT&T</b></li>
-                                <li><b>5. Google</b></li>
-                                <li><b>6. Microsoft</b></li>
+                                <li><b>Cisco Systems</b></li>
+                                <li><b>Deloitte</b></li>
+                                <li><b>IBM</b></li>
+                                <li><b>AT&amp;T</b></li>
+                                <li><b>Google</b></li>
+                                <li><b>Microsoft</b></li>
                             </ol>
+                            
                             </div>
                             <!-- /row -->
                     
@@ -145,4 +123,4 @@
 		<!-- /Blog -->
 
 		
-</html>
+{%endblock%}

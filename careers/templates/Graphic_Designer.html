@@ -1,28 +1,8 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<?php include 'header.php'?>
-		<!-- Hero-area -->
-		<div class="hero-area section">
+{% extends 'base.html' %} 
+{% load static %}
 
-			<!-- Backgound Image -->
-			<div class="bg-image bg-parallax overlay" style="background-image:url(./img/bgc2.jpg); " ></div>
-			<!-- /Backgound Image -->
-
-			<div class="container">
-				<div class="row">
-					<div class="col-md-10 col-md-offset-1 text-center">
-						<ul class="hero-area-tree">
-							<li><a href="main.php">Home</a></li>
-							<li><a href="blog.php">Knowledge Network</a></li>
-							<li>Graphic Designer</li>
-						</ul>
-						<h1 class="white-text">Graphic Designer</h1>
-					</div>
-				</div>
-			</div>
-
-		</div>
+{% block content%}
 		<!-- /Hero-area -->
 
 		<!-- Blog -->
@@ -58,14 +38,15 @@
 							<h2>Skills required</h2>
 							
 							
-							<ol style="font-size:16px;">
-                                <li><b>1. </b>Proven graphic designing experience.</li>
-                                <li><b>2. </b>A strong portfolio of illustrations or other graphics.</li>
-                                <li><b>3. </b>Familiarity with design software and technologies (such as InDesign, Illustrator, Dreamweaver, Photoshop).</li>
-                                <li><b>4. </b>A keen eye for aesthetics and details.</li>
-                                <li><b>5. </b>Excellent communication skills.</li>
-                                <li><b>6. </b>Ability to work methodically and meet deadlines.</li>
-                            </ol>
+                            <ol style="font-size:16px;">
+                                <li>Proven graphic designing experience.</li>
+                                <li>A strong portfolio of illustrations or other graphics.</li>
+                                <li>Familiarity with design software and technologies (such as InDesign, Illustrator, Dreamweaver, Photoshop).</li>
+                                <li>A keen eye for aesthetics and details.</li>
+                                <li>Excellent communication skills.</li>
+                                <li>Ability to work methodically and meet deadlines.</li>
+                              </ol>
+                              
                             </div>
                             <!-- /row -->
 
@@ -81,18 +62,18 @@
                             <!-- row -->
                             <div class="row">
 							<h2>Duties and Responsibilities</h2>
-
-							<ol style="font-size:16px;">
-                                <li><b>1. </b>Study design briefs and determine requirements.</li>
-                                <li><b>2. </b>Schedule projects and define budget constraints.</li>
-                                <li><b>3. </b>Conceptualize visuals based on requirements.</li>
-                                <li><b>4. </b>Prepare rough drafts and present ideas.</li>
-                                <li><b>5. </b>Develop illustrations, logos and other designs using software or by hand.</li>
-                                <li><b>6. </b>Use the appropriate colors and layouts for each graphic.</li>
-                                <li><b>7. </b>Work with copywriters and creative director to produce final design.</li>
-                                <li><b>8. </b>Test graphics across various media.</li>
-                                <li><b>9. </b>Ensure final graphics and layouts are visually appealing and on-brand.</li>
+                            <ol style="font-size:16px;">
+                                <li>Study design briefs and determine requirements.</li>
+                                <li>Schedule projects and define budget constraints.</li>
+                                <li>Conceptualize visuals based on requirements.</li>
+                                <li>Prepare rough drafts and present ideas.</li>
+                                <li>Develop illustrations, logos and other designs using software or by hand.</li>
+                                <li>Use the appropriate colors and layouts for each graphic.</li>
+                                <li>Work with copywriters and creative director to produce final design.</li>
+                                <li>Test graphics across various media.</li>
+                                <li>Ensure final graphics and layouts are visually appealing and on-brand.</li>
                             </ol>
+                            
                             </div>
                             <!-- /row -->
 
@@ -106,16 +87,15 @@
                             <!-- row -->
                             <div class="row">
 							<h2>Companies offering Graphic Designer role</h2>
-    
-							<ol style="font-size:16px;">
-                                <li><b>1. Buttercup advertising studio </b> </li>
-                                <li><b>2. Sigzen Technologies </b></li>
-                                <li><b>3. Mind digital</b></li>
-                                <li><b>4. Webisdom</b></li>
-                                <li><b>5. Zero designs</b></li>
-                                <li><b>6. Netgains</b></li>
-                                <li><b>7. Detecvision</b></li>
-                                <li><b>8. WiseLife</b></li>
+                            <ol style="font-size:16px;">
+                                <li>Buttercup advertising studio</li>
+                                <li>Sigzen Technologies</li>
+                                <li>Mind digital</li>
+                                <li>Webisdom</li>
+                                <li>Zero designs</li>
+                                <li>Netgains</li>
+                                <li>Detecvision</li>
+                                <li>WiseLife</li>
                             </ol>
                             </div>
                             <!-- /row -->
@@ -137,4 +117,4 @@
 		</div>
 		<!-- /Blog -->
 
-</html>
+{%endblock%}
