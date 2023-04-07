@@ -20,218 +20,272 @@
       <div class="row">
         <div class="col-md-12">
             <center>
-          <form method="post" class="p-5 bg-light">
+          <form method="post" class="p-5 bg-light" action="{% url 'careerresult' %}">
             {% csrf_token %}
-            <div class="form-group row">
-              <label for="name" class="col-sm-3 col-form-label">Full Name</label>
-              <div class="col-sm-9">
-                <input type="text" class="form-control" name="name" id="name" placeholder="Full Name" required>
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="email" class="col-sm-3 col-form-label">Email Address</label>
-              <div class="col-sm-9">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Email Address" required>
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="phone" class="col-sm-3 col-form-label">Phone Number</label>
-              <div class="col-sm-9">
-                <input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone Number" required>
-              </div>
-            </div>
             <h3 class="mb-4 mt-5">How do you rate your knowledge/skill in the following areas?</h3>
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Database Fundamentals</label>
-              <div class="col-sm-9">
-                <select class="form-select form-control" required aria-label="select example" name="rate_database_fundamentals">
-                  <option value="">Choose option</option>
-                  <option value="1">Not Interested</option>
-                  <option value="2">Poor</option>
-                  <option value="3">Beginner</option>
-                  <option value="5">Average</option>
-                  <option value="6">Intermediate</option>
-                  <option value="7">Excellent</option>
-                  <option value="9">Professional</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Computer Architecture</label>
-              <div class="col-sm-9">
-                <select class="form-select form-control" required aria-label="select example" name="rate_computer_architecture">
-                  <option value="">Choose option</option>
-                  <option value="1">Not Interested</option>
-                  <option value="2">Poor</option>
-                  <option value="3">Beginner</option>
-                  <option value="5">Average</option>
-                  <option value="6">Intermediate</option>
-                  <option value="7">Excellent</option>
-                  <option value="9">Professional</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Distributed Computing Systems</label>
-              <div class="col-sm-9">
-                <select class="form-select form-control" required aria-label="select example" name="Distributed Computing Systems">
-                    <option value="">Choose option</option>
-                    <option value="1">Not Interested</option>
-                    <option value="2">Poor</option>
-                    <option value="3">Beginner</option>
-                    <option value="5">Average</option>
-                    <option value="6">Intermediate</option>
-                    <option value="7">Excellent</option>
-                    <option value="9">Professional</option>
-                  </select>
+							<label  class="col-sm-3  col-form-label">Database Fundamentals</label>
+							<div class="col-sm-9">
+							<select class="form-select form-control" required aria-label="select example" name="rate_Database_Fundamentals">
+								  <option value="">Choose option</option>
+								 <option value="1">Not Interested</option>
+									<option value="2">Poor</option>
+									<option value="3">Beginner</option>
+									<option value="5"selected>Average</option>
+									<option value="6">Intermediate</option>
+									<option value="7">Excellent</option>
+									<option value="9">Professional</option>
+								</select>
+							
+						    </div>
+				</div>
+				<div class="form-group row">
+							<label  class="col-sm-3  col-form-label">Computer Architecture</label>
+							<div class="col-sm-9">
+							 <select class="form-select form-control" required aria-label="select example" name="rate_Computer_Architecture" >
+							        <option value="">Choose option</option>
+									<option value="1" >Not Interested</option>
+									<option value="2">Poor</option>
+									<option value="3">Beginner</option>
+									<option value="5">Average</option>
+									<option value="6"selected>Intermediate</option>
+									<option value="7">Excellent</option>
+									<option value="9">Professional</option>
+							 </select>
+						    </div>
+				</div>
+				<div class="form-group row">
+							<label  class="col-sm-3  col-form-label">Distributed Computing Systems</label>
+							<div class="col-sm-9">
+							 <select class="form-select form-control" required aria-label="select example" name="rate_Distributed Computing Systems" >
+							        <option value="">Choose option</option>
+									<option value="1" >Not Interested</option>
+									<option value="2">Poor</option>
+									<option value="3">Beginner</option>
+									<option value="5">Average</option>
+									<option value="6"selected>Intermediate</option>
+									<option value="7">Excellent</option>
+									<option value="9">Professional</option>
+							 </select>
+						    </div>
+				</div>
+				<div class="form-group row">
+							<label  class="col-sm-3  col-form-label">Cyber Security</label>
+							<div class="col-sm-9">
+							 <select class="form-select form-control" required aria-label="select example" name="rate_Cyber Security" >
+							        <option value="" >Choose option</option>
+									<option value="1" >Not Interested</option>
+									<option value="2">Poor</option>
+									<option value="3">Beginner</option>
+									<option value="5">Average</option>
+									<option value="6">Intermediate</option>
+									<option value="7"selected>Excellent</option>
+									<option value="9">Professional</option>
+							 </select>
+						    </div>
+				</div>
+				<div class="form-group row">
+							<label  class="col-sm-3  col-form-label">Computer Networking</label>
+							<div class="col-sm-9">
+							 <select class="form-select form-control" required aria-label="select example" name="rate_Networking" >
+							        <option value="">Choose option</option>
+									<option value="1">Not Interested</option>
+									<option value="2">Poor</option>
+									<option value="3">Beginner</option>
+									<option value="5">Average</option>
+									<option value="6">Intermediate</option>
+									<option value="7"selected>Excellent</option>
+									<option value="9">Professional</option>
+							 </select>
+						    </div>
+				</div>
+				<div class="form-group row">
+							<label  class="col-sm-3  col-form-label">Software Development</label>
+							<div class="col-sm-9">
+							 <select class="form-select form-control" required aria-label="select example" name="rate_Development" >
+							        <option value="">Choose option</option>
+									<option value="1">Not Interested</option>
+									<option value="2">Poor</option>
+									<option value="3">Beginner</option>
+									<option value="5">Average</option>
+									<option value="6">Intermediate</option>
+									<option value="7">Excellent</option>
+									<option value="9">Professional</option>
+							 </select>
+						    </div>
+				</div>
+				<div class="form-group row">
+							<label  class="col-sm-3  col-form-label">Programming Skills</label>
+							<div class="col-sm-9">
+							 <select class="form-select form-control" required aria-label="select example" name="rate_Programming Skills" >
+							        <option value="">Choose option</option>
+									<option value="1">Not Interested</option>
+									<option value="2">Poor</option>
+									<option value="3">Beginner</option>
+									<option value="5"selected>Average</option>
+									<option value="6">Intermediate</option>
+									<option value="7">Excellent</option>
+									<option value="9">Professional</option>
+							 </select>
+						    </div>
+				</div>
+				<div class="form-group row">
+							<label  class="col-sm-3  col-form-label">Project Management</label>
+							<div class="col-sm-9">
+							 <select class="form-select form-control" required aria-label="select example" name="rate_Project Management" >
+							        <option value="">Choose option</option>
+									<option value="1">Not Interested</option>
+									<option value="2">Poor</option>
+									<option value="3">Beginner</option>
+									<option value="5">Average</option>
+									<option value="6">Intermediate</option>
+									<option value="7"selected>Excellent</option>
+									<option value="9">Professional</option>
+							 </select>
+						    </div>
+				</div>
+				<div class="form-group row">
+							<label  class="col-sm-3  col-form-label">Computer Forensics Fundamentals</label>
+							<div class="col-sm-9">
+							 <select class="form-select form-control" required aria-label="select example" name="rate_Computer Forensics Fundamentals" >
+							        <option value="">Choose option</option>
+									<option value="1">Not Interested</option>
+									<option value="2">Poor</option>
+									<option value="3">Beginner</option>
+									<option value="5">Average</option>
+									<option value="6">Intermediate</option>
+									<option value="7">Excellent</option>
+									<option value="9"selected>Professional</option>
+							 </select>
+						    </div>
+				</div>
+				<div class="form-group row">
+							<label  class="col-sm-3  col-form-label">Technical Communication skills</label>
+							<div class="col-sm-9">
+							 <select class="form-select form-control" required aria-label="select example" name="rate_Technical Communication" >
+							        <option value="">Choose option</option>
+									<option value="1">Not Interested</option>
+									<option value="2">Poor</option>
+									<option value="3">Beginner</option>
+									<option value="5">Average</option>
+									<option value="6">Intermediate</option>
+									<option value="7"selected>Excellent</option>
+									<option value="9">Professional</option>
+							 </select>
+						    </div>
+				</div>
+				<div class="form-group row">
+							<label  class="col-sm-3  col-form-label">AI ML</label>
+							<div class="col-sm-9">
+							 <select class="form-select form-control" required aria-label="select example" name="rate_AI ML" >
+							        <option value="">Choose option</option>
+									<option value="1">Not Interested</option>
+									<option value="2">Poor</option>
+									<option value="3">Beginner</option>
+									<option value="5">Average</option>
+									<option value="6"selected>Intermediate</option>
+									<option value="7">Excellent</option>
+									<option value="9">Professional</option>
+							 </select>
+						    </div>
+				</div>
+				<div class="form-group row">
+							<label  class="col-sm-3  col-form-label">Software Engineering</label>
+							<div class="col-sm-9">
+							 <select class="form-select form-control" required aria-label="select example" name="rate_se" >
+							        <option value="">Choose option</option>
+									<option value="1">Not Interested</option>
+									<option value="2">Poor</option>
+									<option value="3">Beginner</option>
+									<option value="5">Average</option>
+									<option value="6"selected>Intermediate</option>
+									<option value="7">Excellent</option>
+									<option value="9">Professional</option>
+							 </select>
+						    </div>
+				</div>
+				<div class="form-group row">
+							<label  class="col-sm-3  col-form-label">Business Analysis</label>
+							<div class="col-sm-9">
+							 <select class="form-select form-control" required aria-label="select example" name="rate_Business Analysis" >
+							        <option disabled= "disabled" selected="selected">Choose option</option>
+									<option value="1">Not Interested</option>
+									<option value="2">Poor</option>
+									<option value="3">Beginner</option>
+									<option value="5">Average</option>
+									<option value="6">Intermediate</option>
+									<option value="7"selected>Excellent</option>
+									<option value="9">Professional</option>
+							 </select>
+						    </div>
+				</div>
+				<div class="form-group row">
+							<label  class="col-sm-3  col-form-label">Communication skills</label>
+							<div class="col-sm-9">
+							 <select class="form-select form-control" required aria-label="select example" name="rate_Communication skills" >
+							        <option value="">Choose option</option>
+									<option value="1">Not Interested</option>
+									<option value="2">Poor</option>
+									<option value="3">Beginner</option>
+									<option value="5">Average</option>
+									<option value="6">Intermediate</option>
+									<option value="7"selected>Excellent</option>
+									<option value="9">Professional</option>
+							 </select>
+						    </div>
+				</div>
+				<div class="form-group row">
+							<label  class="col-sm-3 col-form-label">Data Science</label>
+							<div class="col-sm-9">
+							 <select class="form-select form-control" required aria-label="select example" name="rate_Data Science" >
+							        <option value="">Choose option</option>
+									<option value="1">Not Interested</option>
+									<option value="2">Poor</option>
+									<option value="3">Beginner</option>
+									<option value="5"selected>Average</option>
+									<option value="6">Intermediate</option>
+									<option value="7">Excellent</option>
+									<option value="9">Professional</option>
+							 </select>
+						    </div>
+				</div>
+				<div class="form-group row">
+							<label  class="col-sm-3  col-form-label">Troubleshooting skills</label>
+							<div class="col-sm-9">
+							 <select  class="form-control" name="rate_Troubleshooting skills" >
+							        <option value="">Choose option</option>
+									<option value="1">Not Interested</option>
+									<option value="2">Poor</option>
+									<option value="3">Beginner</option>
+									<option value="5">Average</option>
+									<option value="6"selected>Intermediate</option>
+									<option value="7">Excellent</option>
+									<option value="9">Professional</option>
+							 </select>
+						    </div>
+							
                 </div>
-              </div>
-              <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Commmunication Skills</label>
-                <div class="col-sm-9">
-                  <select class="form-select form-control" required aria-label="select example" name="rate_computer_architecture">
-                    <option value="">Choose option</option>
-                    <option value="1">Not Interested</option>
-                    <option value="2">Poor</option>
-                    <option value="3">Beginner</option>
-                    <option value="5">Average</option>
-                    <option value="6">Intermediate</option>
-                    <option value="7">Excellent</option>
-                    <option value="9">Professional</option>
-                  </select>
+				<div class="form-group row">
+							<label  class="col-sm-3  col-form-label">Graphics Designing</label>
+							<div class="col-sm-9">
+							 <select  class="form-control" name="rate_graphic_designing" >
+							        <option value="">Choose option</option>
+									<option value="1">Not Interested</option>
+									<option value="2">Poor</option>
+									<option value="3">Beginner</option>
+									<option value="5">Average</option>
+									<option value="6">Intermediate</option>
+									<option value="7"selected>Excellent</option>
+									<option value="9">Professional</option>
+							 </select>
+						    </div>
+							
                 </div>
-              </div>
-              <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Troubleshooting Skills</label>
-                <div class="col-sm-9">
-                  <select class="form-select form-control" required aria-label="select example" name="rate_computer_architecture">
-                    <option value="">Choose option</option>
-                    <option value="1">Not Interested</option>
-                    <option value="2">Poor</option>
-                    <option value="3">Beginner</option>
-                    <option value="5">Average</option>
-                    <option value="6">Intermediate</option>
-                    <option value="7">Excellent</option>
-                    <option value="9">Professional</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Graphics Designing</label>
-                <div class="col-sm-9">
-                  <select class="form-select form-control" required aria-label="select example" name="rate_computer_architecture">
-                    <option value="">Choose option</option>
-                    <option value="1">Not Interested</option>
-                    <option value="2">Poor</option>
-                    <option value="3">Beginner</option>
-                    <option value="5">Average</option>
-                    <option value="6">Intermediate</option>
-                    <option value="7">Excellent</option>
-                    <option value="9">Professional</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Data Science</label>
-                <div class="col-sm-9">
-                  <select class="form-select form-control" required aria-label="select example" name="rate_computer_architecture">
-                    <option value="">Choose option</option>
-                    <option value="1">Not Interested</option>
-                    <option value="2">Poor</option>
-                    <option value="3">Beginner</option>
-                    <option value="5">Average</option>
-                    <option value="6">Intermediate</option>
-                    <option value="7">Excellent</option>
-                    <option value="9">Professional</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Software Engineering</label>
-                <div class="col-sm-9">
-                  <select class="form-select form-control" required aria-label="select example" name="rate_computer_architecture">
-                    <option value="">Choose option</option>
-                    <option value="1">Not Interested</option>
-                    <option value="2">Poor</option>
-                    <option value="3">Beginner</option>
-                    <option value="5">Average</option>
-                    <option value="6">Intermediate</option>
-                    <option value="7">Excellent</option>
-                    <option value="9">Professional</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group row">
-                <label class="col-sm-3 col-form-label">AI ML</label>
-                <div class="col-sm-9">
-                  <select class="form-select form-control" required aria-label="select example" name="rate_computer_architecture">
-                    <option value="">Choose option</option>
-                    <option value="1">Not Interested</option>
-                    <option value="2">Poor</option>
-                    <option value="3">Beginner</option>
-                    <option value="5">Average</option>
-                    <option value="6">Intermediate</option>
-                    <option value="7">Excellent</option>
-                    <option value="9">Professional</option>
-                  </select>
-                  <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Business Analysis</label>
-                    <div class="col-sm-9">
-                      <select class="form-select form-control" required aria-label="select example" name="rate_computer_architecture">
-                        <option value="">Choose option</option>
-                        <option value="1">Not Interested</option>
-                        <option value="2">Poor</option>
-                        <option value="3">Beginner</option>
-                        <option value="5">Average</option>
-                        <option value="6">Intermediate</option>
-                        <option value="7">Excellent</option>
-                        <option value="9">Professional</option>
-                      </select>
-                      <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Cyber Security</label>
-                        <div class="col-sm-9">
-                          <select class="form-select form-control" required aria-label="select example" name="rate_computer_architecture">
-                            <option value="">Choose option</option>
-                            <option value="1">Not Interested</option>
-                            <option value="2">Poor</option>
-                            <option value="3">Beginner</option>
-                            <option value="5">Average</option>
-                            <option value="6">Intermediate</option>
-                            <option value="7">Excellent</option>
-                            <option value="9">Professional</option>
-                          </select>
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Distributed Computing System</label>
-                            <div class="col-sm-9">
-                              <select class="form-select form-control" required aria-label="select example" name="rate_computer_architecture">
-                                <option value="">Choose option</option>
-                                <option value="1">Not Interested</option>
-                                <option value="2">Poor</option>
-                                <option value="3">Beginner</option>
-                                <option value="5">Average</option>
-                                <option value="6">Intermediate</option>
-                                <option value="7">Excellent</option>
-                                <option value="9">Professional</option>
-                              </select>
-                              <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Computer Networking</label>
-                                <div class="col-sm-9">
-                                  <select class="form-select form-control" required aria-label="select example" name="rate_computer_architecture">
-                                    <option value="">Choose option</option>
-                                    <option value="1">Not Interested</option>
-                                    <option value="2">Poor</option>
-                                    <option value="3">Beginner</option>
-                                    <option value="5">Average</option>
-                                    <option value="6">Intermediate</option>
-                                    <option value="7">Excellent</option>
-                                    <option value="9">Professional</option>
-                                  </select>
-                      
-                  
-            </div>
-            <center><button class="btn btn--radius-2 btn--red" type="submit" >Discover Yourself!</button></center>
+                <center><button class="btn btn--radius-2 btn--red" type="submit" >Discover Yourself!</button></center>
+                </div>						
+				</div>
 </div>		
 
-</form>		</center>
+</form>			</center>
 {% endblock %}
 

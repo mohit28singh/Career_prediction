@@ -5,7 +5,10 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.contrib.auth import get_user_model
-
+import joblib
+import pandas as pd
+reloadModel=joblib.load('careerlast.pkl')
+print(type(reloadModel))
 # Create your views here.
 def home(request):
     user = get_user_model().objects.get(pk=request.user.pk)
@@ -101,3 +104,45 @@ def Graphic_Designer(request):
     return render (request,'Graphic_Designer.html')
 def TermsConditons(request):
     return render(request, 'Terms&Condition.html')
+def CarResult(request):
+    if request.method == 'POST':
+       rate_Database_Fundamentals= request.POST.get('rate_Database Fundamentals')
+       rate_Computer_Architecture=request.POST.get('rate_Computer_Architecture')
+       rate_Distributed_Computing_Systems=request.POST.get('rate_Distributed Computing Systems')
+       rate_Cyber_Security=request.POST.get('rate_Cyber Security')
+       rate_Networking=request.POST.get('rate_Networking')
+       rate_Development=request.POST.get('rate_Development')
+       rate_Programming_Skills=request.POST.get('rate_Programming Skills')
+       rate_Project_Management=request.POST.get('rate_Project Management')
+       rate_Computer_Forensics_Fundamentals=request.POST.get('rate_Computer Forensics Fundamentals')
+       rate_Technical_Communication=request.POST.get('rate_Technical Communication')
+       rate_AI_ML=request.POST.get('rate_AI ML')
+       rate_se=request.POST.get('rate_se')
+       rate_Business_Analysis=request.POST.get('rate_Business Analysis')
+       rate_Communication_skills=request.POST.get('rate_Communication skills')
+       rate_Data_Science=request.POST.get('rate_Data Science')
+       rate_Troubleshooting_skills=request.POST.get('rate_Troubleshooting skills')
+       rate_graphic_designing=request.POST.get('rate_graphic_designing')
+       temp={}
+       temp['rate_database_fundamentals']=rate_Database_Fundamentals
+       temp['rate_Computer_Architecture']=rate_Computer_Architecture
+       temp['Distributed_Computing_Systems']=rate_Distributed_Computing_Systems
+       temp['rate_Cyber_Security']=rate_Cyber_Security
+       temp['rate_Networking']=rate_Networking
+       temp['rate_Development']=rate_Development
+       temp['rate_Programming_Skills']=rate_Programming_Skills
+       temp['rate_Project_Management']=rate_Project_Management
+       temp['rate_Computer_Forensics_Fundamentals']=rate_Computer_Forensics_Fundamentals
+       temp['rate_Technical_Communication']=rate_Technical_Communication
+       temp['rate_AI_ML']=rate_AI_ML
+       temp['rate_se']=rate_se
+       temp['rate_Business_Analysis']=rate_Business_Analysis
+       temp['rate_Communication_skills']=rate_Communication_skills
+       temp['rate_Data_Science']=rate_Data_Science
+       temp['rate_Troubleshooting_skills']=rate_Troubleshooting_skills
+       temp['rate_graphic_designing']=rate_graphic_designing
+       print(temp)
+    testdata=pd.DataFrame({'x':temp}).transpose()
+    resultdata=reloadModel.predict(testdata)[0]
+    context={'resultdata':resultdata}
+    return render(request, 'result.html', context)
