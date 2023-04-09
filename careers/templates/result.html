@@ -1,8 +1,10 @@
-{% comment %} {% extends 'base.html'%} {% endcomment %}
-{% load static %}
+{% extends 'base.html' %}
 
 {% block content %}
-<p> js bkj kj jk  l j k ka kj kja.kj k.aj .kj k. . . . . .jk</p>
-<h1>Your career is {{resultdata}} </h1>
-
-{%endblock%}
+  <h1>Results</h1>
+  {% if chart_data %}
+    <img src="data:image/png;base64,{{ chart_data }}" />
+  {% else %}
+    <p>No data to display.</p>
+  {% endif %}
+{% endblock %}

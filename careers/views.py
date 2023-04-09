@@ -5,10 +5,13 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.contrib.auth import get_user_model
+import numpy as np 
 import joblib
 import pandas as pd
-reloadModel=joblib.load('careerlast.pkl')
-print(type(reloadModel))
+import matplotlib.pyplot as plt
+import io, base64
+
+
 # Create your views here.
 def home(request):
     user = get_user_model().objects.get(pk=request.user.pk)
@@ -104,45 +107,126 @@ def Graphic_Designer(request):
     return render (request,'Graphic_Designer.html')
 def TermsConditons(request):
     return render(request, 'Terms&Condition.html')
+# model = joblib.load('careercounselling.pkl')
+# print(type(model))
+
 def CarResult(request):
     if request.method == 'POST':
-       rate_Database_Fundamentals= request.POST.get('rate_Database Fundamentals')
-       rate_Computer_Architecture=request.POST.get('rate_Computer_Architecture')
-       rate_Distributed_Computing_Systems=request.POST.get('rate_Distributed Computing Systems')
-       rate_Cyber_Security=request.POST.get('rate_Cyber Security')
-       rate_Networking=request.POST.get('rate_Networking')
-       rate_Development=request.POST.get('rate_Development')
-       rate_Programming_Skills=request.POST.get('rate_Programming Skills')
-       rate_Project_Management=request.POST.get('rate_Project Management')
-       rate_Computer_Forensics_Fundamentals=request.POST.get('rate_Computer Forensics Fundamentals')
-       rate_Technical_Communication=request.POST.get('rate_Technical Communication')
-       rate_AI_ML=request.POST.get('rate_AI ML')
-       rate_se=request.POST.get('rate_se')
-       rate_Business_Analysis=request.POST.get('rate_Business Analysis')
-       rate_Communication_skills=request.POST.get('rate_Communication skills')
-       rate_Data_Science=request.POST.get('rate_Data Science')
-       rate_Troubleshooting_skills=request.POST.get('rate_Troubleshooting skills')
-       rate_graphic_designing=request.POST.get('rate_graphic_designing')
-       temp={}
-       temp['rate_database_fundamentals']=rate_Database_Fundamentals
-       temp['rate_Computer_Architecture']=rate_Computer_Architecture
-       temp['Distributed_Computing_Systems']=rate_Distributed_Computing_Systems
-       temp['rate_Cyber_Security']=rate_Cyber_Security
-       temp['rate_Networking']=rate_Networking
-       temp['rate_Development']=rate_Development
-       temp['rate_Programming_Skills']=rate_Programming_Skills
-       temp['rate_Project_Management']=rate_Project_Management
-       temp['rate_Computer_Forensics_Fundamentals']=rate_Computer_Forensics_Fundamentals
-       temp['rate_Technical_Communication']=rate_Technical_Communication
-       temp['rate_AI_ML']=rate_AI_ML
-       temp['rate_se']=rate_se
-       temp['rate_Business_Analysis']=rate_Business_Analysis
-       temp['rate_Communication_skills']=rate_Communication_skills
-       temp['rate_Data_Science']=rate_Data_Science
-       temp['rate_Troubleshooting_skills']=rate_Troubleshooting_skills
-       temp['rate_graphic_designing']=rate_graphic_designing
-       print(temp)
-    testdata=pd.DataFrame({'x':temp}).transpose()
-    resultdata=reloadModel.predict(testdata)[0]
-    context={'resultdata':resultdata}
-    return render(request, 'result.html', context)
+        # Get the ratings from the form
+        rate_database_fundamentals = int(request.POST.get('1'))
+        rate_computer_architecture = int(request.POST.get("b"))
+        rate_Distributed_Computing_Systems = int(request.POST.get('3'))
+        cyber_security_rating = int(request.POST.get('4'))
+        rate_networking = int(request.POST.get('5'))
+        rate_development = int(request.POST.get('6'))
+        rate_programming_skills = int(request.POST.get('7'))
+        project_management = int(request.POST.get('8'))
+        computer_forensics_fundamentals = int(request.POST.get('9'))
+        rate_technical_communication = int(request.POST.get('10'))
+        rate_ai_ml = int(request.POST.get('11'))
+        rate_se = int(request.POST.get('12'))
+        rate_Business_Analysis = int(request.POST.get('13'))
+        rate_communication_skills = int(request.POST.get('14'))
+        rate_data_science = int(request.POST.get('15'))
+        rate_Troubleshooting_skills = int(request.POST.get('16'))
+        rate_graphic_designing = int(request.POST.get('17'))
+
+        # Prepare the input data as a numpy array
+        new_data = [[rate_database_fundamentals, rate_computer_architecture, rate_Distributed_Computing_Systems,
+                     cyber_security_rating, rate_networking, rate_development, rate_programming_skills,
+                     project_management, computer_forensics_fundamentals, rate_technical_communication, rate_ai_ml,
+                     rate_se, rate_Business_Analysis, rate_communication_skills, rate_data_science,
+                     rate_Troubleshooting_skills, rate_graphic_designing]]
+        new_data = np.array(new_data)
+
+        # Load the saved model
+        loaded_model = joblib.load('careercounselling.pkl')
+
+        # Get the probabilities of the new data belonging to each class
+        proba = loaded_model.predict_proba(new_data)
+
+        # Get the indices of the top 3 matches in descending order of probability
+        top3_matches = np.argsort(proba[0])[::-1][:3]
+
+        # Create a list of the top 3 match labels
+        top3_labels = [loaded_model.classes_[i] for i in top3_matches]
+
+        # Create a horizontal bar chart with the top 3 matches
+        fig, ax = plt.subplots(figsize=(6, 3))
+        bars = plt.barh(np.arange(3), proba[0][top3_matches], tick_label=top3_labels)
+        plt.xlim(0, 1)
+        plt.xlabel('Probability')
+        plt.title('Top Career Matches')
+        for bar in bars:
+            width = bar.get_width()
+            plt.text(width + 0.02, bar.get_y() + bar.get_height()/2, '{:.1f}%'.format(width*100))
+
+
+        # Adjust the spacing between subplots
+        fig.subplots_adjust(left=0.4, bottom=0.1, right=0.95, top=0.9)
+
+        # Convert the Matplotlib chart to a base64-encoded string for embedding in the template
+        buf = io.BytesIO()
+        plt.savefig(buf, format='png')
+        plt.close()
+        chart_data = base64.b64encode(buf.getvalue()).decode('utf-8')
+
+        # Pass the data to the template
+        return render(request, 'result.html', {'chart_data': chart_data})
+#      if request.method == 'POST':
+#         rate_database_fundamentals = request.POST.get('1')
+#         rate_computer_architecture = request.POST.get("b")
+#         rate_Distributed_Computing_Systems = request.POST.get('3')
+#         cyber_security_rating = request.POST.get('4')
+#         rate_networking = request.POST.get('5')
+#         rate_development = request.POST.get('6')
+#         rate_programming_skills = request.POST.get('7')
+#         project_management = request.POST.get('8')
+#         computer_forensics_fundamentals = request.POST.get('9')
+#         rate_technical_communication = request.POST.get('10')
+#         rate_ai_ml = request.POST.get('11')
+#         rate_se = request.POST.get('12')
+#         rate_Business_Analysis = request.POST.get('13')
+#         rate_communication_skills = request.POST.get('14')
+#         rate_data_science = request.POST.get('15')
+#         rate_Troubleshooting_skills = request.POST.get('16')
+#         rate_graphic_designing = request.POST.get('17')
+
+#         print(rate_database_fundamentals)
+#         print(rate_computer_architecture)
+#         print(rate_Distributed_Computing_Systems)
+#         print(cyber_security_rating)
+#         print(rate_networking)
+#         print(rate_development , rate_programming_skills ,project_management ,computer_forensics_fundamentals ,rate_technical_communication ,  rate_ai_ml)
+#         print(rate_se ,rate_Business_Analysis ,rate_communication_skills , rate_data_science, 
+#         rate_Troubleshooting_skills 
+#         ,rate_graphic_designing )
+#         skills = {
+#     'rate_database_fundamentals': rate_database_fundamentals,
+#     'rate_computer_architecture': rate_computer_architecture,
+#     'rate_Distributed_Computing_Systems': rate_Distributed_Computing_Systems,
+#     'cyber_security_rating': cyber_security_rating,
+#     'rate_networking': rate_networking,
+#     'rate_development': rate_development,
+#     'rate_programming_skills': rate_programming_skills,
+#     'project_management': project_management,
+#     'computer_forensics_fundamentals': computer_forensics_fundamentals,
+#     'rate_technical_communication': rate_technical_communication,
+#     'rate_ai_ml': rate_ai_ml,
+#     'rate_se': rate_se,
+#     'rate_Business_Analysis': rate_Business_Analysis,
+#     'rate_communication_skills': rate_communication_skills,
+#     'rate_data_science': rate_data_science,
+#     'rate_Troubleshooting_skills': rate_Troubleshooting_skills,
+#     'rate_graphic_designing': rate_graphic_designing
+# }
+
+    #  testdata=pd.DataFrame({'x':skills}).transpose()
+    #  resultdata=model.predict(testdata)[0]
+    #  resultdata1= round(resultdata * 100, 2)
+    #  return render(request, 'result.html', {'resultdata':resultdata,'resultdata1':resultdata1})
+      # Make predictions using the trained model
+     #dont delete it its for backup
+     #dont delete it its for backup
+     #dont delete it its for backup
+     #dont delete it its for backup
