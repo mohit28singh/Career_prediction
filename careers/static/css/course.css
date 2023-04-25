@@ -6,7 +6,6 @@
   .blog{
     width: 100%;
     padding-bottom: 50px;
-    background:#dfe9f5; 
   }
   .blog h2{
     text-align: center;
@@ -83,8 +82,7 @@
   }
   .blog{
     width: 100%;
-    padding-bottom: 50px;
-    background:#dfe9f5; 
+    padding-bottom: 50px; 
   }
   .blog h2{
     text-align: center;

@@ -10,6 +10,7 @@ import joblib
 import pandas as pd
 import matplotlib.pyplot as plt
 import io, base64
+from django.core.files.storage import FileSystemStorage
 
 
 # Create your views here.
@@ -50,6 +51,7 @@ def LoginPage(request):
 def LogoutPage(request):
      logout(request)
      return render(request,'main.html')
+ 
 
 
 @login_required(login_url='login')

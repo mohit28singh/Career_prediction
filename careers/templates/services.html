@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Career Counsling Website</title>
-    <link rel="stylesheet" href="{% static 'css/services.css' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'css/services.css' %}"> {% endcomment %}
 </head>
 
 {% block content %}
@@ -281,7 +281,8 @@
 						    </div>
 							
                 </div>
-                <center><button class="btn btn--radius-2 btn--red" type="submit" >Discover Yourself!</button></center>
+				<br>
+                <center><button type="submit" class="btn btn-primary ">Submit</button></center>
                 </div>						
 				</div>
 </div>		

@@ -35,7 +35,7 @@ urlpatterns = [
     path('TechnicalWriter/', views.Technical_wri, name='TW'),
     path('GraphicDesigner/', views.Graphic_Designer, name='GD'),
     path('TermsCondition/', views.TermsConditons, name='Terms'),
-     path('result/',views.CarResult, name='careerresult'),
+    path('result/',views.CarResult, name='careerresult'),
 ]
 
 # Redirecting to login page if user not authenticated

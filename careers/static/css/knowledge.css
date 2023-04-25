@@ -9,7 +9,7 @@
     margin: 0px;
     font-family: "Open Sans",Arial, Helvetica, sans-serif; }
   
-  .box-cards-blog {
+  /* .box-cards-blog {
     max-width: 1000px;
     margin: auto;
     padding: 20px 40px; }
@@ -26,12 +26,12 @@
     .card-image {
       width: 30%; }
       .card-image img {
-        width: 100%;
+        width: 100%; */
        
-        
+/*         
         border-top-left-radius: 20px;
-        border-bottom-left-radius: 20px; }
-    
+        border-bottom-left-radius: 20px; } */
+/*     
     .card-meta {
       width: 70%;
       padding: 1rem;
@@ -51,7 +51,7 @@
             }
         
     
-    
+     */
     
        .readmore {
         display: block;
@@ -70,7 +70,7 @@
   
   
   /*Responsive*/
-  @media (max-width: 991px) {
+  /* @media (max-width: 991px) {
     .box-cards-blog.-grid {
       display: block; }
       .box-cards-blog.-grid .card {
@@ -100,4 +100,4 @@
         width: 100%; }
       .box-cards-blog.-grid .card .card-meta {
         margin-left: 0px;
-        margin-top: 1rem; } }
+        margin-top: 1rem; } } */
