@@ -112,6 +112,10 @@ def TermsConditons(request):
 # model = joblib.load('careercounselling.pkl')
 # print(type(model))
 
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+from django.shortcuts import render
+
 def CarResult(request):
     if request.method == 'POST':
         # Get the ratings from the form
@@ -152,26 +156,32 @@ def CarResult(request):
 
         # Create a list of the top 3 match labels
         top3_labels = [loaded_model.classes_[i] for i in top3_matches]
+    # Create the data for the pie chart
+        labels = top3_labels
+        values = proba[0][top3_matches] * 100
 
-        # Create a horizontal bar chart with the top 3 matches
-        fig, ax = plt.subplots(figsize=(6, 3))
-        bars = plt.barh(np.arange(3), proba[0][top3_matches], tick_label=top3_labels)
-        plt.xlim(0, 1)
-        plt.xlabel('Probability')
-        plt.title('Top Career Matches')
-        for bar in bars:
-            width = bar.get_width()
-            plt.text(width + 0.02, bar.get_y() + bar.get_height()/2, '{:.1f}%'.format(width*100))
+        # Create the pie chart trace
+        trace = go.Pie(
+            labels=labels,
+            values=values,
+            hoverinfo='label+percent',
+            textinfo='percent',
+            textfont=dict(size=14),
+            marker=dict(colors=['rgb(50, 100, 200)', 'rgb(200, 50, 100)', 'rgb(100, 200, 50)'])
+        )
 
+        # Create the layout with increased size
+        layout = go.Layout(
+            title='Top Career Matches',
+            height=600,
+            width=800
+        )
 
-        # Adjust the spacing between subplots
-        fig.subplots_adjust(left=0.4, bottom=0.1, right=0.95, top=0.9)
+        # Create the figure
+        fig = go.Figure(data=[trace], layout=layout)
 
-        # Convert the Matplotlib chart to a base64-encoded string for embedding in the template
-        buf = io.BytesIO()
-        plt.savefig(buf, format='png')
-        plt.close()
-        chart_data = base64.b64encode(buf.getvalue()).decode('utf-8')
+        # Convert the figure to HTML
+        chart_data = fig.to_html()
 
         # Pass the data to the template
         return render(request, 'result.html', {'chart_data': chart_data})
