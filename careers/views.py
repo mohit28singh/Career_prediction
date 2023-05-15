@@ -14,6 +14,28 @@ from django.core.files.storage import FileSystemStorage
 
 
 # Create your views here.
+from django.shortcuts import render, redirect
+
+
+from django.shortcuts import render, redirect
+from .models import PDFFile
+
+def upload_pdf(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        pdf_file = request.FILES.get('pdf_file')
+        if pdf_file:
+            # Save the uploaded PDF file in the database
+            pdf = PDFFile(name=name, file=pdf_file)
+            pdf.save()
+            
+            # Fetch the uploaded PDF file from the database
+            uploaded_pdf = PDFFile.objects.latest('id')
+
+            return render(request, 'upload_page.html', {'uploaded_pdf': uploaded_pdf})
+
+    return render(request, 'upload_page.html')
+
 def home(request):
     user = get_user_model().objects.get(pk=request.user.pk)
     return render(request, 'main.html', {'user': user})

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ pdf_file.name }}</h1>
+<iframe src="{{ pdf_file.file.url }}" style="width: 500px; height: 600px;"></iframe>
+
+
+
+{% endblock%}

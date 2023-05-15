@@ -1,9 +1,13 @@
 from django.contrib import admin
 from django.urls import path, include
 from careers import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+  path('upload/', views.upload_pdf, name='upload_pdf'),
+    # path('pdf/<int:pk>/', views.render_pdf, name='render_pdf'),
     path('', views.homepage),
     path('course/', views.course, name='course'),
     path('services/', views.careerprediction, name='careerprediction'),
@@ -42,4 +46,5 @@ urlpatterns = [
 urlpatterns += [
     path('accounts/', include('django.contrib.auth.urls')),
 ]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
