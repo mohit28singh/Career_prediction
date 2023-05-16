@@ -6,8 +6,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-  path('upload/', views.upload_pdf, name='upload_pdf'),
-    # path('pdf/<int:pk>/', views.render_pdf, name='render_pdf'),
+     path('upload/', views.upload_pdf, name='upload_pdf'),
+      path('view/<int:pdf_id>/', views.view_pdf, name='view_pdf'),
     path('', views.homepage),
     path('course/', views.course, name='course'),
     path('services/', views.careerprediction, name='careerprediction'),

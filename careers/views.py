@@ -17,24 +17,179 @@ from django.core.files.storage import FileSystemStorage
 from django.shortcuts import render, redirect
 
 
+
+
+
+import io
+import re
+import nltk
+from PyPDF2 import PdfReader
 from django.shortcuts import render, redirect
-from .models import PDFFile
+
+
+
+dataScience_keywords = ['tensorflow','keras','pytorch','machine learning','deep Learning','flask','streamlit']
+webDevelopment_keywords = ['react', 'django', 'node jS', 'react js', 'php', 'laravel', 'magento', 'wordpress', 'javascript', 'angular js', 'c#', 'flask']
+android_keywords = ['android','android development','flutter','kotlin','xml','kivy']
+ios_keywords = ['ios','ios development','swift','cocoa','cocoa touch','xcode']
+uiux_keywords = ['ux','adobe xd','figma','zeplin','balsamiq','ui','prototyping','wireframes','storyframes','adobe photoshop','photoshop','editing','adobe illustrator','illustrator','adobe after effects','after effects','adobe premier pro','premier pro','adobe indesign','indesign','wireframe','solid','grasp','user research','user experience']
+
+
+
+recommended_skills_dict = {
+    'Data Science': ['numpy', 'pandas', 'scikit-learn', 'matplotlib'],
+    'Web Development': ['HTML', 'CSS', 'JavaScript', 'React', 'Django'],
+    'Android Development': ['Java', 'Android Studio', 'Kotlin'],
+    'iOS Development': ['Swift', 'Xcode', 'Objective-C'],
+    'UI/UX Design': ['Adobe XD', 'Figma', 'Sketch', 'InVision']
+}
+# def process_pdf(request):
+#     if request.method == 'POST':
+#         name = request.POST['name']
+#         pdf_file = request.FILES['pdf_file']
+#         instance = PDFFile(name=name, file=pdf_file)
+#         instance.save()
+
+#         # Extract key information from the PDF file
+#         extracted_data = extract_information_from_pdf(pdf_file)
+
+#         # Fetch further details from the extracted data
+#         email = extracted_data.get('Email')
+#         skills = extracted_data.get('Skills and Technologies')
+#         num_pages = extracted_data.get('Number of Pages')
+
+#         # Do further processing with the extracted details
+#         # ...
+
+#         # Pass the extracted data and additional details to the template for rendering
+#         return render(request, 'pdf_detail.html', {'pdf_file': instance, 'name': name, 'email': email, 'skills': skills, 'num_pages': num_pages})
+
+#     pdf_files = PDFFile.objects.all()
+#     return render(request, 'upload_pdf.html', {'pdf_files': pdf_files})
+
+def extract_information_from_pdf(pdf_file):
+    # Create a BytesIO object to store the PDF file
+    pdf_buffer = io.BytesIO(pdf_file.read())
+
+    # Extract text from the PDF file
+    output_string = io.StringIO()
+    pdf_reader = PdfReader(pdf_buffer)
+
+    for page in pdf_reader.pages:
+        output_string.write(page.extract_text())
+
+    # Get the text as a string
+    text = output_string.getvalue()
+
+    # Extract the section containing the name
+    line_break_index = text.find('\n')
+    name_section = text[:line_break_index]
+
+    # Extract email addresses
+    emails = re.findall(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b', text)
+    email = emails[0] if emails else ""
+
+    # Define the patterns to extract skills and technologies
+    skill_patterns = [
+        r'(?i)\b((?:Java|Data Structure|MongoDB|IBM Cognos|C#|Perl|ASP.NET|Excel|Python|C\+\+|JavaScript|PHP|Ruby|Swift|Objective-C)\s*(?:programming)?\s*(?:language|lang|developer)?)\b',
+        r'(?i)\b((?:HTML|CSS|React|Vue\.js|Angular|Node\.js|jQuery|Bootstrap)\s*(?:developer|designer|framework|library|tool)?)\b',
+        r'(?i)\b((?:SQL|MySQL|PostgreSQL|Oracle)\s*(?:database|DBA|developer|admin)?)\b',
+        r'(?i)\b((?:Linux|Unix|Windows|MacOS)\s*(?:system)?\s*(?:administration|admin|developer|user)?)\b',
+        r'(?i)\b((?:Git|JIRA|Trello|Slack)\s*(?:management)?\s*(?:tool|software)?)\b',
+    ]
+
+    # Create a set to store unique skills and technologies
+    unique_skills = set()
+
+    # Extract skills and technologies from the text
+    remaining_text = text[line_break_index + 1:]  # Exclude the name section
+    sentences = nltk.sent_tokenize(remaining_text)
+
+    for sentence in sentences:
+        # Extract skills and technologies that match the patterns
+        for pattern in skill_patterns:
+            matches = re.findall(pattern, sentence)
+            unique_skills.update(matches)  # Add
+    num_pages = len(pdf_reader.pages)
+
+# Store the extracted data in a dictionary
+    extracted_data = {
+    "Name": name_section.strip() if name_section else "",
+    "Email": email,
+    "Skills and Technologies": list(unique_skills),
+    "Number of Pages": num_pages,
+}
+
+    return extracted_data
+def get_matching_keyword(skills):
+    weights = {
+        'Data Science': 0,
+        'Web Development': 0,
+        'Android Development': 0,
+        'iOS Development': 0,
+        'UI/UX Design': 0
+    }
+    
+    for skill in skills:
+        skill_lower = skill.lower()
+        if skill_lower in [keyword.lower() for keyword in dataScience_keywords]:
+            weights['Data Science'] += 1
+        elif skill_lower in [keyword.lower() for keyword in webDevelopment_keywords]:
+            weights['Web Development'] += 1
+        elif skill_lower in [keyword.lower() for keyword in android_keywords]:
+            weights['Android Development'] += 1
+        elif skill_lower in [keyword.lower() for keyword in ios_keywords]:
+            weights['iOS Development'] += 1
+        elif skill_lower in [keyword.lower() for keyword in uiux_keywords]:
+            weights['UI/UX Design'] += 1
+    
+    # Get the category with the highest weight
+    matching_keyword = max(weights, key=weights.get)
+    
+    return matching_keyword
+
+from django.shortcuts import render, redirect
+from .forms import PDFUploadForm
+from .models import PDFDocument
+
+
+from django.shortcuts import render, redirect
+from .forms import PDFUploadForm
 
 def upload_pdf(request):
     if request.method == 'POST':
-        name = request.POST.get('name')
-        pdf_file = request.FILES.get('pdf_file')
-        if pdf_file:
-            # Save the uploaded PDF file in the database
-            pdf = PDFFile(name=name, file=pdf_file)
-            pdf.save()
+        form = PDFUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            pdf = form.save()  # Save the form and get the PDFDocument object
+            return redirect('view_pdf', pdf_id=pdf.pk)  # Redirect to the view_pdf page
+    else:
+        form = PDFUploadForm()
+    return render(request, 'upload_pdf.html', {'form': form})
+
+from django.shortcuts import render, get_object_or_404
+from .models import PDFDocument
+
+def view_pdf(request, pdf_id):
+    pdf = get_object_or_404(PDFDocument, id=pdf_id)
+    document_name = pdf.Name
+
+    # Call the extract_information_from_pdf function
+    extracted_data = extract_information_from_pdf(pdf.pdf_file)
+    skills = extracted_data.get("Skills and Technologies", [])
+    matching_keyword = get_matching_keyword(skills)
+    print(matching_keyword)
+    recommended_skills = []
+    if matching_keyword:
+            recommended_skills = recommended_skills_dict.get(matching_keyword, [])
+            print(recommended_skills)
             
-            # Fetch the uploaded PDF file from the database
-            uploaded_pdf = PDFFile.objects.latest('id')
+            # Get the recommended courses for the matching keyword
+    # recommended_courses = []
+    # if matching_keyword:
+    #         recommended_courses = courserecommendation(matching_keyword)
 
-            return render(request, 'upload_page.html', {'uploaded_pdf': uploaded_pdf})
 
-    return render(request, 'upload_page.html')
+    return render(request, 'pdf_detail.html', {'pdf': pdf, 'document_name': document_name, 'extracted_data': extracted_data,'matching_keyword': matching_keyword,'recommended_skills':recommended_skills})
 
 def home(request):
     user = get_user_model().objects.get(pk=request.user.pk)

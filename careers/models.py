@@ -1,7 +1,5 @@
 from django.db import models
 
-
-class PDFFile(models.Model):
-    name = models.CharField(max_length=255)
-    file = models.FileField(upload_to='pdf_files/')
-
+class PDFDocument(models.Model):
+    Name = models.CharField(max_length=100)
+    pdf_file = models.FileField(upload_to='pdfs/')
