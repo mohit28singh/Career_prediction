@@ -28,44 +28,110 @@ from django.shortcuts import render, redirect
 
 
 
-dataScience_keywords = ['tensorflow','keras','pytorch','machine learning','deep Learning','flask','streamlit']
-webDevelopment_keywords = ['react', 'django', 'node jS', 'react js', 'php', 'laravel', 'magento', 'wordpress', 'javascript', 'angular js', 'c#', 'flask']
-android_keywords = ['android','android development','flutter','kotlin','xml','kivy']
-ios_keywords = ['ios','ios development','swift','cocoa','cocoa touch','xcode']
-uiux_keywords = ['ux','adobe xd','figma','zeplin','balsamiq','ui','prototyping','wireframes','storyframes','adobe photoshop','photoshop','editing','adobe illustrator','illustrator','adobe after effects','after effects','adobe premier pro','premier pro','adobe indesign','indesign','wireframe','solid','grasp','user research','user experience']
+dataScience_keywords = ['tensorflow', 'keras', 'pytorch', 'machine learning', 'deep learning', 'flask', 'streamlit', 'numpy', 'pandas', 'scikit-learn', 'matplotlib', 'data analysis', 'data visualization', 'statistics', 'data mining', 'natural language processing', 'computer vision', 'neural networks', 'linear regression', 'logistic regression', 'decision trees', 'random forests', 'gradient boosting', 'clustering', 'dimensionality reduction', 'time series analysis']
+
+webDevelopment_keywords = ['react', 'django', 'node.js', 'react.js', 'php', 'laravel', 'magento', 'wordpress', 'javascript', 'angular.js', 'c#', 'flask', 'HTML', 'CSS', 'responsive design', 'RESTful APIs', 'version control', 'UX/UI design', 'front-end development', 'back-end development', 'database management', 'web security', 'user experience']
+
+android_keywords = ['android', 'android development', 'flutter', 'kotlin', 'xml', 'kivy', 'Java', 'Android Studio', 'Android SDK', 'mobile app development', 'UI design', 'UX design', 'Firebase', 'RESTful APIs', 'SQLite', 'MVC pattern', 'material design', 'push notifications', 'memory management', 'performance optimization']
+
+ios_keywords = ['ios', 'ios development', 'swift', 'cocoa', 'cocoa touch', 'xcode', 'Objective-C', 'iOS SDK', 'Core Data', 'Auto Layout', 'App Store submission', 'push notifications', 'memory management', 'user interface design', 'user experience design', 'widget development', 'localization']
+
+uiux_keywords = ['ux', 'adobe xd', 'figma', 'zeplin', 'balsamiq', 'ui', 'prototyping', 'wireframes', 'storyboards', 'adobe photoshop', 'photoshop', 'editing', 'adobe illustrator', 'illustrator', 'adobe after effects', 'after effects', 'adobe premier pro', 'premier pro', 'adobe indesign', 'indesign', 'wireframing', 'solid grasp', 'user research', 'user experience design', 'visual design', 'interaction design', 'usability testing']
 
 
 
-recommended_skills_dict = {
-    'Data Science': ['numpy', 'pandas', 'scikit-learn', 'matplotlib'],
-    'Web Development': ['HTML', 'CSS', 'JavaScript', 'React', 'Django'],
-    'Android Development': ['Java', 'Android Studio', 'Kotlin'],
-    'iOS Development': ['Swift', 'Xcode', 'Objective-C'],
-    'UI/UX Design': ['Adobe XD', 'Figma', 'Sketch', 'InVision']
+
+recommended_skills_dict ={
+    'Data Science': ['numpy', 'pandas', 'scikit-learn', 'matplotlib', 'tensorflow', 'keras', 'pytorch', 'sql', 'big data', 'data visualization',
+                     'natural language processing', 'deep learning', 'time series analysis', 'feature engineering', 'data preprocessing',
+                     'model evaluation', 'ensemble methods', 'cross-validation', 'dimensionality reduction', 'cluster analysis',
+                     'hyperparameter tuning', 'data wrangling', 'data mining', 'statistical analysis', 'predictive modeling'],
+    'Web Development': ['HTML', 'CSS', 'JavaScript', 'React', 'Django', 'Node.js', 'Express.js', 'Vue.js', 'Angular', 'RESTful APIs',
+                        'MERN stack', 'LAMP stack', 'front-end development', 'back-end development', 'responsive web design',
+                        'version control (Git)', 'UI/UX principles', 'web performance optimization', 'SEO'],
+    'Android Development': ['Java', 'Android Studio', 'Kotlin', 'Android SDK', 'Firebase', 'RESTful APIs', 'SQLite', 'MVVM architecture',
+                            'material design', 'Google Play Store submission', 'push notifications', 'background tasks',
+                            'unit testing', 'debugging', 'memory management', 'performance optimization'],
+    'iOS Development': ['Swift', 'Xcode', 'Objective-C', 'iOS SDK', 'Core Data', 'Auto Layout', 'CocoaPods', 'App Store submission',
+                        'push notifications', 'Core Animation', 'Core Graphics', 'memory management', 'UI/UX guidelines',
+                        'localization', 'In-App Purchases', 'widget development'],
+    'UI/UX Design': ['Adobe XD', 'Figma', 'Sketch', 'InVision', 'user research', 'wireframing', 'prototyping', 'user personas',
+                     'information architecture', 'interaction design', 'visual design', 'usability testing', 'design thinking',
+                     'responsive design', 'typography', 'color theory', 'motion design', 'user-centered design'],
 }
-# def process_pdf(request):
-#     if request.method == 'POST':
-#         name = request.POST['name']
-#         pdf_file = request.FILES['pdf_file']
-#         instance = PDFFile(name=name, file=pdf_file)
-#         instance.save()
 
-#         # Extract key information from the PDF file
-#         extracted_data = extract_information_from_pdf(pdf_file)
+courses_dict = {
+    'Data Science': [
+        ['Machine Learning Crash Course by Google', 'https://developers.google.com/machine-learning/crash-course'],
+        ['Machine Learning A-Z by Udemy', 'https://www.udemy.com/course/machinelearning/'],
+        ['Machine Learning by Andrew NG', 'https://www.coursera.org/learn/machine-learning'],
+        ['Data Scientist Master Program of Simplilearn (IBM)', 'https://www.simplilearn.com/big-data-and-analytics/senior-data-scientist-masters-program-training'],
+        ['Data Science Foundations: Fundamentals by LinkedIn', 'https://www.linkedin.com/learning/data-science-foundations-fundamentals-5'],
+        ['Data Scientist with Python', 'https://www.datacamp.com/tracks/data-scientist-with-python'],
+        ['Programming for Data Science with Python', 'https://www.udacity.com/course/programming-for-data-science-nanodegree--nd104'],
+        ['Programming for Data Science with R', 'https://www.udacity.com/course/programming-for-data-science-nanodegree-with-R--nd118'],
+        ['Introduction to Data Science', 'https://www.udacity.com/course/introduction-to-data-science--cd0017'],
+        ['Intro to Machine Learning with TensorFlow', 'https://www.udacity.com/course/intro-to-machine-learning-with-tensorflow-nanodegree--nd230']
+    ],
+    'Web Development': [
+        ['Django Crash course', 'https://youtu.be/e1IyzVyrLSU'],
+        ['Python and Django Full Stack Web Developer Bootcamp', 'https://www.udemy.com/course/python-and-django-full-stack-web-developer-bootcamp'],
+        ['React Crash Course', 'https://youtu.be/Dorf8i6lCuk'],
+        ['ReactJS Project Development Training', 'https://www.dotnettricks.com/training/masters-program/reactjs-certification-training'],
+        ['Full Stack Web Developer - MEAN Stack', 'https://www.simplilearn.com/full-stack-web-developer-mean-stack-certification-training'],
+        ['Node.js and Express.js [Free]', 'https://youtu.be/Oe421EPjeBE'],
+        ['Flask: Develop Web Applications in Python', 'https://www.educative.io/courses/flask-develop-web-applications-in-python'],
+        ['Full Stack Web Developer by Udacity', 'https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd0044'],
+        ['Front End Web Developer by Udacity', 'https://www.udacity.com/course/front-end-web-developer-nanodegree--nd0011'],
+        ['Become a React Developer by Udacity', 'https://www.udacity.com/course/react-nanodegree--nd019']
+    ],
+     'Android Development': [
+        ['Android Development for Beginners', 'https://youtu.be/fis26HvvDII'],
+        ['Android App Development Specialization', 'https://www.coursera.org/specializations/android-app-development'],
+        ['Associate Android Developer Certification', 'https://grow.google/androiddev/#?modal_active=none'],
+        ['Become an Android Kotlin Developer by Udacity', 'https://www.udacity.com/course/android-kotlin-developer-nanodegree--nd940'],
+        ['Android Basics by Google', 'https://www.udacity.com/course/android-basics-nanodegree-by-google--nd803'],['The Complete Android Developer Course', 'https://www.udemy.com/course/complete-android-n-developer-course/'],
+['Building an Android App with Architecture Components', 'https://www.linkedin.com/learning/building-an-android-app-with-architecture-components'],
+['Android App Development Masterclass using Kotlin', 'https://www.udemy.com/course/android-oreo-kotlin-app-masterclass/'],
+['Flutter & Dart - The Complete Flutter App Development Course', 'https://www.udemy.com/course/flutter-dart-the-complete-flutter-app-development-course/'],
+['Flutter App Development Course [Free]', 'https://youtu.be/rZLR5olMR64']
+],
+'iOS Development': [
+['IOS App Development by LinkedIn', 'https://www.linkedin.com/learning/subscription/topics/ios'],
+['iOS & Swift - The Complete iOS App Development Bootcamp', 'https://www.udemy.com/course/ios-13-app-development-bootcamp/'],
+['Become an iOS Developer', 'https://www.udacity.com/course/ios-developer-nanodegree--nd003'],
+['iOS App Development with Swift Specialization', 'https://www.coursera.org/specializations/app-development'],
+['Mobile App Development with Swift', 'https://www.edx.org/professional-certificate/curtinx-mobile-app-development-with-swift'],
+['Swift Course by LinkedIn', 'https://www.linkedin.com/learning/subscription/topics/swift-2'],
+['Objective-C Crash Course for Swift Developers', 'https://www.udemy.com/course/objectivec/'],
+['Learn Swift by Codecademy', 'https://www.codecademy.com/learn/learn-swift'],
+['Swift Tutorial - Full Course for Beginners [Free]', 'https://youtu.be/comQ1-x2a1Q'],
+['Learn Swift Fast - [Free]', 'https://youtu.be/FcsY1YPBwzQ']
+],
+'UI/UX Design': [
+['Google UX Design Professional Certificate', 'https://www.coursera.org/professional-certificates/google-ux-design'],
+['UI / UX Design Specialization', 'https://www.coursera.org/specializations/ui-ux-design'],
+['The Complete App Design Course - UX, UI and Design Thinking', 'https://www.udemy.com/course/the-complete-app-design-course-ux-and-ui-design/'],
+['UX & Web Design Master Course: Strategy, Design, Development', 'https://www.udemy.com/course/ux-web-design-master-course-strategy-design-development/'],
+['The Complete App Design Course - UX, UI and Design Thinking', 'https://www.udemy.com/course/the-complete-app-design-course-ux-and-ui-design/'],
+['DESIGN RULES: Principles + Practices for Great UI Design', 'https://www.udemy.com/course/design-rules/'],
+['Become a UX Designer by Udacity', 'https://www.udacity.com/course/ux-designer-nanodegree--nd578'],
+['Adobe XD Tutorial: User Experience Design Course [Free]', 'https://youtu.be/68w2VwalD5w'],
+['Adobe XD for Beginners [Free]', 'https://youtu.be/WEljsc2jorI'],
+['Adobe XD in Simple Way', 'https://learnux.io/course/adobe-xd']
+]
+}
+def courserecommendation(matching_keyword):
+    recommended_courses = []
+    if matching_keyword:
+        recommended_courses = courses_dict.get(matching_keyword, [])
+        recommended_courses = [
+            f'<a href="{course[1]}">{course[0]}</a>'
+            for course in recommended_courses
+        ]
+    return ', '.join(recommended_courses)
 
-#         # Fetch further details from the extracted data
-#         email = extracted_data.get('Email')
-#         skills = extracted_data.get('Skills and Technologies')
-#         num_pages = extracted_data.get('Number of Pages')
 
-#         # Do further processing with the extracted details
-#         # ...
-
-#         # Pass the extracted data and additional details to the template for rendering
-#         return render(request, 'pdf_detail.html', {'pdf_file': instance, 'name': name, 'email': email, 'skills': skills, 'num_pages': num_pages})
-
-#     pdf_files = PDFFile.objects.all()
-#     return render(request, 'upload_pdf.html', {'pdf_files': pdf_files})
 
 def extract_information_from_pdf(pdf_file):
     # Create a BytesIO object to store the PDF file
@@ -175,21 +241,37 @@ def view_pdf(request, pdf_id):
 
     # Call the extract_information_from_pdf function
     extracted_data = extract_information_from_pdf(pdf.pdf_file)
+    print(extracted_data)
+    print(extracted_data.get("Email"))
+    if 'Email' not in extracted_data:
+        # Add a warning for missing email
+        email_warning = 'Email field not found in the resume.'
+    else:
+         email_warning = None
     skills = extracted_data.get("Skills and Technologies", [])
+    skills = [skill.strip() for skill in skills]
+    skills = list(set(skills))
+    print(skills)
+    # Check if skills field is accessible
+    if not skills:
+        # Add a warning for missing skills
+        skills_warning = 'Skills field not found in the resume.'
+    else:
+        skills_warning = None
     matching_keyword = get_matching_keyword(skills)
-    print(matching_keyword)
     recommended_skills = []
     if matching_keyword:
             recommended_skills = recommended_skills_dict.get(matching_keyword, [])
-            print(recommended_skills)
+            
             
             # Get the recommended courses for the matching keyword
-    # recommended_courses = []
-    # if matching_keyword:
-    #         recommended_courses = courserecommendation(matching_keyword)
+    recommended_courses = []
+    if matching_keyword:
+        recommended_courses = courserecommendation(matching_keyword)
+    
 
-
-    return render(request, 'pdf_detail.html', {'pdf': pdf, 'document_name': document_name, 'extracted_data': extracted_data,'matching_keyword': matching_keyword,'recommended_skills':recommended_skills})
+    return render(request, 'pdf_detail.html', {'pdf': pdf, 'document_name': document_name, 'extracted_data': extracted_data,
+'matching_keyword': matching_keyword,'skills':skills,'recommended_skills':recommended_skills,'recommended_courses':recommended_courses,'email_warning':email_warning,'skills_warning':skills_warning})
 
 def home(request):
     user = get_user_model().objects.get(pk=request.user.pk)
