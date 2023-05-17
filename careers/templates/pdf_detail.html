@@ -43,9 +43,9 @@
     <h2>Your Resume</h2>
     <iframe src="{{ pdf.pdf_file.url }}" width="600px" height="800px"></iframe>
     <h2>Resume Analysis</h2>
-    {% if email_warning %}
+    {% comment %} {% if email_warning %}
     <p style="background-color: yellow"><strong>Warning:</strong> {{ email_warning }}</p>
-{% endif %}
+{% endif %} {% endcomment %}
 
 <p><strong>Email:</strong> {{ extracted_data.Email }}</p>
 
