@@ -26,7 +26,7 @@ import nltk
 from PyPDF2 import PdfReader
 from django.shortcuts import render, redirect
 
-
+nltk.download('punkt')
 
 dataScience_keywords = ['tensorflow', 'keras', 'pytorch', 'machine learning', 'deep learning', 'flask', 'streamlit', 'numpy', 'pandas', 'scikit-learn', 'matplotlib', 'data analysis', 'data visualization', 'statistics', 'data mining', 'natural language processing', 'computer vision', 'neural networks', 'linear regression', 'logistic regression', 'decision trees', 'random forests', 'gradient boosting', 'clustering', 'dimensionality reduction', 'time series analysis']
 
