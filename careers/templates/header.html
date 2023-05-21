@@ -50,8 +50,91 @@
             {% if user.is_authenticated %}
             <a href="{% url 'logout' %}"><button class="btn btn-warning">LogOut</button></a>
             {% else %}
-            <a href="{% url 'signup' %}"><button type="button" class="btn btn-warning">SignUp</button></a>   
-            <a href="{% url 'login' %}"><button class="btn btn-outline-light me-2">Login</button></a> 
+
+            <!-- Button trigger login modal -->
+<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#loginModal">
+  Login
+</button>
+
+<!-- Button trigger signup modal -->
+<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#signupModal">
+  Sign Up
+</button>
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title "  id="loginModalLabel">Login</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="post">
+          {% csrf_token %} 
+          
+          <div class="mb-3">
+            <input type="text" class="form-control"   placeholder="Username" name="username" id="username" required>
+          </div>
+          <div class="mb-3">
+            <input type="password" class="form-control" id="password1" name="password1" placeholder="Enter password" required>
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary">Login</button>
+          </div>
+          <div class="text-center mt-3">
+            <span>Don't have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#signupModal" data-bs-dismiss="modal">Sign up</a></span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Signup Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title "   id="signupModalLabel">Sign Up</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="" method="POST">
+          {% csrf_token %} 
+          <div class="mb-3">
+            <input type="text" class="form-control" id="username" name="username" placeholder="Enter your name" required>
+          </div>
+          <div class="mb-3">
+            
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+          </div>
+          <div class="mb-3">
+            <input type="password" class="form-control" id="password1" name="password1" placeholder="Enter password" required>
+          </div>
+          <div class="mb-3">
+            <input type="password" class="form-control" id="password2" name="password2" placeholder="Re-enter password" required>
+          </div>
+          <div class="terms">
+            <input type="checkbox" id="checkbox" required/>
+            <label for="checkbox">I agree to these </label>
+            <a href="{% url 'Terms' %}" >Terms And Conditions </a>
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+          </div>
+          <div class="text-center mt-3">
+            <span>Already have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Login</a></span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+           
+            {% comment %} <a href="{% url 'signup' %}"><button type="button" class="btn btn-warning">SignUp</button></a>   
+            <a href="{% url 'login' %}"><button class="btn btn-outline-light me-2">Login</button></a>  {% endcomment %}
             {% endif %} 
             
           </div>
