@@ -1,0 +1,289 @@
+{% extends 'base.html' %} 
+{% load static %}
+{%block content%}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/knowledge.css' %}">
+{% endblock %}
+	<center>
+<div class="p-4 p-md-5 mb-4 rounded text-bg-infolight-emphasis">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 fst-italic">Knowledge Network</h1>
+      <p class="lead fw-normal">The Knowledge module in a career counseling website is designed to provide information and resources related to career development, 
+        education, and job search. This module is intended to help users explore career options, gain insight into different career paths, and learn about the education and training needed to pursue those careers.</p>
+        
+    </div>
+  </div></center>
+
+{% comment %} <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+      <h1 class="display-4 fw-normal">Knowledge Network</h1>
+      <p class="lead fw-normal">The Knowledge module in a career counseling website is designed to provide information and resources related to career development, 
+        education, and job search. This module is intended to help users explore career options, gain insight into different career paths, and learn about the education and training needed to pursue those careers.</p>
+        
+    </div>
+    <div class="product-device shadow-sm d-none d-md-block"></div>
+    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+  </div> {% endcomment %}
+      
+  <div class="container">
+    <div class="row featurette d-flex justify-content-center align-items-center mx-4">
+      <div class="col-md-7 ">
+        <h2 class="featurette-heading fw-normal lh-1">AI ML Specialist</h2>
+        <p class="lead">AI/ML specialist is a software specialist with a strong mathematics background and a knowledge of coding, who’s core responsibilities are Designing and developing machine
+             learning and deep learning systems, Running machine learning tests and experiments, Implementing appropriate ML algorithms...</p>
+             <a href="{% url 'AIML' %}" class="readmore">
+                Read more →
+            </a>
+      </div>
+      <div class="col-md-5">
+        <img class="img-fluid" src="{% static 'img/c1.png' %}">
+      </div>
+    </div>
+    <div class="row featurette d-flex justify-content-center align-items-center mx-4">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1">API Integration Specialist</h2>
+        <p class="lead">The API Integration Specialist are the technical problem solver who will help the clients and
+            partners integrate with their system. Beyond the technical skillset, someone who can communicate
+            clearly both orally and in writing. The incumbent will be required to bridge the gap between
+            business resources and the technology team and effectively communicate with internal and external
+            clients.
+        </p>
+        <a href="{% url 'API' %}" class="readmore">
+            Read more →
+        </a>
+      </div>
+      <div class="col-md-5 order-md-1  ">
+        <img class="img-fluid" src="{% static 'img/c2.png' %}">
+      </div>
+    </div>
+    <div class="row featurette d-flex justify-content-center align-items-center mx-4">
+      <div class="col-md-7 ">
+        <h2 class="featurette-heading fw-normal lh-1">Penetration Tester</h2>
+        <p class="lead">  Penetration testers, also known as “ethical hackers,” are highly skilled security specialists that
+            spend their days attempting to breach computer and network security systems. These testers work in
+            the information technology (IT) field to ensure that those without authorization cannot access an
+            organization’s data. They do this by trying to hack into networks to identify potential
+            vulnerabilities in the system.</p>
+            
+            <a href="{% url 'PenTest' %}" class="readmore">
+                Read more →
+            </a>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img class="img-fluid" src="{% static 'img/c3.png' %}">
+      </div>
+    </div>
+  </div>
+  <div class="row featurette d-flex justify-content-center align-items-center mx-4">
+    <div class="col-md-7 order-md-2">
+      <h2 class="featurette-heading fw-normal lh-1">Application Support Engineer</h2>
+      <p class="lead"> An Application Support Engineer is an IT professional who provides technical support regarding a
+        spectrum of software used within a specific business sector. Due to this broad definition, the core
+        responsibilities of an Application Support Engineer vary depending on the industry. Some Application
+        Support Engineers are responsible for database management, while others put more emphasis on the
+        programming end of an application. The specific focus is dependent on the needs of the business...</p>
+           <a href="{% url 'Support' %}"class="readmore">
+              Read more →
+          </a>
+    </div>
+    <div class="col-md-5 order-md-1">
+      <img class="img-fluid" src="{% static 'img/c4.png' %}">
+    </div>
+  </div>
+  <div class="row featurette d-flex justify-content-center align-items-center mx-4">
+    <div class="col-md-7 order-md-1">
+      <h2 class="featurette-heading fw-normal lh-1">Business Analyst</h2>
+      <p class="lead"> Business analyst help guide businesses in improving processes, products, services and software
+        through data analysis. These agile workers straddle the line between IT and the business to help
+        bridge the gap and improve efficiency...
+      </p>
+      <a href="{% url 'Analyst' %}" class="readmore">
+          Read more →
+      </a>
+    </div>
+    <div class="col-md-5 order-md-2  ">
+      <img class="img-fluid" src="{% static 'img/c5.jpeg' %}">
+    </div>
+  </div>
+  <div class="row featurette d-flex justify-content-center align-items-center mx-4">
+    <div class="col-md-7 order-md-2 ">
+      <h2 class="featurette-heading fw-normal lh-1">Customer Service Executive</h2>
+      <p class="lead"> Customer Service Executive manages a team of representatives who will offer excellent customer service and after-sales support. Customer Service Execute
+         creates policies and procedures and oversee the customer service provided by the team. The Customer Service Executive 
+        will be responsible for the selection of staff in the hiring process and ensure that a standardized level of service is maintained for all customers...</p>
+          
+          <a href="{% url 'CSA' %}" class="readmore">
+              Read more →
+          </a>
+    </div>
+    <div class="col-md-5 order-md-1">
+      <img class="img-fluid" src="{% static 'img/c6.png' %}">
+    </div>
+  </div>
+  <div class="row featurette d-flex justify-content-center align-items-center mx-4">
+    <div class="col-md-7 ">
+      <h2 class="featurette-heading fw-normal lh-1">Cyber Security Specialist</h2>
+      <p class="lead">Cyber Security Specialist is responsible for providing security during the development stages of software systems, networks and data centers. The professionals have to search for vulnerabilities and risks in hardware and software. They manage and monitor any attacks and intrusions. 
+        The Security Specialist has to recognize the potential threat or attempted breach by closing off the security vulnerability. They build firewalls into network infrastructures</p>
+           <a href="{% url 'CSS' %}" class="readmore">
+              Read more →
+          </a>
+    </div>
+    <div class="col-md-5">
+      <img class="img-fluid" src="{% static 'img/c7.png' %}">
+    </div>
+  </div>
+  <div class="row featurette d-flex justify-content-center align-items-center mx-4">
+    <div class="col-md-7 order-md-2">
+      <h2 class="featurette-heading fw-normal lh-1">Database administrators</h2>
+      <p class="lead">Database administrators or managers create and maintain databases compatible with their companies’ needs.
+         These information technology (IT) professionals oversee database updates, storage, security, and troubleshooting...
+      </p>
+      <a href="{% url 'DBA' %}" class="readmore">
+          Read more →
+      </a>
+    </div>
+    <div class="col-md-5 order-md-1  ">
+      <img class="img-fluid" src="{% static 'img/c8.jpeg' %}">
+    </div>
+  </div>
+  <div class="row featurette d-flex justify-content-center align-items-center mx-4">
+    <div class="col-md-7 ">
+      <h2 class="featurette-heading fw-normal lh-1">Data Scientist</h2>
+      <p class="lead">   A Data Scientist is someone who makes value out of data. Such a person proactively fetches information from various sources and analyzes it for better 
+        understanding about how the business performs, and to build AI tools that automate certain processes within the company...</p>
+          
+          <a href="{% url 'DScience' %}" class="readmore">
+              Read more →
+          </a>
+    </div>
+    <div class="col-md-5 order-md-1">
+      <img class="img-fluid" src="{% static 'img/c9.jpeg' %}">
+    </div>
+  </div>
+</div>
+<div class="row featurette d-flex justify-content-center align-items-center mx-4">
+  <div class="col-md-7 order-md-2">
+    <h2 class="featurette-heading fw-normal lh-1">Hardware Engineer</h2>
+    <p class="lead"> Hardware Engineers design the technology of the future. Using their solid knowledge of computer 
+        components and how they function, these skilled professionals play an important role in the development of a variety of useful products.....</p>
+         <a href="{% url 'HardEngin' %}"class="readmore">
+            Read more →
+        </a>
+  </div>
+  <div class="col-md-5 order-md-1">
+    <img class="img-fluid" src="{% static 'img/c10.jpeg' %}">
+  </div>
+</div>
+<div class="row featurette d-flex justify-content-center align-items-center mx-4">
+  <div class="col-md-7 order-md-1">
+    <h2 class="featurette-heading fw-normal lh-1"> Helpdesk Engineer</h2>
+    <p class="lead">  Helpdesk Engineer are the go-to people for providing technical assistance and support related to computer systems, hardware, and software. They are responsible for answering queries and addressing system and user issues in a timely
+         and professional manner. Helpdesk Engineer works with the IT team, and will often interact with system and computer users across the company. The helpdesk team will train users on basic system and computer functions...
+    </p>
+    <a href="{% url 'Helpdesk' %}" class="readmore">
+        Read more →
+    </a>
+  </div>
+  <div class="col-md-5 order-md-2  ">
+    <img class="img-fluid" src="{% static 'img/c11.png' %}">
+  </div>
+</div>
+<div class="row featurette d-flex justify-content-center align-items-center mx-4">
+  <div class="col-md-7 order-md-2 ">
+    <h2 class="featurette-heading fw-normal lh-1">Information Security Specialist</h2>
+    <p class="lead">Information Security role involves in understanding and taking steps to mitigate the risks associated with collecting, storing and transmitting data in a business setting.
+         Information Security Specialist will be expected to set up security measures that help prevent security breaches, as well as analyzing any breeches that do occur...</p>
+        
+        <a href="{% url 'infosec' %}" class="readmore">
+            Read more →
+        </a>
+  </div>
+  <div class="col-md-5 order-md-1">
+    <img class="img-fluid" src="{% static 'img/c12.jpg' %}">
+  </div>
+</div>
+<div class="row featurette d-flex justify-content-center align-items-center mx-4">
+    <div class="col-md-7 ">
+      <h2 class="featurette-heading fw-normal lh-1"> Networking Engineer</h2>
+      <p class="lead"> Networking Engineer will be responsible for maintaining and administering our company's computer networks. Primary duties will include maintenance of computer networks, hardware, software,
+         and other related systems, performing disaster recovery operations, protecting data, software, and hardware from attacks, and replacing faulty network hardware components when necessary...</p>
+           <a href="{% url 'neten' %}"class="readmore">
+              Read more →
+          </a>
+    </div>
+    <div class="col-md-5">
+      <img class="img-fluid" src="{% static 'img/c13.jpeg' %}">
+    </div>
+  </div>
+  <div class="row featurette d-flex justify-content-center align-items-center mx-4">
+    <div class="col-md-7 order-md-2">
+      <h2 class="featurette-heading fw-normal lh-1">Project Manager</h2>
+      <p class="lead"> A Project Manager is responsible for planning, overseeing and leading projects from ideation through to completion. This is a senior role at an organisation and requires interaction with a range
+         of internal and external stakeholders, most often managing several moving project parts simultaneously...
+      </p>
+      <a href="{% url 'projman' %}" class="readmore">
+          Read more →
+      </a>
+    </div>
+    <div class="col-md-5 order-md-1  ">
+      <img class="img-fluid" src="{% static 'img/c14.jpeg' %}">
+    </div>
+  </div>
+  <div class="row featurette d-flex justify-content-center align-items-center mx-4">
+    <div class="col-md-7 ">
+      <h2 class="featurette-heading fw-normal lh-1">Software Developer</h2>
+      <p class="lead">  Software Developer design, develop, and test software and applications for computers. The main duties and responsibilities of software developer include directing and participating in programming activities, monitoring, and
+         evaluating system performance, and designing and implementing new programs and features...</p>
+          
+          <a href="{% url 'softdev' %}" class="readmore">
+              Read more →
+          </a>
+    </div>
+    <div class="col-md-5 order-md-1">
+      <img class="img-fluid" src="{% static 'img/c15.jpeg' %}">
+    </div>
+  </div>
+</div>
+<div class="row featurette d-flex justify-content-center align-items-center mx-4">
+  <div class="col-md-7 order-md-2">
+    <h2 class="featurette-heading fw-normal lh-1">Software Tester</h2>
+    <p class="lead"> Software Testers are responsible for the quality of software development and deployment. 
+        They are involved in performing automated and manual tests to ensure the software created by developers is fit for purpose. Some of the duties include analysis of software, and systems, mitigate risk and prevent software issues....</p>
+         <a href="{% url 'softtes' %}"class="readmore">
+            Read more →
+        </a>
+  </div>
+  <div class="col-md-5 order-md-1">
+    <img class="img-fluid" src="{% static 'img/c16.jpeg' %}">
+  </div>
+</div>
+<div class="row featurette d-flex justify-content-center align-items-center mx-4">
+  <div class="col-md-7 order-md-1">
+    <h2 class="featurette-heading fw-normal lh-1">Technical Writer</h2>
+    <p class="lead"> Technical writers, also called technical communicators, prepare instruction manuals, how-to guides, journal articles, and other supporting documents to communicate complex and technical information more easily. 
+        They also develop, gather, and disseminate technical information through an organization’s communications channels...
+    </p>
+    <a href="{% url 'TW' %}" class="readmore">
+        Read more →
+    </a>
+  </div>
+  <div class="col-md-5 order-md-2  ">
+    <img class="img-fluid" src="{% static 'img/c17.png' %}">
+  </div>
+</div>
+<div class="row featurette d-flex justify-content-center align-items-center mx-4">
+  <div class="col-md-7 order-md-2 ">
+    <h2 class="featurette-heading fw-normal lh-1">Graphic Designer</h2>
+    <p class="lead">    The Graphic Designer job includes the entire process of defining requirements, visualizing and creating graphics including illustrations,
+         logos, layouts and photos. Graphic Designer will be the one to shape the visual aspects of websites, books, magazines, product packaging, exhibitions and more....</p>
+        
+        <a href="{% url 'GD' %}" class="readmore">
+            Read more →
+        </a>
+  </div>
+  <div class="col-md-5 order-md-1">
+    <img class="img-fluid" src="{% static 'img/c18.png' %}">
+  </div>
+</div>
+	{% endblock%}

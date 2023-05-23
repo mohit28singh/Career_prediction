@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/loginsignup.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"/>
+    {% endblock %}
+
+      <section>
+        <div class="wrapper">
+          <h3>Sign Up</h3>
+          
+          <form action="" method="POST">
+            {% csrf_token %} 
+            <input type="text" placeholder="Username" name="username" id="username" />
+            <input type="email" placeholder="Email or Number" name="email" id="email" />
+            <label for="password1"></label>
+            <input type="password" placeholder="Password" id="password1" name="password1" />
+            <label for="password2"></label>
+            <input type="password" placeholder="Re-Enter Password" id="password2" name="password2" />
+            
+          
+          <div class="terms">
+            <input type="checkbox" id="checkbox" required/>
+            <label for="checkbox">I agree to these </label>
+            <a href="{% url 'Terms' %}" >Terms And Conditions </a>
+          </div>
+        <button type="submit">Sign Up</button>
+        <div class="member">
+          Already have an account? <a href="{% url 'login' %}">Login here</a>
+        </div>
+      </form>
+    </div>
+    </sectiom>
+    
+    
+{% endblock %}

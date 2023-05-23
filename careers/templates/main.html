@@ -1,0 +1,158 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block content%}
+<style>
+  .greeting-message {
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    box-shadow: 0px 0px 5px 0px #ccc;
+  }
+</style>  
+ 
+<div id="carouselExampleCaptions" class="carousel slide carousel-fade">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="img-fluid" src="https://source.unsplash.com/1400x400/?technology,trends" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Welcome to Career Apex</h5>
+        <p>Career Guidance ,Knowlegde Hub , Career Guidance.</p>
+        <button class="btn btn-danger">Courses</button>
+        <button class="btn btn-primary">Knowledge Network</button>
+        <button class="btn btn-success">Resume Analyser</button>
+
+
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://source.unsplash.com/1400x400/?students,counselling" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Welcome to Career Apex</h5>
+        <p>Career Guidance ,Knowlegde Hub , Career Guidance.</p>
+        <button class="btn btn-danger">Courses</button>
+        <button class="btn btn-primary">Knowledge Network</button>
+        <button class="btn btn-success">Resume Analyser</button>
+
+
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://source.unsplash.com/1400x400/?coding,technology" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Welcome to Career Apex</h5>
+        <p>Career Guidance ,Knowlegde Hub , Career Guidance.</p>
+        <button class="btn btn-danger">Courses</button>
+        <button class="btn btn-primary">Knowledge Network</button>
+        <button class="btn btn-success">Resume Analyser</button>
+
+
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<div class="greeting-message" >
+  <center>
+  {% if user.is_authenticated %}
+  <b><p>Welcome, {{ user.username }}!</p></b>
+<b> <p>Thank you for visiting our website. We hope you find the information you need and enjoy your stay.</p></b>
+{% endif %}
+  </center>
+</div>
+<div class="container my-4"> 
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">World</strong>
+          <h3 class="mb-0">Featured post</h3>
+          <div class="mb-1 text-body-secondary">Nov 12</div>
+          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img class="bd-placeholder-img img-fluid" width="200" height="250" src="{% static 'img/about.png' %}">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success">Design</strong>
+          <h3 class="mb-0">Post title</h3>
+          <div class="mb-1 text-body-secondary">Nov 11</div>
+          <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img class="bd-placeholder-img img-fluid" width="200" height="250" src="{% static 'img/about-video.jpg' %}">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row featurette d-flex justify-content-center align-items-center mx-4">
+    <div class="col-md-7 ">
+      <h2 class="featurette-heading fw-normal lh-1">Welcome to Career Apex <span class="text-body-secondary">Lets Get Started.</span></h2>
+      <p class="lead">Welcome to our Career Counselling web application! Our platform is designed to help you navigate the complex and ever-changing world of careers, by providing you with the tools and resources you need
+         to make informed decisions about your future.</p>
+    </div>
+    <div class="col-md-5">
+      <img class="img-fluid" src="https://source.unsplash.com/400x400/?courses,programming">
+    </div>
+  </div>
+  <div class="row featurette d-flex justify-content-center align-items-center mx-4">
+    <div class="col-md-7 order-md-2">
+      <h2 class="featurette-heading fw-normal lh-1">Our Vision</h2>
+      <p class="lead">Whether you're a student, a recent graduate, or a professional looking for a change, our platform offers a range of services
+         to help you find your path. From personalized assessments and career planning tools to job search resources and networking opportunities, we've got you covered.
+
+      </p>
+    </div>
+    <div class="col-md-5 order-md-1  ">
+      <img class="img-fluid" src="https://source.unsplash.com/400x400/?students,teachers">
+    </div>
+  </div>
+  <div class="row featurette d-flex justify-content-center align-items-center mx-4">
+    <div class="col-md-7 ">
+      <h2 class="featurette-heading fw-normal lh-1">Lets connect with our community</h2>
+      <p class="lead">At Career Counselling, we believe that everyone deserves to find fulfilling and meaningful work. That's why we're committed to providing you with the support you need to achieve your goals, no matter where you are on your career journey.
+
+        So why wait? Sign up today and take the first step towards a brighter future!</p>
+    </div>
+    <div class="col-md-5 order-md-1">
+      <img class="img-fluid" src="https://source.unsplash.com/400x400/?exams,guidance">
+    </div>
+  </div>
+</div>
+
+ 
+ {% comment %} <section >
+  <header>
+    
+    {% comment %} {% comment %} <div class="container header__container">
+      <div class="header__left">
+        {% if user.is_authenticated %}
+        <b><p>Welcome, {{ user.username }}!</p></b>
+      {% endif %}
+        <h1>Discover Yourself And Your Ideal Career</h1>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque consectetur est quam aut explicabo recusandae. Odit totam temporibus, ipsa suscipit quas dolore distinctio repellendus quibusdam animi sed ducimus, recusandae rerum.
+          </p>
+      </div>  {% endcomment %}
+   {% comment %} {% endcomment %}
+
+{% endblock%}

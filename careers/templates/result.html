@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <center>
+    <h1>Results</h1>
+    {% if chart_data %}
+      <div id="chart-container">
+        {{ chart_data|safe }}
+      </div>
+    {% else %}
+      <p>No data to display.</p>
+    {% endif %}
+    <center>
+    <h2>To know more about your Career Suggestion Visit<h2/>
+    <a href="{% url 'knowledge' %}">Knowledge Network</a>
+    </center>
+  </center>
+  
+  <!-- Include Plotly library -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  
+  <script>
+    // Custom JavaScript code to initialize the Plotly graph
+    document.addEventListener('DOMContentLoaded', function() {
+      // Code to extract the chart container element
+      var chartContainer = document.getElementById('chart-container');
+      
+      // Create the Plotly graph
+      var figure = JSON.parse(chartContainer.innerText);
+      Plotly.newPlot(chartContainer, figure.data, figure.layout);
+    });
+  </script>
+{% endblock %}

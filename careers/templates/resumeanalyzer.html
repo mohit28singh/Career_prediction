@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Resume Analyzer</h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div>
+      <label for="resume">Upload your resume (PDF only)</label>
+      <input type="file" name="resume" accept=".pdf">
+    </div>
+    <button type="submit">Analyze</button>
+  </form>
+
+  {% if resume %}
+    <h2>Uploaded Resume</h2>
+    <embed src="{{ resume.url }}" width="800px" height="1000px" type="application/pdf">
+  {% endif %}
+{% endblock %}

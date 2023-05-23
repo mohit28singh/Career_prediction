@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load custom_filters %}
+
+{% block content %}
+<style>
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .skills-list li {
+        margin-bottom: 5px;
+        flex-wrap: wrap;
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #add8e6;
+        border-radius: 20px;
+        font-size: 14px;
+    }
+    
+    .recommended-skills {
+        display: inline-block;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .recommended-skills li {
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #add8e6;
+        border-radius: 20px;
+        font-size: 14px;
+    }
+    .recommended-courses a {
+        display: block;  /* Display each course in a new line */
+        margin-bottom: 5px;  /* Add some spacing between courses */
+    }
+</style>
+<center>
+    <h2>Your Resume</h2>
+    <iframe src="{{ pdf.pdf_file.url }}" width="600px" height="800px"></iframe>
+    <h2>Resume Analysis</h2>
+    {% comment %} {% if email_warning %}
+    <p style="background-color: yellow"><strong>Warning:</strong> {{ email_warning }}</p>
+{% endif %} {% endcomment %}
+
+<p><strong>Email:</strong> {{ extracted_data.Email }}</p>
+
+<!-- Existing code -->
+
+{% if skills_warning %}
+    <p style="background-color: yellow"><strong>Warning:</strong> {{ skills_warning }}</p>
+{% endif %}
+    <p style="background-color: red"><strong>Name: {{ document_name }}</p>
+    <p><strong>Email:</strong> {{ extracted_data.Email }}</p>
+    
+    {% if extracted_data|get_item:"Number of Pages" == 1 %}
+        <p><strong>Experience:</strong> You are a Fresher</p>
+    {% elif extracted_data|get_item:"Number of Pages" == 2 %}
+        <p><strong>Experience:</strong> You are at Intermediate level</p>
+    {% elif extracted_data|get_item:"Number of Pages" > 2 %}
+        <p><strong>Experience:</strong> You are Experienced</p>
+    {% endif %}
+    
+    <p><strong>Skills and Technologies:</strong></p>
+    <ul class="skills-list">
+        {% for skill in skills %}
+            {% if skill|strip_spaces %}
+                <li>{{ skill|strip_spaces }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    <br>
+    <br>
+    <p style="background-color: blue"><strong>Our Analysis says you are looking for {{ matching_keyword }} job</strong></p>
+    <br>
+    <br>
+    
+    <p style="background-color: orange"><strong>Based on your skills, we recommend learning the following:</strong></p>
+    <ul class="recommended-skills">
+        {% for skill in recommended_skills %}
+            <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+    <p><Strong>Based on your skills, we recommend learning the following:</Strong></p>
+        <div class="recommended-courses">
+            {{ recommended_courses|safe }}
+        </div>
+</center>
+{% endblock %}
