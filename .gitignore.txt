@@ -1,24 +1,64 @@
-# Ignore node_modules directory
-node_modules/
-
-# Ignore logs and temporary files
-*.log
-*.tmp
-
-# Ignore IDE-specific files and folders
-.vscode/
-.idea/
-*.iml
-*.ipr
-*.iws
-
-# Ignore compiled files
+# Compiled source code
+*.com
 *.class
-*.jar
+*.dll
+*.exe
+*.o
+*.so
 
-# Ignore environment files
+# Packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDE and editor files
+.idea/
+.vscode/
+
+# Environment-specific files
 .env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.*
+
+# Dependency directories
+node_modules/
+venv/
+myenv/
+
+# Compiled Python bytecode
+*.pyc
+__pycache__/
+
+# Generated files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# macOS
+.AppleDouble
+.LSOverride
+
+# Windows
+$RECYCLE.BIN/
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints/
