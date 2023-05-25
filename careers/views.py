@@ -241,10 +241,21 @@ def view_pdf(request, pdf_id):
 
     # Call the extract_information_from_pdf function
     extracted_data = extract_information_from_pdf(pdf.pdf_file)
+    print(extracted_data)
+    print(extracted_data.get("Email"))
     skills = extracted_data.get("Skills and Technologies", [])
     skills = [skill.strip() for skill in skills]
     skills = list(set(skills))
-    # Check if skills field is accessible
+    print(skills)
+    # Check if  fields is accessible
+    messages = []
+    if not extracted_data.get("Name", ""):
+        messages.append("Name field is empty or invalid type!")
+    if not extracted_data.get("Email", ""):
+        messages.append("Email field is empty or invalid type!")
+    if not extracted_data.get("Skills and Technologies", []):
+        messages.append("Skills field are either empty or not in right format")
+    print(messages)
     matching_keyword = get_matching_keyword(skills)
     recommended_skills = []
     if matching_keyword:
@@ -258,7 +269,7 @@ def view_pdf(request, pdf_id):
     
 
     return render(request, 'pdf_detail.html', {'pdf': pdf, 'document_name': document_name, 'extracted_data': extracted_data,
-'matching_keyword': matching_keyword,'skills':skills,'recommended_skills':recommended_skills,'recommended_courses':recommended_courses})
+'matching_keyword': matching_keyword,'skills':skills,'recommended_skills':recommended_skills,'recommended_courses':recommended_courses,'messages': messages})
 
 def home(request):
     user = get_user_model().objects.get(pk=request.user.pk)

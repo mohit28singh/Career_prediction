@@ -38,22 +38,40 @@
         display: block;  /* Display each course in a new line */
         margin-bottom: 5px;  /* Add some spacing between courses */
     }
+    
+    /* Animation for blinking effect */
+    @keyframes blink {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .blinking-message {
+        animation: blink 1s infinite;
+    }
 </style>
 <center>
     <h2>Your Resume</h2>
     <iframe src="{{ pdf.pdf_file.url }}" width="600px" height="800px"></iframe>
     <h2>Resume Analysis</h2>
-    {% comment %} {% if email_warning %}
-    <p style="background-color: yellow"><strong>Warning:</strong> {{ email_warning }}</p>
-{% endif %} {% endcomment %}
 
-<p><strong>Email:</strong> {{ extracted_data.Email }}</p>
+    {% for message in messages %}
+        <p class="blinking-message" style="background-color: yellow"><strong>Our ATS tracking System says:</strong> {{ message }}</p>
+    {% endfor %}
 
-<!-- Existing code -->
+    <p><strong>Email:</strong> {{ extracted_data.Email }}</p>
+    
+    <!-- Existing code -->
 
-{% if skills_warning %}
-    <p style="background-color: yellow"><strong>Warning:</strong> {{ skills_warning }}</p>
-{% endif %}
+    {% if skills_warning %}
+        <p style="background-color: yellow"><strong>Warning:</strong> {{ skills_warning }}</p>
+    {% endif %}
     <p style="background-color: red"><strong>Name: {{ document_name }}</p>
     <p><strong>Email:</strong> {{ extracted_data.Email }}</p>
     
@@ -85,9 +103,10 @@
             <li>{{ skill }}</li>
         {% endfor %}
     </ul>
-    <p><Strong>Based on your skills, we recommend learning the following:</Strong></p>
-        <div class="recommended-courses">
-            {{ recommended_courses|safe }}
-        </div>
+    <p><strong>Based on your skills, we recommend learning the following:</strong></p>
+    <div class="recommended-courses">
+        {{ recommended_courses|safe }}
+    </div>
+   
 </center>
 {% endblock %}
