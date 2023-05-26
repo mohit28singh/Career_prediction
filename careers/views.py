@@ -16,11 +16,6 @@ from django.core.files.storage import FileSystemStorage
 # Create your views here.
 from django.shortcuts import render, redirect
 
-
-
-
-
-import io
 import re
 import nltk
 from PyPDF2 import PdfReader
@@ -218,8 +213,6 @@ from django.shortcuts import render, redirect
 from .forms import PDFUploadForm
 from .models import PDFDocument
 
-
-from django.shortcuts import render, redirect
 from .forms import PDFUploadForm
 
 def upload_pdf(request):
@@ -292,7 +285,7 @@ def SignUpPage(request):
         
         return HttpResponse('<script>alert("User created successfully!"); window.location.href = "/";</script>')
     
-    return render(request, 'signup.html')
+    return redirect('/')
 
 
 # def login_view(request):
@@ -383,7 +376,7 @@ def Graphic_Designer(request):
 def TermsConditons(request):
     return render(request, 'Terms&Condition.html')
 # model = joblib.load('careercounselling.pkl')
-# print(type(model))
+# print(type(model))c
 
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
