@@ -3,43 +3,119 @@
 
 {% block content %}
 <style>
-    ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
+    .report-card {
+        width: 600px;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        text-align: center;
+        margin: 0 auto;
     }
-    
-    .skills-list li {
+
+    .report-card h2 {
+        margin-top: 0;
+        color: #333;
+    }
+
+    .report-card p {
+        margin: 10px 0;
+        color: #555;
+    }
+
+    .report-card .section-title {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .report-card .warning {
+        background-color: #ffc107;
+        color: #333;
+        padding: 8px;
+        border-radius: 5px;
+        animation: blink 1s infinite;
+    }
+
+    .report-card .error {
+        background-color: #dc3545;
+        color: #fff;
+        padding: 8px;
+        border-radius: 5px;
+    }
+
+    .report-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0;
+        text-align: left;
+    }
+
+    .report-card ul li {
         margin-bottom: 5px;
-        flex-wrap: wrap;
-        display: inline-block;
-        padding: 8px 16px;
-        background-color: #add8e6;
-        border-radius: 20px;
-        font-size: 14px;
+        color: #555;
     }
-    
-    .recommended-skills {
-        display: inline-block;
+
+    .report-card .recommended-skills {
+        margin-top: 20px;
+        display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         gap: 10px;
-        padding: 0;
-        margin: 0;
     }
-    
-    .recommended-skills li {
+
+    .report-card .recommended-skills li {
         display: inline-block;
-        padding: 8px 16px;
         background-color: #add8e6;
-        border-radius: 20px;
-        font-size: 14px;
+        color: #fff;
+        padding: 8px;
+        border-radius: 5px;
     }
-    .recommended-courses a {
-        display: block;  /* Display each course in a new line */
-        margin-bottom: 5px;  /* Add some spacing between courses */
+
+    .report-card .recommended-courses {
+        margin-top: 20px;
+        text-align: left;
     }
-    
-    /* Animation for blinking effect */
+
+    .report-card .recommended-courses a {
+        display: block;
+        margin-bottom: 5px;
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .skills-list {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .skills-list li {
+        display: inline-block;
+        background-color: #add8e6;
+        color: #fff;
+        padding: 8px;
+        border-radius: 5px;
+    }
+
+    .section-title {
+        position: relative;
+        display: inline-block;
+    }
+
+    .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: #007bff;
+    }
+
     @keyframes blink {
         0% {
             opacity: 0;
@@ -51,39 +127,34 @@
             opacity: 0;
         }
     }
-
-    .blinking-message {
-        animation: blink 1s infinite;
-    }
 </style>
-<center>
+      <center>
     <h2>Your Resume</h2>
-    <iframe src="{{ pdf.pdf_file.url }}" width="600px" height="800px"></iframe>
+    <iframe src="{{ pdf.pdf_file.url }}" width="600px" height="800px"></iframe></center>
+    <br>
+
+    <div class="report-card">
     <h2>Resume Analysis</h2>
 
     {% for message in messages %}
-        <p class="blinking-message" style="background-color: yellow"><strong>Our ATS tracking System says:</strong> {{ message }}</p>
+        <p class="warning"><strong>Warning:</strong> <span class="blinking-message">{{ message }}</span></p>
     {% endfor %}
 
+    <p><strong>Name:</strong> {{ document_name }}</p>
     <p><strong>Email:</strong> {{ extracted_data.Email }}</p>
-    
-    <!-- Existing code -->
 
-    {% if skills_warning %}
-        <p style="background-color: yellow"><strong>Warning:</strong> {{ skills_warning }}</p>
-    {% endif %}
-    <p style="background-color: red"><strong>Name: {{ document_name }}</p>
-    <p><strong>Email:</strong> {{ extracted_data.Email }}</p>
-    
     {% if extracted_data|get_item:"Number of Pages" == 1 %}
-        <p><strong>Experience:</strong> You are a Fresher</p>
+        <p class="section-title" style="color: #ff5733;">Experience:</p>
+        <p>You are a Fresher</p>
     {% elif extracted_data|get_item:"Number of Pages" == 2 %}
-        <p><strong>Experience:</strong> You are at Intermediate level</p>
+        <p class="section-title" style="color: #ff5733;">Experience:</p>
+        <p>You are at Intermediate level</p>
     {% elif extracted_data|get_item:"Number of Pages" > 2 %}
-        <p><strong>Experience:</strong> You are Experienced</p>
+        <p class="section-title" style="color: #ff5733;">Experience:</p>
+        <p>You are Experienced</p>
     {% endif %}
-    
-    <p><strong>Skills and Technologies:</strong></p>
+
+    <p class="section-title" style="color: #ff5733;">Skills and Technologies:</p>
     <ul class="skills-list">
         {% for skill in skills %}
             {% if skill|strip_spaces %}
@@ -91,22 +162,24 @@
             {% endif %}
         {% endfor %}
     </ul>
-    <br>
-    <br>
-    <p style="background-color: blue"><strong>Our Analysis says you are looking for {{ matching_keyword }} job</strong></p>
-    <br>
-    <br>
-    
-    <p style="background-color: orange"><strong>Based on your skills, we recommend learning the following:</strong></p>
+
+    {% if skills_warning %}
+        <p class="warning"><strong>Warning:</strong> <span class="blinking-message">{{ skills_warning }}</span></p>
+    {% endif %}
+
+    <p class="section-title" style="color: #ff5733;">Job Profile Recommendation:</p>
+    <p><strong>Our Analysis suggests you are looking for a {{ matching_keyword }} job</strong></p>
+
+    <p class="section-title" style="color: #ff5733;">Recommended Skills:</p>
     <ul class="recommended-skills">
         {% for skill in recommended_skills %}
             <li>{{ skill }}</li>
         {% endfor %}
     </ul>
-    <p><strong>Based on your skills, we recommend learning the following:</strong></p>
+
+    <p class="section-title" style="color: #ff5733;">Recommended Courses:</p>
     <div class="recommended-courses">
         {{ recommended_courses|safe }}
     </div>
-   
-</center>
+</div>
 {% endblock %}
