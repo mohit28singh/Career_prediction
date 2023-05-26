@@ -16,6 +16,7 @@ egg-info/
 
 # Virtual environment
 env/
+myenv/
 
 # IDE specific files
 .vscode/
