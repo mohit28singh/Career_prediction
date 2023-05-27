@@ -159,7 +159,8 @@ section h2{
         <div class="upload-form">
           <form method="post" enctype="multipart/form-data" class="form-inline">
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ form.Name.label_tag }} {{ form.Name }}<br>
+            {{ form.pdf_file.label_tag }} {{ form.pdf_file }}
             <input type="submit" value="Upload">
           </form>
         </div>
