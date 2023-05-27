@@ -2,44 +2,81 @@
 {% load static %}
 {%block content%}
 {% block css %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/knowledge.css' %}">
-{% endblock %}
-	<center>
-<div class="p-4 p-md-5 mb-4 rounded text-bg-infolight-emphasis">
-    <div class="col-md-6 px-0">
-      <h1 class="display-4 fst-italic">Knowledge Network</h1>
-      <p class="lead fw-normal">The Knowledge module in a career counseling website is designed to provide information and resources related to career development, 
-        education, and job search. This module is intended to help users explore career options, gain insight into different career paths, and learn about the education and training needed to pursue those careers.</p>
-        
-    </div>
-  </div></center>
-
-{% comment %} <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
-    <div class="col-md-5 p-lg-5 mx-auto my-5">
-      <h1 class="display-4 fw-normal">Knowledge Network</h1>
-      <p class="lead fw-normal">The Knowledge module in a career counseling website is designed to provide information and resources related to career development, 
-        education, and job search. This module is intended to help users explore career options, gain insight into different career paths, and learn about the education and training needed to pursue those careers.</p>
-        
-    </div>
-    <div class="product-device shadow-sm d-none d-md-block"></div>
-    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
-  </div> {% endcomment %}
+    
+    <style>
+      .knowledge-container{
+        max-width: 1068px;
+        margin: auto;
+        width: 100%;
+      }
+      .home{
+        width: 100%;
+        min-height:440px;
+        background: #1a1e21;
+        display: grid;
+        justify-content: center;
+        align-items: center; 
+       }
+      .home-text{
+        color: #fff;
+        text-align: center;
+      }
+      .home-title{
+        font-size: 3.5rem;
       
-  <div class="container">
-    <div class="row featurette d-flex justify-content-center align-items-center mx-4">
-      <div class="col-md-7 ">
-        <h2 class="featurette-heading fw-normal lh-1">AI ML Specialist</h2>
-        <p class="lead">AI/ML specialist is a software specialist with a strong mathematics background and a knowledge of coding, who’s core responsibilities are Designing and developing machine
-             learning and deep learning systems, Running machine learning tests and experiments, Implementing appropriate ML algorithms...</p>
-             <a href="{% url 'AIML' %}" class="readmore">
-                Read more →
-            </a>
-      </div>
-      <div class="col-md-5">
-        <img class="img-fluid" src="{% static 'img/c1.png' %}">
-      </div>
+      }
+      .home-subtitle{
+       font-size: 1rem;
+       font-weight: 400;  
+       margin-left: 2rem;
+       margin-right:2rem;
+      }
+      .readmore {
+        display: block;
+        padding: 5px 10px;
+        text-decoration: none;
+        color: #933ded;
+        font-weight: 600;
+        transition: transform 0.3s ease; }
+        .readmore:hover {
+          transition: transform 0.3s ease;
+          transform: translateX(-10px); }
+          section{
+            padding: 3rem 0 2rem;
+          }
+          .imgg {
+            max-width: 300px;
+            height: auto;
+        }
+        .cont{
+          margin-top:3rem;
+          margin-bottom:3rem;
+          padding:1rem;
+          transition: box-shadow 0.3s ease;
+          border-radius: 20px; 
+        }
+        .cont:hover{
+          transition: box-shadow 0.3s ease;
+          box-shadow: 0px 24px 64px rgba(0, 0, 0, 0.30);
+        }
+                
+    </style>
+{% endblock %}
+	
+<section class="home" id="home">
+    <div class="home-text containers">
+      <h1 class="home-title">Knowledge Network</h1>
+      <p class="home-subtitle">The Knowledge module in a career counseling website is designed to provide information and resources related to career development, 
+        education, and job search. This module is intended to help users explore career options, gain insight into different career paths, and learn about the education and training needed to pursue those careers.</p>
+        
     </div>
-    <div class="row featurette d-flex justify-content-center align-items-center mx-4">
+  </section>
+
+
+ <section class="knowledge-container">     
+  <div class="container">
+    
+    <div class="row featurette d-flex justify-content-center align-items-center mx-4 cont">
       <div class="col-md-7 order-md-2">
         <h2 class="featurette-heading fw-normal lh-1">API Integration Specialist</h2>
         <p class="lead">The API Integration Specialist are the technical problem solver who will help the clients and
@@ -53,10 +90,10 @@
         </a>
       </div>
       <div class="col-md-5 order-md-1  ">
-        <img class="img-fluid" src="{% static 'img/c2.png' %}">
+        <img class="imgg" src="{% static 'img/c2.png' %}">
       </div>
     </div>
-    <div class="row featurette d-flex justify-content-center align-items-center mx-4">
+    <div class="row featurette d-flex justify-content-center align-items-center mx-4 cont">
       <div class="col-md-7 ">
         <h2 class="featurette-heading fw-normal lh-1">Penetration Tester</h2>
         <p class="lead">  Penetration testers, also known as “ethical hackers,” are highly skilled security specialists that
@@ -70,11 +107,11 @@
             </a>
       </div>
       <div class="col-md-5 order-md-1">
-        <img class="img-fluid" src="{% static 'img/c3.png' %}">
+        <img class="imgg" src="{% static 'img/c3.png' %}">
       </div>
     </div>
   </div>
-  <div class="row featurette d-flex justify-content-center align-items-center mx-4">
+  <div class="row featurette d-flex justify-content-center align-items-center mx-4 cont">
     <div class="col-md-7 order-md-2">
       <h2 class="featurette-heading fw-normal lh-1">Application Support Engineer</h2>
       <p class="lead"> An Application Support Engineer is an IT professional who provides technical support regarding a
@@ -87,10 +124,10 @@
           </a>
     </div>
     <div class="col-md-5 order-md-1">
-      <img class="img-fluid" src="{% static 'img/c4.png' %}">
+      <img class="imgg" src="{% static 'img/c4.png' %}">
     </div>
   </div>
-  <div class="row featurette d-flex justify-content-center align-items-center mx-4">
+  <div class="row featurette d-flex justify-content-center align-items-center mx-4 cont">
     <div class="col-md-7 order-md-1">
       <h2 class="featurette-heading fw-normal lh-1">Business Analyst</h2>
       <p class="lead"> Business analyst help guide businesses in improving processes, products, services and software
@@ -102,10 +139,10 @@
       </a>
     </div>
     <div class="col-md-5 order-md-2  ">
-      <img class="img-fluid" src="{% static 'img/c5.jpeg' %}">
+      <img class="imgg" src="{% static 'img/c5.jpeg' %}">
     </div>
   </div>
-  <div class="row featurette d-flex justify-content-center align-items-center mx-4">
+  <div class="row featurette d-flex justify-content-center align-items-center mx-4 cont">
     <div class="col-md-7 order-md-2 ">
       <h2 class="featurette-heading fw-normal lh-1">Customer Service Executive</h2>
       <p class="lead"> Customer Service Executive manages a team of representatives who will offer excellent customer service and after-sales support. Customer Service Execute
@@ -117,10 +154,10 @@
           </a>
     </div>
     <div class="col-md-5 order-md-1">
-      <img class="img-fluid" src="{% static 'img/c6.png' %}">
+      <img class="imgg" src="{% static 'img/c6.png' %}">
     </div>
   </div>
-  <div class="row featurette d-flex justify-content-center align-items-center mx-4">
+  <div class="row featurette d-flex justify-content-center align-items-center mx-4 cont">
     <div class="col-md-7 ">
       <h2 class="featurette-heading fw-normal lh-1">Cyber Security Specialist</h2>
       <p class="lead">Cyber Security Specialist is responsible for providing security during the development stages of software systems, networks and data centers. The professionals have to search for vulnerabilities and risks in hardware and software. They manage and monitor any attacks and intrusions. 
@@ -130,10 +167,10 @@
           </a>
     </div>
     <div class="col-md-5">
-      <img class="img-fluid" src="{% static 'img/c7.png' %}">
+      <img class="imgg" src="{% static 'img/c7.png' %}">
     </div>
   </div>
-  <div class="row featurette d-flex justify-content-center align-items-center mx-4">
+  <div class="row featurette d-flex justify-content-center align-items-center mx-4 cont">
     <div class="col-md-7 order-md-2">
       <h2 class="featurette-heading fw-normal lh-1">Database administrators</h2>
       <p class="lead">Database administrators or managers create and maintain databases compatible with their companies’ needs.
@@ -144,10 +181,10 @@
       </a>
     </div>
     <div class="col-md-5 order-md-1  ">
-      <img class="img-fluid" src="{% static 'img/c8.jpeg' %}">
+      <img class="imgg" src="{% static 'img/c8.jpeg' %}">
     </div>
   </div>
-  <div class="row featurette d-flex justify-content-center align-items-center mx-4">
+  <div class="row featurette d-flex justify-content-center align-items-center mx-4 cont">
     <div class="col-md-7 ">
       <h2 class="featurette-heading fw-normal lh-1">Data Scientist</h2>
       <p class="lead">   A Data Scientist is someone who makes value out of data. Such a person proactively fetches information from various sources and analyzes it for better 
@@ -158,11 +195,11 @@
           </a>
     </div>
     <div class="col-md-5 order-md-1">
-      <img class="img-fluid" src="{% static 'img/c9.jpeg' %}">
+      <img class="imgg" src="{% static 'img/c9.jpeg' %}">
     </div>
   </div>
 </div>
-<div class="row featurette d-flex justify-content-center align-items-center mx-4">
+<div class="row featurette d-flex justify-content-center align-items-center mx-4 cont">
   <div class="col-md-7 order-md-2">
     <h2 class="featurette-heading fw-normal lh-1">Hardware Engineer</h2>
     <p class="lead"> Hardware Engineers design the technology of the future. Using their solid knowledge of computer 
@@ -172,10 +209,10 @@
         </a>
   </div>
   <div class="col-md-5 order-md-1">
-    <img class="img-fluid" src="{% static 'img/c10.jpeg' %}">
+    <img class="imgg" src="{% static 'img/c10.jpeg' %}">
   </div>
 </div>
-<div class="row featurette d-flex justify-content-center align-items-center mx-4">
+<div class="row featurette d-flex justify-content-center align-items-center mx-4 cont">
   <div class="col-md-7 order-md-1">
     <h2 class="featurette-heading fw-normal lh-1"> Helpdesk Engineer</h2>
     <p class="lead">  Helpdesk Engineer are the go-to people for providing technical assistance and support related to computer systems, hardware, and software. They are responsible for answering queries and addressing system and user issues in a timely
@@ -186,10 +223,10 @@
     </a>
   </div>
   <div class="col-md-5 order-md-2  ">
-    <img class="img-fluid" src="{% static 'img/c11.png' %}">
+    <img class="imgg" src="{% static 'img/c11.png' %}">
   </div>
 </div>
-<div class="row featurette d-flex justify-content-center align-items-center mx-4">
+<div class="row featurette d-flex justify-content-center align-items-center mx-4 cont">
   <div class="col-md-7 order-md-2 ">
     <h2 class="featurette-heading fw-normal lh-1">Information Security Specialist</h2>
     <p class="lead">Information Security role involves in understanding and taking steps to mitigate the risks associated with collecting, storing and transmitting data in a business setting.
@@ -200,10 +237,10 @@
         </a>
   </div>
   <div class="col-md-5 order-md-1">
-    <img class="img-fluid" src="{% static 'img/c12.jpg' %}">
+    <img class="imgg" src="{% static 'img/c12.jpg' %}">
   </div>
 </div>
-<div class="row featurette d-flex justify-content-center align-items-center mx-4">
+<div class="row featurette d-flex justify-content-center align-items-center mx-4 cont">
     <div class="col-md-7 ">
       <h2 class="featurette-heading fw-normal lh-1"> Networking Engineer</h2>
       <p class="lead"> Networking Engineer will be responsible for maintaining and administering our company's computer networks. Primary duties will include maintenance of computer networks, hardware, software,
@@ -213,10 +250,10 @@
           </a>
     </div>
     <div class="col-md-5">
-      <img class="img-fluid" src="{% static 'img/c13.jpeg' %}">
+      <img class="imgg" src="{% static 'img/c13.jpeg' %}">
     </div>
   </div>
-  <div class="row featurette d-flex justify-content-center align-items-center mx-4">
+  <div class="row featurette d-flex justify-content-center align-items-center mx-4 cont">
     <div class="col-md-7 order-md-2">
       <h2 class="featurette-heading fw-normal lh-1">Project Manager</h2>
       <p class="lead"> A Project Manager is responsible for planning, overseeing and leading projects from ideation through to completion. This is a senior role at an organisation and requires interaction with a range
@@ -227,10 +264,10 @@
       </a>
     </div>
     <div class="col-md-5 order-md-1  ">
-      <img class="img-fluid" src="{% static 'img/c14.jpeg' %}">
+      <img class="imgg" src="{% static 'img/c14.jpeg' %}">
     </div>
   </div>
-  <div class="row featurette d-flex justify-content-center align-items-center mx-4">
+  <div class="row featurette d-flex justify-content-center align-items-center mx-4 cont">
     <div class="col-md-7 ">
       <h2 class="featurette-heading fw-normal lh-1">Software Developer</h2>
       <p class="lead">  Software Developer design, develop, and test software and applications for computers. The main duties and responsibilities of software developer include directing and participating in programming activities, monitoring, and
@@ -241,11 +278,11 @@
           </a>
     </div>
     <div class="col-md-5 order-md-1">
-      <img class="img-fluid" src="{% static 'img/c15.jpeg' %}">
+      <img class="imgg" src="{% static 'img/c15.jpeg' %}">
     </div>
   </div>
 </div>
-<div class="row featurette d-flex justify-content-center align-items-center mx-4">
+<div class="row featurette d-flex justify-content-center align-items-center mx-4 cont">
   <div class="col-md-7 order-md-2">
     <h2 class="featurette-heading fw-normal lh-1">Software Tester</h2>
     <p class="lead"> Software Testers are responsible for the quality of software development and deployment. 
@@ -255,10 +292,10 @@
         </a>
   </div>
   <div class="col-md-5 order-md-1">
-    <img class="img-fluid" src="{% static 'img/c16.jpeg' %}">
+    <img class="imgg" src="{% static 'img/c16.jpeg' %}">
   </div>
 </div>
-<div class="row featurette d-flex justify-content-center align-items-center mx-4">
+<div class="row featurette d-flex justify-content-center align-items-center mx-4 cont">
   <div class="col-md-7 order-md-1">
     <h2 class="featurette-heading fw-normal lh-1">Technical Writer</h2>
     <p class="lead"> Technical writers, also called technical communicators, prepare instruction manuals, how-to guides, journal articles, and other supporting documents to communicate complex and technical information more easily. 
@@ -269,10 +306,10 @@
     </a>
   </div>
   <div class="col-md-5 order-md-2  ">
-    <img class="img-fluid" src="{% static 'img/c17.png' %}">
+    <img class="imgg" src="{% static 'img/c17.png' %}">
   </div>
 </div>
-<div class="row featurette d-flex justify-content-center align-items-center mx-4">
+<div class="row featurette d-flex justify-content-center align-items-center mx-4 cont">
   <div class="col-md-7 order-md-2 ">
     <h2 class="featurette-heading fw-normal lh-1">Graphic Designer</h2>
     <p class="lead">    The Graphic Designer job includes the entire process of defining requirements, visualizing and creating graphics including illustrations,
@@ -283,7 +320,23 @@
         </a>
   </div>
   <div class="col-md-5 order-md-1">
-    <img class="img-fluid" src="{% static 'img/c18.png' %}">
+    <img class="imgg" src="{% static 'img/c18.png' %}">
+  </div>
+
+</div>
+  <div class="row featurette d-flex justify-content-center align-items-center mx-4 cont">
+    <div class="col-md-7 ">
+      <h2 class="featurette-heading fw-normal lh-1">AI ML Specialist</h2>
+      <p class="lead">AI/ML specialist is a software specialist with a strong mathematics background and a knowledge of coding, who’s core responsibilities are Designing and developing machine
+           learning and deep learning systems, Running machine learning tests and experiments, Implementing appropriate ML algorithms...</p>
+           <a href="{% url 'AIML' %}" class="readmore">
+              Read more →
+          </a>
+    </div>
+    <div class="col-md-5">
+      <img class="imgg" src="{% static 'img/c1.png' %}">
+    </div>
   </div>
 </div>
+</section>
 	{% endblock%}

@@ -9,7 +9,7 @@
     
 
 section{
-    padding: 6rem 0;;
+    padding: 4rem 0;;
 }
 
 section h2{
@@ -38,10 +38,13 @@ section h2{
 }
 #para{
    
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color:#60696c;
     
     
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: #dee2e6;
 }
 #l{
     color:#3d85e3;
@@ -137,13 +140,35 @@ section h2{
       <h1 id="h">Is your resume good enough?</h1>
       <p>Make sure it showcases your relevant skills and achievements, stands out visually, and aligns with 
         the job requirements. Polish it to make a strong impression and increase your chances of landing interviews.</p>
-      <div class="upload-form">
-        <form method="post" enctype="multipart/form-data" class="form-inline">
-          {% csrf_token %}
-          {{ form.as_p }}
-          <input type="submit" value="Upload">
-        </form>
+      
+     <!-- Button trigger modal -->
+<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  UPLOAD YOUR RESUME
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Resume Uploader</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div> 
+      <div class="modal-body">
+        
+        <div class="upload-form">
+          <form method="post" enctype="multipart/form-data" class="form-inline">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Upload">
+          </form>
+        </div>
       </div>
+      
+    </div>
+  </div>
+</div>
+
     </div>
 
     <div class="resume__right">
