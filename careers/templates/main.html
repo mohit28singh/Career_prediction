@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content%}
+
 <style>
   .greeting-message {
     border-radius: 10px;
@@ -9,7 +10,28 @@
     background-color: #f2f2f2;
     box-shadow: 0px 0px 5px 0px #ccc;
   }
-</style>  
+  
+  .blink {
+    animation: blinker 1s linear infinite;
+  }
+
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+</style> 
+{% if messages %}
+  <div class="alert alert-warning {% if not user.is_authenticated %} blink {% endif %}" role="alert">
+    {% for message in messages %}
+      {{ message }}
+    {% endfor %}
+  </div>
+{% elif not user.is_authenticated %}
+  <div class="alert alert-warning blink" role="alert">
+    You are not logged in. Please log in to access the full features of the website.
+  </div>
+{% endif %} 
  
 <div id="carouselExampleCaptions" class="carousel slide carousel-fade">
   <div class="carousel-indicators">

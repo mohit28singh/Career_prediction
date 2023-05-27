@@ -214,7 +214,7 @@ from .forms import PDFUploadForm
 from .models import PDFDocument
 
 from .forms import PDFUploadForm
-
+@login_required(login_url='/')
 def upload_pdf(request):
     if request.method == 'POST':
         form = PDFUploadForm(request.POST, request.FILES)
@@ -288,19 +288,7 @@ def SignUpPage(request):
     return redirect('/')
 
 
-# def login_view(request):
-#     if request.method == 'POST':
-#         username = request.POST.get('username')
-#         password = request.POST.get('password1')
-#         user = authenticate(request, username=username, password=password)
-#         if user is not None:
-#             login(request, user)
-#             return redirect('home')  # Replace 'home' with the desired URL
-#         else:
-#             # Handle invalid credentials
-#             return render(request, 'main.html', {'error': 'Invalid username or password.'})
-#     else:
-#         return render(request, 'main.html')
+
 from django.contrib import messages
 def LoginPage(request):
     if request.method == 'POST':
@@ -314,7 +302,7 @@ def LoginPage(request):
             messages.error(request, 'Invalid password')
             return redirect('/')
             
-    return render(request, 'login.html')
+    return redirect('login')
 
 def LogoutPage(request):
      logout(request)
@@ -322,9 +310,13 @@ def LogoutPage(request):
  
 
 
-@login_required(login_url='login')
+@login_required(login_url='/')
 def careerprediction(request):
-    return render(request, 'services.html')
+    if request.user.is_authenticated:
+        return render(request, 'services.html')
+    else:
+        messages.warning(request, 'Please login to access this page.')
+        return render(request, 'main.html')
 
 def course(request):
     return render(request,"course.html")
@@ -333,7 +325,7 @@ def contact(request):
     return render(request,"contact.html")
 def about(request):
     return render(request, 'about.html')
-@login_required(login_url='login')
+@login_required(login_url='/')
 def knowledge(request):
     return render(request, 'knowledge.html')
 
