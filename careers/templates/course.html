@@ -3,220 +3,229 @@
 {% block content %}
 {% block css %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/course.css' %}">
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 {% endblock %}
 
 
-<section>
-<!-- Courses -->
-<div class="p-4 p-md-5 mb-4 rounded text-bg-dark ">
-	<center>
-    <div class="col-md-6 px-0">
-      <h1 class="display-4 fst-italic ">Computer Science Course Module: Comprehensive Study Materials for Students</h1>
+<section class="home" id="home">
+    <div class="home-text containers">
+        <h2 class="home-title">Computer Science Course Module</h2>
+        <span class="home-subtitle">Comprehensive Study Materials for Students</span>
     </div>
-  </div></center>
-<div class="blog">
-	<h2>Web Development</h2>
-	<div class="container my-4">
-		<div class="blog-item">
-			<img src="{% static 'img/coursejq.jpg' %}" alt="">
-			<h3>The Complete jQuery Course</h3>
-			
-			<a class="course-title" href="https://www.w3schools.com/jquery/default.asp" target="_blank"
-				style="font-size:18px; text-align: center"><button>Enroll now</button></a>
-		</div>
-		<div class="blog-item">
-			<img src="{% static 'img/course02.jpg' %}" alt="">
-			<h3>Introduction to CSS </h3>
-			
-			<a class="course-title" href="https://www.w3schools.com/css/default.asp" target="_blank"
-				style="font-size:18px; text-align: center"><button>Enroll now</button></a>
-		</div>
-		<div class="blog-item">
-			<img src="{% static 'img/coursehtml.jpg' %}" alt="">
-			<h3>The Complete course on HTML</h3>
-			<a class="course-title" href="https://www.w3schools.com/html/default.asp" target="_blank"
-				style="font-size:18px; text-align: center"><button>Enroll now</button></a>
+   </section>
+    <div class="post-filter containers">
+        <span class="filter-item active-filter" data-filter="all">All</span>
+        
+        <span class="filter-item " data-filter="programming">PROGRAMMING</span>
+        <span class="filter-item " data-filter="database">DATABASE</span>
+        <span class="filter-item " data-filter="web">WEBSITE</span>
+        
+    </div>
 
-		</div>
-		<div class="blog-item">
-			<img src="{% static 'img/coursebtsp.jpg' %}" alt="">
-			<h3>Introduction to Bootstrap</h3>
-			
-			<a class="course-title" href="https://www.w3schools.com/bootstrap4/default.asp" target="_blank"
-				style="font-size:18px; text-align: center"><button>Enroll now</button></a>
-
-		</div>
-		<div class="blog-item">
-			<img src="{% static 'img/coursejs.jpg' %}" alt="">
-			<h3>JavaScript Tutorial</h3>
-			
-			<a class="course-title" href="https://www.w3schools.com/js/default.asp" target="_blank"
-				style="font-size:18px; text-align: center"><button>Enroll now</button></a>
-
-		</div>
-		<div class="blog-item">
-			<img src="{% static 'img/courserea.jpg' %}" alt="">
-			<h3>React Tutorial</h3>
-			
-			<a class="course-title" href="https://www.w3schools.com/react/default.asp" target="_blank"
-				style="font-size:18px; text-align: center"><button>Enroll now</button></a>
-
-		</div>
-		<div class="blog-item">
-			<img src="{% static 'img/courseruby.jpg' %}" alt="">
-			<h3>Ruby Tips and Tricks</h3>
-			
-			<a class="course-title" href="https://www.rubyguides.com/2016/01/ruby-tricks/" target="_blank"
-				style="font-size:18px; text-align: center"><button>Enroll now</button></a>
-
-		</div>
-		<div class="blog-item">
-			<img src="{% static 'img/course04.jpg' %}" alt="">
-			<h3>HTML & CSS</h3>
-			
-			<a class="course-title" href="https://www.w3schools.com/html/default.asp" target="_blank"
-				style="font-size:18px; text-align: center"><button>Enroll now</button></a>
-
-		</div>
-		<div class="blog-item">
-			<img src="{% static 'img/courseror.jpg' %}" alt="">
-			<h3>Ruby on Rails5</h3>
-			
-			<a class="course-title" href="https://www.tutorialspoint.com/ruby-on-rails/index.htm" target="_blank"
-				style="font-size:18px; text-align: center"><button>Enroll now</button></a>
-
-		</div>
-		<div class="blog-item">
-			<img src="{% static 'img/coursesass.jpg' %}" alt="">
-			<h3>Introduction to Sass</h3>
-			
-			<a class="course-title" href="https://www.salesforce.com/in/saas/" target="_blank"
-				style="font-size:18px; text-align: center"><button>Enroll now</button></a>
-
-		</div>
-		<div class="blog-item">
-			<img src="{% static 'img/coursereact.jpg' %}" alt="">
-			<h3>React complete course</h3>
-			
-			<a class="course-title" href="https://beta.reactjs.org/" target="_blank"
-				style="font-size:18px; text-align: center"><button>Enroll now</button></a>
-
-		</div>
-		<div class="blog-item">
-			<img src="{% static 'img/coursejas.jpg' %}" alt="">
-			<h3>Complete guide on JavaScript</h3>
-			
-			<a class="course-title" href="https://www.w3schools.com/js/default.asp" target="_blank"
-				style="font-size:18px; text-align: center"><button>Enroll now</button></a>
-
-		</div>
+    <section class="post containers">
+        <div class="post-box web">
+            <img src="{% static 'img/jquery.jpg' %}" alt="">
+            
+            <a href="https://www.w3schools.com/jquery/default.asp" class="post-title"> The Complete jQuery Course</a>
+            <hr>
+            <h2 class="category">Web Development</h2>
+            
+        </div>
+        <div class="post-box web">
+            <img src="{% static 'img/css.jpg' %}" alt="">
+            
+            <a href="https://www.w3schools.com/css/default.asp" class="post-title"> Introduction to CSS</a>
+            <hr>
+            <h2 class="category">Web Development</h2>
+            
+        </div>
+        <div class="post-box web">
+            <img src="{% static 'img/bootstrap.jpg' %}" alt="">
+            <a href="https://www.w3schools.com/bootstrap4/default.asp" class="post-title"> Introduction to Bootstrap</a>
+            <hr>
+            <h2 class="category">Web Development</h2>
 
 
+        </div>
+        <div class="post-box web">
+            <img src="{% static 'img/html.jpg' %}" alt="">
+            
+            <a href="https://www.w3schools.com/html/default.asp" class="post-title"> The Complete course on HTML</a>
+            <hr>
+            <h2 class="category">Web Development</h2>
+        </div>
+        <div class="post-box web">
+            <img src="{% static 'img/js1.jpg' %}" alt="">
+            
+            <a href="https://www.w3schools.com/js/default.asp" class="post-title"> JavaScript Tutorial</a>
 
-       
+            <hr>
+            <h2 class="category">Web Development</h2>
+        </div>
+        <div class="post-box web">
+            <img src="{% static 'img/courserea.jpg' %}" alt="">
+            
+            <a href="https://www.w3schools.com/react/default.asp" class="post-title"> React Tutorial</a>
+            <hr>
+            <h2 class="category">Web Development</h2>
+        </div>
+        <div class="post-box web">
+            <img src="{% static 'img/ruby.jpg' %}" alt="">
+            
+            <a href="https://www.rubyguides.com/2016/01/ruby-tricks/" class="post-title"> Ruby Tips and Tricks</a>
+           <hr>
+           <h2 class="category">Web Development</h2>
+        </div>
+        <div class="post-box web">
+            <img src="{% static 'img/htcs.jpg' %}" alt="">
+            
+            <a href="https://www.w3schools.com/html/default.asp" class="post-title"> HTML & CSS</a>
+           <hr>
+           <h2 class="category">Web Development</h2>
+        </div>
+        <div class="post-box web">
+            <img src="{% static 'img/ror.jpg' %}" alt="">
+            
+            <a href="https://www.tutorialspoint.com/ruby-on-rails/index.htm" class="post-title"> Ruby on Rails5</a>
+           <hr>
+           <h2 class="category">Web Development</h2>
+        </div>
+        <div class="post-box web">
+            <img src="{% static 'img/react.jpg' %}" alt="">
+            
+            <a href="https://beta.reactjs.org/" class="post-title"> React complete course</a>
+           <hr>
+           <h2 class="category">Web Development</h2>
+        </div>
+        <div class="post-box web">
+            <img src="{% static 'img/js.jpg' %}" alt="">
+            
+            <a href="https://www.w3schools.com/js/default.asp" class="post-title"> Complete guide on JavaScript</a>
+           <hr>
+           <h2 class="category">Web Development</h2>
+        </div>
+        <div class="post-box web">
+            <img src="{% static 'img/coursesass.jpg' %}" alt="">
+            
+            <a href="https://www.salesforce.com/in/saas/" class="post-title"> Introduction to Sass</a>
+           <hr>
+           <h2 class="category">Web Development</h2>
+        </div>
+        <div class="post-box web">
+            <img src="{% static 'img/node.jpg' %}" alt="">
+            
+            <a href="https://www.w3schools.com/nodejs/default.asp" class="post-title">Node.js crash course</a>
+           <hr>
+           <h2 class="category">Web Development</h2>
+        </div>
 
-		<div class="blog-item">
-			<img src="{% static 'img/course01.jpg' %}" alt="">
-			<h3>R Programming</h3>
-			
-			<a class="course-title" href="https://www.datacamp.com/tracks/r-programming" target="_blank"
-				style="font-size:18px; text-align: center"><button>Enroll now</button></a>
+        <div class="post-box programming">
+            <img src="{% static 'img/r.jpg' %}" alt="">
+           
+            <a href="https://www.datacamp.com/tracks/r-programming" class="post-title"> R Programming</a>
+            <hr>
+            <h2 class="category">Programming</h2>
+            
+        </div>
+        <div class="post-box programming">
+            <img src="{% static 'img/cpp.jpg' %}" alt="">
+           
+            <a href="https://www.w3schools.com/cpp/default.asp" class="post-title"> Learn C++</a>
+            <hr>
+            <h2 class="category">Programming</h2>
+            
+        </div>
+        <div class="post-box programming">
+            <img src="{% static 'img/java.jpg' %}" alt="">
+           
+            <a href="https://www.w3schools.com/java/default.asp" class="post-title"> Java Tutorial</a>
+            <hr>
+            <h2 class="category">Programming</h2>
+            
+        </div>
+        <div class="post-box programming">
+            <img src="{% static 'img/python1.jpg' %}" alt="">
+           
+            <a href="https://www.w3schools.com/python/default.asp" class="post-title"> Complete guide on Python</a>
+            <hr>
+            <h2 class="category">Programming</h2>
+            
+        </div>
+        <div class="post-box programming">
+            <img src="{% static 'img/java1.jpg' %}" alt="">
+           
+            <a href="https://progate.com/courses/java" class="post-title"> Core Java</a>
+            <hr>
+            <h2 class="category">Programming</h2>
+            
+        </div>
+        <div class="post-box programming">
+            <img src="{% static 'img/python.jpg' %}" alt="">
+           
+            <a href="https://docs.python.org/3/tutorial/" class="post-title"> Python Programming Documentation</a>
+            <hr>
+            <h2 class="category">Programming</h2>
+            
+        </div>
+        <div class="post-box programming">
+            <img src="{% static 'img/cs.jpg' %}" alt="">
+           
+            <a href="https://www.w3schools.com/cs/default.asp" class="post-title"> C# Tutorial</a>
+            <hr>
+            <h2 class="category">Programming</h2>
+            
+        </div>
+        <div class="post-box programming">
+            <img src="{% static 'img/c.jpg' %}" alt="">
+           
+            <a href="https://www.udemy.com/course/the-complete-c-programming/" class="post-title"> Complete C programming</a>
+            <hr>
+            <h2 class="category">Programming</h2>
+            
+        </div>
+        <div class="post-box programming">
+            <img src="{% static 'img/php.jpg' %}" alt="">
+           
+            <a href="https://enlear.academy/top-advanced-php-tips-and-tricks-your-php-developers-should-know-e96dabc5933c" class="post-title"> PHP Tips, Tricks, and Techniques</a>
+            <hr>
+            <h2 class="category">Programming</h2>
+        </div>
+        <div class="post-box database">
+            <img src="{% static 'img/sql1.jpg' %}" alt="">
+           
+            <a href="https://enlear.academy/top-advanced-php-tips-and-tricks-your-php-developers-should-know-e96dabc5933c" class="post-title"> SQL</a>
+            <hr>
+            <h2 class="category">Database</h2>
+        </div>
+        <div class="post-box database">
+            <img src="{% static 'img/mongo.jpg' %}" alt="">
+           
+            <a href=" https://www.w3schools.com/mongodb/" class="post-title"> MongoDB</a>
+            <hr>
+            <h2 class="category">Database</h2>
+        </div>
+        <div class="post-box database">
+            <img src="{% static 'img/mysql.jpg' %}" alt="">
+           
+            <a href=" https://www.w3schools.com/MySQL/default.asp" class="post-title"> MySQL</a>
+            <hr>
+            <h2 class="category">Database</h2>
+        </div>
+        <div class="post-box database">
+            <img src="{% static 'img/postgre.jpg' %}" alt="">
+           
+            <a href=" https://www.geeksforgeeks.org/postgresql-tutorial/" class="post-title"> PostgreSQL</a>
+            <hr>
+            <h2 class="category">Database</h2>
+        </div>
+        
+    </section>
 
-		</div>
-		<div class="blog-item">
-			<img src="{% static 'img/coursecpp.jpg' %}" alt="">
-			<h3>Learn C++</h3>
-			
-			<a class="course-title" href="https://www.w3schools.com/cpp/default.asp" target="_blank"
-				style="font-size:18px; text-align: center"><button>Enroll now</button></a>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
 
-		</div>
-		<div class="blog-item">
-			<img src="{% static 'img/coursejava.jpg' %}" alt="">
-			<h3>Java Tutorial</h3>
-			
-			<a class="course-title" href="https://www.w3schools.com/java/default.asp" target="_blank"
-				style="font-size:18px; text-align: center"><button>Enroll now</button></a>
 
-		</div>
-		<div class="blog-item">
-			<img src="{% static 'img/coursepy.jpg' %}" alt="">
-			<h3>Complete guide on Python</h3>
-			
-			<a class="course-title" href="https://www.w3schools.com/python/default.asp" target="_blank"
-				style="font-size:18px; text-align: center"><button>Enroll now</button></a>
 
-		</div>
-		<div class="blog-item">
-			<img src="{% static 'img/coursejv.jpg' %}" alt="">
-			<h3>Core Java</h3>
-			
-			<a class="course-title" href="https://progate.com/courses/java" target="_blank"
-				style="font-size:18px; text-align: center"><button>Enroll now</button></a>
-
-		</div>
-		<div class="blog-item">
-			<img src="{% static 'img/coursepyth.jpg' %}" alt="">
-			<h3>Python Programming Documentation</h3>
-			
-			<a class="course-title" href="https://docs.python.org/3/tutorial/" target="_blank"
-				style="font-size:18px; text-align: center"><button>Enroll now</button></a>
-
-		</div>
-		<div class="blog-item">
-			<img src="{% static 'img/coursec.jpg' %}" alt="">
-			<h3>C# Tutorial</h3>
-			
-			<a class="course-title" href="https://www.w3schools.com/cs/default.asp" target="_blank"
-				style="font-size:18px; text-align: center"><button>Enroll now</button></a>
-
-		</div>
-		<div class="blog-item">
-			<img src="{% static 'img/coursecp.jpg' %}" alt="">
-			<h3>Complete C programming</h3>
-			
-			<a class="course-title" href="https://www.udemy.com/course/the-complete-c-programming/" target="_blank"
-				style="font-size:18px; text-align: center"><button>Enroll now</button></a>
-
-		</div>
-		<div class="blog-item">
-			<img src="{% static 'img/course05.jpg' %}" alt="">
-			<h3>PHP Tips, Tricks, and Techniques</h3>
-			
-			<a class="course-title" href="https://enlear.academy/top-advanced-php-tips-and-tricks-your-php-developers-should-know-e96dabc5933c" target="_blank"
-				style="font-size:18px; text-align: center"><button>Enroll now</button></a>
-
-		</div>
-		<div class="blog-item">
-			<img src="{% static 'img/coursesql.jpg' %}" alt="">
-			<h3>SQL Tutorial</h3>
-			
-			<a class="course-title" href="https://www.w3schools.com/sql/default.asp" target="_blank"
-				style="font-size:18px; text-align: center"><button>Enroll now</button></a>
-
-		</div>
-		<div class="blog-item">
-			<img src="{% static 'img/coursend.jpg' %}" alt="">
-			<h3>Node.js crash course</h3>
-			
-			<a class="course-title" href="https://www.w3schools.com/nodejs/default.asp" target="_blank"
-				style="font-size:18px; text-align: center"><button>Enroll now</button></a>
-
-		</div>
-		<div class="blog-item">
-			<img src="{% static 'img/coursegit.jpg' %}" alt="">
-			<h3>Master Git</h3>
-			
-			<a class="course-title" href="https://www.w3schools.com/git/default.asp" target="_blank"
-				style="font-size:18px; text-align: center"><button>Enroll now</button></a>
-
-		</div>
-		
-
-	</div>
-</div>
-</section>
-
+   <script src="{%static 'js/course.js' %}"></script>
 
 {% endblock %}
 
