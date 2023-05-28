@@ -127,6 +127,7 @@ def courserecommendation(matching_keyword):
     return ', '.join(recommended_courses)
 
 
+import re
 
 def extract_information_from_pdf(pdf_file):
     # Create a BytesIO object to store the PDF file
@@ -159,6 +160,9 @@ def extract_information_from_pdf(pdf_file):
         r'(?i)\b((?:Git|JIRA|Trello|Slack)\s*(?:management)?\s*(?:tool|software)?)\b',
     ]
 
+    # Define the phone number pattern for 10 digits
+    phone_number_pattern = r'\b\d{10,12}\b'
+
     # Create a set to store unique skills and technologies
     unique_skills = set()
 
@@ -171,17 +175,24 @@ def extract_information_from_pdf(pdf_file):
         for pattern in skill_patterns:
             matches = re.findall(pattern, sentence)
             unique_skills.update(matches)  # Add
+
     num_pages = len(pdf_reader.pages)
 
-# Store the extracted data in a dictionary
+    # Check for the presence of a phone number using regular expression
+    phone_numbers = re.findall(phone_number_pattern, text)
+    phone_number = phone_numbers[0] if phone_numbers else ""
+
+    # Store the extracted data in a dictionary
     extracted_data = {
-    "Name": name_section.strip() if name_section else "",
-    "Email": email,
-    "Skills and Technologies": list(unique_skills),
-    "Number of Pages": num_pages,
-}
+        "Name": name_section.strip() if name_section else "",
+        "Email": email,
+        "Skills and Technologies": list(unique_skills),
+        "Number of Pages": num_pages,
+        "Phone Number": phone_number,
+    }
 
     return extracted_data
+
 def get_matching_keyword(skills):
     weights = {
         'Data Science': 0,
@@ -227,7 +238,6 @@ def upload_pdf(request):
 
 from django.shortcuts import render, get_object_or_404
 from .models import PDFDocument
-
 def view_pdf(request, pdf_id):
     pdf = get_object_or_404(PDFDocument, id=pdf_id)
     document_name = pdf.Name
@@ -236,33 +246,49 @@ def view_pdf(request, pdf_id):
     extracted_data = extract_information_from_pdf(pdf.pdf_file)
     print(extracted_data)
     print(extracted_data.get("Email"))
+    print(extracted_data.get("Phone Number"))
     skills = extracted_data.get("Skills and Technologies", [])
     skills = [skill.strip() for skill in skills]
     skills = list(set(skills))
     print(skills)
-    # Check if  fields is accessible
+    
+    # Check if fields are accessible
     messages = []
     if not extracted_data.get("Name", ""):
         messages.append("Name field is empty or invalid type!")
     if not extracted_data.get("Email", ""):
         messages.append("Email field is empty or invalid type!")
     if not extracted_data.get("Skills and Technologies", []):
-        messages.append("Skills field are either empty or not in right format")
+        messages.append("Skills field is either empty or not in the right format")
+    if not extracted_data.get("Phone Number", ""):
+        messages.append("Phone number is missing or inaccessible")
     print(messages)
+    
     matching_keyword = get_matching_keyword(skills)
     recommended_skills = []
     if matching_keyword:
-            recommended_skills = recommended_skills_dict.get(matching_keyword, [])
+        recommended_skills = recommended_skills_dict.get(matching_keyword, [])
             
-            
-            # Get the recommended courses for the matching keyword
+    # Get the recommended courses for the matching keyword
     recommended_courses = []
     if matching_keyword:
         recommended_courses = courserecommendation(matching_keyword)
     
-
+    # Generate recommendations for missing fields
+    missing_fields_recommendations = []
+    if not skills:
+        missing_fields_recommendations.append("Skills section is either empty or does not contain relevant skills. We recommend including key skills and technologies that are relevant to your desired job profile. Highlighting your skills can greatly enhance your resume and increase your chances of success.")
+    if not extracted_data.get("Email", ""):
+        missing_fields_recommendations.append("Email address is either missing or not recognized. Please ensure that the email address is provided in a valid format (e.g., example@example.com) or try reformatting it according to  ATS system.")
+    if not extracted_data.get("Phone Number", ""):
+        missing_fields_recommendations.append("Phone number is either missing or not recognized.Please ensure that the phone number is provided in a recognized format or try reformatting it according to our ATS system..")
+    all_fields_present = extracted_data.get("Email") and skills and extracted_data.get("Phone Number")
     return render(request, 'pdf_detail.html', {'pdf': pdf, 'document_name': document_name, 'extracted_data': extracted_data,
-'matching_keyword': matching_keyword,'skills':skills,'recommended_skills':recommended_skills,'recommended_courses':recommended_courses,'messages': messages})
+                                                'matching_keyword': matching_keyword, 'skills': skills,
+                                                'recommended_skills': recommended_skills,
+                                                'recommended_courses': recommended_courses, 'messages': messages,
+                                                'missing_fields_recommendations': missing_fields_recommendations,'all_fields_present': all_fields_present
+                                                })
 
 def home(request):
     user = get_user_model().objects.get(pk=request.user.pk)

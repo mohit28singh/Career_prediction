@@ -115,7 +115,14 @@
         height: 3px;
         background-color: #007bff;
     }
-
+    .report-card .success {
+        background-color: #28a745;
+        color: #fff;
+        padding: 8px;
+        border-radius: 5px;
+        animation: blink 1s infinite;
+    }
+    
     @keyframes blink {
         0% {
             opacity: 0;
@@ -128,58 +135,72 @@
         }
     }
 </style>
-      <center>
+
+<center>
     <h2>Your Resume</h2>
-    <iframe src="{{ pdf.pdf_file.url }}" width="600px" height="800px"></iframe></center>
-    <br>
+    <iframe src="{{ pdf.pdf_file.url }}" width="600px" height="800px"></iframe>
+</center>
+<br>
 
-    <div class="report-card">
+<div class="report-card">
     <h2>Resume Analysis</h2>
+    {% if all_fields_present %}
+        <p class="success">Perfect Resume Structure</p>
+    {% else %}
+        {% for message in messages %}
+            <p class="warning"><strong>Our ATS System says:</strong> {% if message %}<span class="blinking">{{ message }}</span>{% endif %}</p>
+        {% endfor %}
 
-    {% for message in messages %}
-        <p class="warning"><strong>Warning:</strong> <span class="blinking-message">{{ message }}</span></p>
-    {% endfor %}
+        <p><strong>Name:</strong> {{ document_name }}</p>
+        <p><strong>Email:</strong> {{ extracted_data.Email }}</p>
 
-    <p><strong>Name:</strong> {{ document_name }}</p>
-    <p><strong>Email:</strong> {{ extracted_data.Email }}</p>
+        {% if extracted_data|get_item:"Number of Pages" == 1 %}
+            <p class="section-title" style="color: #ff5733;">Experience:</p>
+            <p>You are a Fresher</p>
+        {% elif extracted_data|get_item:"Number of Pages" == 2 %}
+            <p class="section-title" style="color: #ff5733;">Experience:</p>
+            <p>You are at Intermediate level</p>
+        {% elif extracted_data|get_item:"Number of Pages" > 2 %}
+            <p class="section-title" style="color: #ff5733;">Experience:</p>
+            <p>You are Experienced</p>
+        {% endif %}
 
-    {% if extracted_data|get_item:"Number of Pages" == 1 %}
-        <p class="section-title" style="color: #ff5733;">Experience:</p>
-        <p>You are a Fresher</p>
-    {% elif extracted_data|get_item:"Number of Pages" == 2 %}
-        <p class="section-title" style="color: #ff5733;">Experience:</p>
-        <p>You are at Intermediate level</p>
-    {% elif extracted_data|get_item:"Number of Pages" > 2 %}
-        <p class="section-title" style="color: #ff5733;">Experience:</p>
-        <p>You are Experienced</p>
+        <p class="section-title" style="color: #ff5733;">Skills and Technologies:</p>
+        <ul class="skills-list">
+            {% for skill in skills %}
+                {% if skill|strip_spaces %}
+                    <li>{{ skill|strip_spaces }}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+
+        {% if skills_warning %}
+            <p class="warning"><strong>Our ATS System says:</strong> <span class="blinking-message">{{ skills_warning }}</span></p>
+        {% endif %}
+
+        <p class="section-title" style="color: #ff5733;">Job Profile Recommendation:</p>
+        <p><strong>Our Analysis suggests you are looking for a {{ matching_keyword }} job</strong></p>
+
+        <p class="section-title" style="color: #ff5733;">Recommended Skills:</p>
+        <ul class="recommended-skills">
+            {% for skill in recommended_skills %}
+                <li>{{ skill }}</li>
+            {% endfor %}
+        </ul>
+
+        <p class="section-title" style="color: #ff5733;">Recommended Courses:</p>
+        <div class="recommended-courses">
+            {{ recommended_courses|safe }}
+        </div>
     {% endif %}
 
-    <p class="section-title" style="color: #ff5733;">Skills and Technologies:</p>
-    <ul class="skills-list">
-        {% for skill in skills %}
-            {% if skill|strip_spaces %}
-                <li>{{ skill|strip_spaces }}</li>
-            {% endif %}
+
+{% if missing_fields_recommendations %}
+        <h2>Recommendations for Resume</h2>
+        {% for recommendation in missing_fields_recommendations %}
+            <p><ul> {{ recommendation }}</p></ul>
         {% endfor %}
-    </ul>
-
-    {% if skills_warning %}
-        <p class="warning"><strong>Warning:</strong> <span class="blinking-message">{{ skills_warning }}</span></p>
-    {% endif %}
-
-    <p class="section-title" style="color: #ff5733;">Job Profile Recommendation:</p>
-    <p><strong>Our Analysis suggests you are looking for a {{ matching_keyword }} job</strong></p>
-
-    <p class="section-title" style="color: #ff5733;">Recommended Skills:</p>
-    <ul class="recommended-skills">
-        {% for skill in recommended_skills %}
-            <li>{{ skill }}</li>
-        {% endfor %}
-    </ul>
-
-    <p class="section-title" style="color: #ff5733;">Recommended Courses:</p>
-    <div class="recommended-courses">
-        {{ recommended_courses|safe }}
-    </div>
+{% endif %}
 </div>
+
 {% endblock %}
