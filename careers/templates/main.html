@@ -191,6 +191,99 @@
     font-size: 16px;
     line-height: 1.5;
   }
+  .service_heading {
+    text-transform: uppercase;
+    position: relative;
+  }
+  
+  .service_heading:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: auto;
+    border-bottom: 3px solid #3e4555;
+    transition: all 0.3s linear;
+  }
+  
+  .service_heading:hover:after {
+    width: 20%
+  }
+  
+  .services {
+    color: #8d97ad;
+    font-weight: 300;
+  }
+  
+  .services h1, .services h2, .services h3, .services h4, .services h5, .services h6 {
+    color: #3e4555;
+  }
+  
+  .services h6 {
+    line-height: 22px;
+    font-size: 18px;
+    color: #8d97ad;
+  }
+  
+  .services .font-weight-medium {
+    font-weight: 500;
+    color: #3e4555;
+  }
+  
+  .services .badge {
+    line-height: 15px;
+  }
+  
+  .services .badge-info {
+    background: #188ef4;
+  }
+  
+  .services .subtitle {
+    color: #8d97ad;
+    line-height: 24px;
+  }
+  
+  
+  .services .img-shadow {
+    box-shadow: 0 0 30px rgba(115, 128, 157, 0.3);
+    width:18rem;
+    height:auto;
+  }
+  
+  .services .wrap-service .img-hover {
+    transition: all 0.2s ease-in;
+  }
+  
+  .services .wrap-service .img-hover:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  
+  .services .wrap-service .uneven-box {
+    margin-top: 100px;
+  }
+  
+  .services .btn-sm {
+    padding: 6px 14px;
+    font-size: 16px;
+    background: #188ef4;
+  }
+  
+  .services .btn-sm:hover {
+    color: #188ef4;
+    background: #fff;
+    border: 1px solid #188ef4;
+  }
+  
+  @media(max-width:768px) {
+    .service .wrap-service .uneven-box {
+      margin-top: 10px;
+    }
+  
+  }
 </style> 
 {% if messages %}
   <div class="alert alert-warning {% if not user.is_authenticated %} blink {% endif %}" role="alert">
@@ -305,7 +398,7 @@
       <div class="row">
         <div class="col-md-3">
           <div class="service">
-            <img src="{% static 'img/s1.jpg' %}" alt="Service 1" class="service-image">
+            <a  href="{% url 'careerprediction' %}"><img src="{% static 'img/s1.jpg' %}" alt="Service 1" class="service-image"></a>
             <a  class="service-title" href="{% url 'careerprediction' %}"> Career Prediction</a>
             <p class="service-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus quo soluta aut, accusantium porro tenetur.
             </p>
@@ -317,21 +410,21 @@
         </div>
         <div class="col-md-3">
           <div class="service">
-            <img src="{% static 'img/s3.jpg' %}" alt="Service 2" class="service-image">
+            <a  href="{% url 'course' %}"><img src="{% static 'img/s3.jpg' %}" alt="Service 2" class="service-image"></a>
             <a class="service-title" href="{% url 'course' %}">Courses</a>
             <p class="service-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam voluptatibus, perspiciatis beatae reiciendis temporibus excepturi.</p>
           </div>
         </div>
         <div class="col-md-3">
           <div class="service">
-            <img src="{% static 'img/s2.jpg' %}" alt="Service 3" class="service-image">
+            <a href="{% url 'upload_pdf' %}"><img src="{% static 'img/s2.jpg' %}" alt="Service 3" class="service-image"></a>
             <a class="service-title" href="{% url 'upload_pdf' %}">Resume Analyzer</a>
             <p class="service-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore obcaecati molestiae, voluptas laboriosam eaque esse.</p>
           </div>
         </div>
         <div class="col-md-3">
           <div class="service">
-            <img src="{% static 'img/s4.jpg' %}" alt="Service 3" class="service-image">
+            <a  href="{% url 'knowledge' %}"><img src="{% static 'img/s4.jpg' %}" alt="Service 3" class="service-image"></a>
             <a class="service-title" href="{% url 'knowledge' %}">Knowledge Network</a>
             <p class="service-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae id, adipisci saepe perferendis neque iure.</p>
           </div>
@@ -363,5 +456,84 @@
       </div>
     </div>
   </div>
+</section>
+<section><div class="services py-5">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-10 col-11 mx-auto">
+        <div class="mt-2 mb-5 text-center">
+          <h1 class="service_heading">ABOUT US</h1>
+        </div>
+        <div class="row ">
+          <!-- left side data -->
+          <div class="col-md-6 mt-md-2 m-0">
+            
+            <h4>We are Mohit Singh and Prachi Singh</h4>
+            <h6 class="font-weight-light subtitle">A team of passionate college students who have come together to create this project. Our mission is to provide awareness about career counselling.</h6>
+            <!-- one more grid sys for services -->
+            <div class="row mt-md-5">
+              
+              <div class="col-md-6 mt-3">
+                <h6 class="font-weight-medium">Breif Introduction</h6>
+                <p>Our Django project is a comprehensive platform designed to provide high-quality career counseling services to students and professionals...</p>
+              </div>
+              <div class="col-md-6 mt-3">
+                <h6 class="font-weight-medium">Future Goals</h6>
+                <p>We aim to expand the career prediction module by incorporating additional machine learning algorithms and models to enhance accuracy...</p>
+              </div>
+              <div class="col-md-6 mt-3">
+                <h6 class="font-weight-medium">Our methodology</h6>
+                <p>Our methodology involved careful planning, extensive research, detailed design, development, testing, deployment, and ongoing maintenance for an effective...</p>
+              </div>
+              <div class="col-md-6 mt-3">
+                <h6 class="font-weight-medium">New Features</h6>
+                <p>Resume Analyser with NLP: Our platform now includes a powerful Resume Analyser feature utilizing Natural Language Processing (NLP). Users can ...</p>
+              </div>
+              <div class="col-lg-12 my-4">
+                <a class="btn btn-warning" href="{% url 'about' %}"> check More </a>
+              </div>
+            </div>
+          </div>
+          <!-- right side data -->
+          <div class="col-md-6 mt-md-5 m-0">
+            <div class="row wrap-service">
+              <!-- left side images -->
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-12 img-hover mb-4">
+                    <img alt="ux" class="rounded img-shadow img-fluid" src="{%static 'img/img1.jpg'%}"/>
+                  </div>
+                  <div class="col-md-12 img-hover mb-4">
+                    <img alt="ux" class="rounded img-shadow img-fluid"src="{%static 'img/img2.jpg'%}" />
+                  </div>
+                </div>
+              </div>
+              <!-- right side images -->
+              <div class="col-md-6 uneven-box">
+
+                 
+
+<div class="row">
+                  <div class="col-md-12 img-hover mb-4">
+                    <img alt="ux" class="rounded img-shadow img-fluid" src="{%static 'img/img3.jpg'%}" />
+                  </div>
+                  <div class="col-md-12 img-hover mb-4">
+                    <img alt="ux" class="rounded img-shadow img-fluid" src="{%static 'img/img4.jpg'%}" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Optional JavaScript -->
+<!-- Popper.js first, then Bootstrap JS -->
+<script crossorigin="anonymous" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+
+
 </section>
 {% endblock%}
