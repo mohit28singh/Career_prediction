@@ -148,7 +148,8 @@
         <p class="success">Perfect Resume Structure</p>
     {% else %}
         {% for message in messages %}
-            <p class="warning"><strong>Our ATS System says:</strong> {% if message %}<span class="blinking">{{ message }}</span>{% endif %}</p>
+            <p class="warning"><strong>Our ATS System says:</strong> {% if message %}<span class="blinking">{{ message }}</span></p>
+            {% endif %}
         {% endfor %}
 
         <p><strong>Name:</strong> {{ document_name }}</p>

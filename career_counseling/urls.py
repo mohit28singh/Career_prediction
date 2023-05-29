@@ -5,6 +5,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+     path('linkedin/mohit-singh/', views.redirect_to_mohit_linkedin,name='redirect_to_mohit_linkedin'),
+    path('linkedin/prachi-singh/', views.redirect_to_prachi_linkedin,name='redirect_to_prachi_linkedin'),
     path('admin/', admin.site.urls),
      path('upload/', views.upload_pdf, name='upload_pdf'),
       path('view/<int:pdf_id>/', views.view_pdf, name='view_pdf'),
