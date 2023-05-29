@@ -1,3 +1,1 @@
-# Career_prediction
-courses page done
-main page of knowledge network done
+#home pages details are updated with hyperlink to linked in attached to user pic photo
