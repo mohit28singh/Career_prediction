@@ -1,1 +1,1 @@
-#home pages details are updated with hyperlink to linked in attached to user pic photo
+#home pages details are updated with hyperlink to linkedin attached to user pic photo
