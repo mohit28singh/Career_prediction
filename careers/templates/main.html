@@ -131,8 +131,9 @@
 
   .service .service-description {
     margin-top: 10px;
-    font-size: 17px;
+    font-size: 16px;
     text-align: center;
+    text-indent: 1em;
     box-sizing: border-box;
   }
   .our-team {
@@ -176,10 +177,11 @@
     transition: all 0.3s ease;
   }
 
-  .member-name {
-    font-size: 24px;
+   .member-name {
+    font-size: 21px;
     font-weight: bold;
     margin-top: 20px;
+    color:#000;
   }
 
   .member-role {
@@ -190,8 +192,10 @@
 
   .member-description {
     margin-top: 10px;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.5;
+   
+    text-indent: 1em;
   }
   .service_heading {
     text-transform: uppercase;
@@ -398,7 +402,7 @@
  </div>
 </section>
  
- <section class="our-service">
+ 
   
   <section class="our-service">
     <h4>Our Services</h4>
@@ -409,7 +413,7 @@
             <a href="{% url 'careerprediction' %}">
               <img src="{% static 'img/s1.jpg' %}" alt="Service 1" class="service-image">
             </a>
-            <a class="service-title" href="{% url 'careerprediction' %}">CareerPrediction</a>
+            <a class="service-title" href="{% url 'careerprediction' %}">Career Prediction</a>
             <p class="service-description">
               Utilizing machine learning, personalized career predictions recommend optimal career paths based on individual profiles, strengths, and interests, aiding informed decision-making for future prospects.
             </p>
@@ -418,14 +422,14 @@
         <div class="col-md-3">
           <div class="service">
             <a  href="{% url 'course' %}"><img src="{% static 'img/s3.jpg' %}" alt="Service 2" class="service-image"></a>
-            <a class="service-title" href="{% url 'course' %}">CoursesModule</a>
+            <a class="service-title" href="{% url 'course' %}">Courses</a>
             <p class="service-description">The Course Module offers a diverse collection of computer science courses, empowering learners to expand knowledge in programming, algorithms, databases, AI, and more through structured, self-paced learning.</p>
           </div>
         </div>
         <div class="col-md-3">
           <div class="service">
             <a href="{% url 'upload_pdf' %}"><img src="{% static 'img/s2.jpg' %}" alt="Service 3" class="service-image"></a>
-            <a class="service-title" href="{% url 'upload_pdf' %}">ResumeAnalyzer</a>
+            <a class="service-title" href="{% url 'upload_pdf' %}">Resume Analyzer</a>
             <p class="service-description">
               The Resume Analyzer module optimizes resumes by analyzing content, structure, and keywords, providing insights and suggestions to enhance effectiveness, highlight skills, and improve presentation for increased job opportunities.</p>
           </div>
@@ -433,7 +437,7 @@
         <div class="col-md-3">
           <div class="service">
             <a  href="{% url 'knowledge' %}"><img src="{% static 'img/s4.jpg' %}" alt="Service 3" class="service-image"></a>
-            <a class="service-title" href="{% url 'knowledge' %}">KnowledgeNetwork</a>
+            <a class="service-title" href="{% url 'knowledge' %}">Knowledge Network</a>
             <p class="service-description">The Knowledge Network is a centralized collection of IT job role descriptions and associated skills, aiding professionals in making informed career choices and assisting employers in identifying required skills for specific IT positions.</p>
           </div>
         </div>
@@ -445,13 +449,7 @@
  
 
 
-        </div>
-        
-      </div>
-    
-   </div>
- </section>
-
+       
  <section class="our-team">
   <div class="container">
     <h4>Our Team</h4>
@@ -473,7 +471,7 @@
             <h3 class="member-name">Prachi Singh</h3>
           </a>
           <p class="member-role">Student</p>
-          <p class="member-description">Meet Prachi Singh, a dedicated MCA student specializing in Data Science and AI. With a deep passion for coding in C++ and Python, Prachi excels in developing robust solutions and algorithms. Her strong database knowledge adds an extra layer of expertise to her skill set. Beyond programming, Prachi's exceptional front-end skills in HTML, CSS, and JavaScript have been instrumental in creating an interactive and engaging experience for users in this project. Get ready to embark on an enlightening journey guided by Prachi's technical prowess and dedication to delivering impactful solutions.</p>
+          <p class="member-description">Meet Prachi Singh, a dedicated MCA student specializing in Data Science and AI. With a deep passion for coding in C++ and Python, Prachi excels in developing robust solutions and algorithms. Her strong database knowledge adds an extra layer of expertise to her skill set. Beyond programming, Prachi's exceptional front-end skills in HTML, CSS, and JavaScript have been instrumental in creating an interactive and engaging experience for users in this project.Embark on an enlightening journey guided by Prachi's technical expertise and dedication.</p>
         </div>
       </div>
     </div>
