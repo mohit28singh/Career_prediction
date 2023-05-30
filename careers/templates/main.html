@@ -93,48 +93,48 @@
     margin-top:2rem;
     margin-bottom:2rem;
   }
-  .our-service{
-    margin-top:4rem;
-    margin-bottom:2rem;
-    text-align:center;
+  .our-service {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    text-align: center;
   }
-  .our-service h4{
-    font-size:2.6rem;
+
+  .our-service h4 {
+    font-size: 2.6rem;
   }
+
   .service {
     margin-top: 40px;
   }
-  
+
   .service .service-image {
     width: 180px;
     height: 180px;
     margin-bottom: 1rem;
-    
     border-radius: 50%;
     object-fit: cover;
-    
-    box-shadow: 0 0 10px 5px rgba(0,0,0,.2);
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, .2);
   }
-  .service-image:hover{
+
+  .service .service-image:hover {
     width: 200px;
     height: 200px;
-    
-    box-shadow: 0 0 10px 5px rgba(0,0,0,.3);
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, .3);
   }
-  .service  .service-title {
-    margin-top: 20px;
+
+  .service .service-title {
+    margin-top: 10px;
     font-size: 28px;
-    color:#000;
-   
+    color: #000;
     text-align: center;
   }
-  
+
   .service .service-description {
     margin-top: 10px;
-    font-size: 18px;
+    font-size: 17px;
     text-align: center;
+    box-sizing: border-box;
   }
-  
   .our-team {
     margin-top: 4rem;
     margin-bottom: 2rem;
@@ -183,13 +183,14 @@
   }
 
   .member-role {
-    font-size: 18px;
+    font-size:20px;
+    font-weight:400;
     margin-top: 10px;
   }
 
   .member-description {
     margin-top: 10px;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.5;
   }
   .service_heading {
@@ -224,10 +225,12 @@
   
   .services h6 {
     line-height: 22px;
-    font-size: 18px;
+    font-size: 20px;
     color: #8d97ad;
   }
-  
+  .services p{
+    font-size: 18px;
+  }
   .services .font-weight-medium {
     font-weight: 500;
     color: #3e4555;
@@ -397,47 +400,53 @@
  
  <section class="our-service">
   
-    <h4> Our Services</h4>
+  <section class="our-service">
+    <h4>Our Services</h4>
     <div class="container my-4">
       <div class="row">
         <div class="col-md-3">
           <div class="service">
-            <a  href="{% url 'careerprediction' %}"><img src="{% static 'img/s1.jpg' %}" alt="Service 1" class="service-image"></a>
-            <a  class="service-title" href="{% url 'careerprediction' %}"> Career Prediction</a>
+            <a href="{% url 'careerprediction' %}">
+              <img src="{% static 'img/s1.jpg' %}" alt="Service 1" class="service-image">
+            </a>
+            <a class="service-title" href="{% url 'careerprediction' %}">CareerPrediction</a>
             <p class="service-description">
-              The career prediction module offers personalized insights into optimal career paths based on individual profiles and data analysis. Utilizing machine learning algorithms, it provides recommendations for the top career fields aligning with individual strengths and interests. 
-              This module assists users in making informed decisions about their future career prospects. </p>
+              Utilizing machine learning, personalized career predictions recommend optimal career paths based on individual profiles, strengths, and interests, aiding informed decision-making for future prospects.
+            </p>
           </div>
-          
- 
-
-
         </div>
         <div class="col-md-3">
           <div class="service">
             <a  href="{% url 'course' %}"><img src="{% static 'img/s3.jpg' %}" alt="Service 2" class="service-image"></a>
-            <a class="service-title" href="{% url 'course' %}">Courses</a>
-            <p class="service-description">The Course Module is a curated collection of computer science courses. It offers a diverse range of topics and expertise levels, empowering learners to expand their knowledge in programming, algorithms, databases, AI, and more.
-               With high-quality educational content, it provides structured and self-paced learning opportunities for individuals interested in computer science.</p>
+            <a class="service-title" href="{% url 'course' %}">CoursesModule</a>
+            <p class="service-description">The Course Module offers a diverse collection of computer science courses, empowering learners to expand knowledge in programming, algorithms, databases, AI, and more through structured, self-paced learning.</p>
           </div>
         </div>
         <div class="col-md-3">
           <div class="service">
             <a href="{% url 'upload_pdf' %}"><img src="{% static 'img/s2.jpg' %}" alt="Service 3" class="service-image"></a>
-            <a class="service-title" href="{% url 'upload_pdf' %}">Resume Analyzer</a>
+            <a class="service-title" href="{% url 'upload_pdf' %}">ResumeAnalyzer</a>
             <p class="service-description">
-              The Resume Analyzer module optimizes resumes by analyzing content, structure, and keywords. It provides valuable insights and suggestions for improving effectiveness, highlighting relevant skills, and enhancing overall presentation.
-               It helps users create compelling resumes that increase their chances of securing job opportunities.</p>
+              The Resume Analyzer module optimizes resumes by analyzing content, structure, and keywords, providing insights and suggestions to enhance effectiveness, highlight skills, and improve presentation for increased job opportunities.</p>
           </div>
         </div>
         <div class="col-md-3">
           <div class="service">
             <a  href="{% url 'knowledge' %}"><img src="{% static 'img/s4.jpg' %}" alt="Service 3" class="service-image"></a>
-            <a class="service-title" href="{% url 'knowledge' %}">Knowledge Network</a>
-            <p class="service-description">The Knowledge Network is a centralized collection of IT job role descriptions and associated skills. It serves as a valuable resource for professionals, providing insights into various roles and their required qualifications. It helps individuals
-               make informed career choices and aids employers in identifying the necessary skills for specific IT positions.</p>
+            <a class="service-title" href="{% url 'knowledge' %}">KnowledgeNetwork</a>
+            <p class="service-description">The Knowledge Network is a centralized collection of IT job role descriptions and associated skills, aiding professionals in making informed career choices and assisting employers in identifying required skills for specific IT positions.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+          
+ 
+
+
+        </div>
+        
       </div>
     
    </div>
