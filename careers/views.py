@@ -295,6 +295,12 @@ def home(request):
     return render(request, 'main.html', {'user': user})
 def homepage(request):
     return render(request, 'main.html')
+def redirect_to_mohit_linkedin(request):
+    return redirect('https://www.linkedin.com/in/mohit-singh-210036185/')
+
+def redirect_to_prachi_linkedin(request):
+    return redirect('https://www.linkedin.com/in/prachi-singh-9044b31ab/')
+
 
 def SignUpPage(request):
     if request.method == 'POST':

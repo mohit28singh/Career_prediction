@@ -285,6 +285,7 @@
     }
   
   }
+  
 </style> 
 {% if messages %}
   <div class="alert alert-warning {% if not user.is_authenticated %} blink {% endif %}" role="alert">
@@ -309,8 +310,9 @@
       <img src="{%static 'img/cr1.jpg' %}" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Discover Yourself And Your Ideal Career</h5>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque consectetur est quam aut explicabo recusandae. Odit totam temporibus, ipsa suscipit quas dolore distinctio repellendus quibusdam animi sed ducimus, recusandae rerum.</p>
-        <a class="btn btn-warning" href="#" >GET STARTED</a>
+        <p>Discovering yourself is the key to unlocking a world of possibilities. Explore your passions, values, and 
+          talents to pave the way towards your ideal career, where you can thrive and make a meaningful impact.</p>
+        <a class="btn btn-warning" href="{% url 'careerprediction' %}" >GET STARTED</a>
         
 
 
@@ -319,9 +321,9 @@
     <div class="carousel-item">
       <img  src="{%static 'img/cr2.jpg' %}" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Discover Yourself And Your Ideal Career</h5>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque consectetur est quam aut explicabo recusandae. Odit totam temporibus, ipsa suscipit quas dolore distinctio repellendus quibusdam animi sed ducimus, recusandae rerum.</p>
-        <a class="btn btn-warning" href="#" >GET STARTED</a>
+        <h5>Unleash the power of your resume with precision analysis.</h5>
+        <p>Scan and Evaluate Your Resume Against Job Descriptions to Ensure Alignment and Maximize Your Chances of Getting Noticed.</p>
+        <a class="btn btn-warning" href="{% url 'upload_pdf' %}" >GET STARTED</a>
 
 
       </div>
@@ -329,9 +331,10 @@
     <div class="carousel-item">
       <img  src="{%static 'img/cr3.jpg' %}" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Discover Yourself And Your Ideal Career</h5>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque consectetur est quam aut explicabo recusandae. Odit totam temporibus, ipsa suscipit quas dolore distinctio repellendus quibusdam animi sed ducimus, recusandae rerum.</p>
-        <a class="btn btn-warning" href="#" >GET STARTED</a>
+        <h5>Expand your horizons through Knowledge Network.</h5>
+        <p>Explore IT roles, skills, and salaries with precision. 
+          Gain valuable insights to shape your career path confidently.</p>
+        <a class="btn btn-warning" href="{% url 'knowledge' %}" >GET STARTED</a>
 
 
       </div>
@@ -401,8 +404,9 @@
           <div class="service">
             <a  href="{% url 'careerprediction' %}"><img src="{% static 'img/s1.jpg' %}" alt="Service 1" class="service-image"></a>
             <a  class="service-title" href="{% url 'careerprediction' %}"> Career Prediction</a>
-            <p class="service-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus quo soluta aut, accusantium porro tenetur.
-            </p>
+            <p class="service-description">
+              The career prediction module offers personalized insights into optimal career paths based on individual profiles and data analysis. Utilizing machine learning algorithms, it provides recommendations for the top career fields aligning with individual strengths and interests. 
+              This module assists users in making informed decisions about their future career prospects. </p>
           </div>
           
  
@@ -413,21 +417,25 @@
           <div class="service">
             <a  href="{% url 'course' %}"><img src="{% static 'img/s3.jpg' %}" alt="Service 2" class="service-image"></a>
             <a class="service-title" href="{% url 'course' %}">Courses</a>
-            <p class="service-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam voluptatibus, perspiciatis beatae reiciendis temporibus excepturi.</p>
+            <p class="service-description">The Course Module is a curated collection of computer science courses. It offers a diverse range of topics and expertise levels, empowering learners to expand their knowledge in programming, algorithms, databases, AI, and more.
+               With high-quality educational content, it provides structured and self-paced learning opportunities for individuals interested in computer science.</p>
           </div>
         </div>
         <div class="col-md-3">
           <div class="service">
             <a href="{% url 'upload_pdf' %}"><img src="{% static 'img/s2.jpg' %}" alt="Service 3" class="service-image"></a>
             <a class="service-title" href="{% url 'upload_pdf' %}">Resume Analyzer</a>
-            <p class="service-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore obcaecati molestiae, voluptas laboriosam eaque esse.</p>
+            <p class="service-description">
+              The Resume Analyzer module optimizes resumes by analyzing content, structure, and keywords. It provides valuable insights and suggestions for improving effectiveness, highlighting relevant skills, and enhancing overall presentation.
+               It helps users create compelling resumes that increase their chances of securing job opportunities.</p>
           </div>
         </div>
         <div class="col-md-3">
           <div class="service">
             <a  href="{% url 'knowledge' %}"><img src="{% static 'img/s4.jpg' %}" alt="Service 3" class="service-image"></a>
             <a class="service-title" href="{% url 'knowledge' %}">Knowledge Network</a>
-            <p class="service-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae id, adipisci saepe perferendis neque iure.</p>
+            <p class="service-description">The Knowledge Network is a centralized collection of IT job role descriptions and associated skills. It serves as a valuable resource for professionals, providing insights into various roles and their required qualifications. It helps individuals
+               make informed career choices and aids employers in identifying the necessary skills for specific IT positions.</p>
           </div>
         </div>
       </div>
@@ -441,23 +449,28 @@
     <div class="row">
       <div class="col-md-5">
         <div class="team-member">
-          <img src="{% static 'img/profile2.jpg' %}" alt="Team Member 1" class="member-image">
-          <h3 class="member-name">Mohit Singh</h3>
+          <a href="{% url 'redirect_to_mohit_linkedin' %}" target="_blank">
+            <img src="{% static 'img/profile2.jpg' %}" alt="Team Member 1" class="member-image">
+            <h3 class="member-name">Mohit Singh</h3>
+          </a>
           <p class="member-role">Student</p>
-          <p class="member-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos ipsum facilis aliquam dolor eveniet accusamus quasi voluptatibus. Esse laborum adipisci officiis autem eos, fuga quisquam?</p>
+          <p class="member-description">Meet Mohit Singh, an aspiring Data Science and AI enthusiast currently pursuing an MCA degree. With a strong background in Java, C++, Machine Learning, and Natural Language Processing, Mohit possesses a solid foundation in programming and data analysis. Passionate about leveraging technology to drive innovation, Mohit's Career Counseling project combines his expertise in data science with a keen interest in helping individuals make informed career choices. Join him on this exciting journey of exploration and discovery in the world of data-driven career guidance.</p>
         </div>
       </div>
       <div class="col-md-5">
         <div class="team-member">
-          <img src="{% static 'img/profile1.jpg' %}" alt="Team Member 2" class="member-image">
-          <h3 class="member-name">Prachi Singh</h3>
+          <a href="{% url 'redirect_to_prachi_linkedin' %}" target="_blank">
+            <img src="{% static 'img/profile1.jpg' %}" alt="Team Member 2" class="member-image">
+            <h3 class="member-name">Prachi Singh</h3>
+          </a>
           <p class="member-role">Student</p>
-          <p class="member-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum qui voluptate officiis ut pariatur voluptas neque magni nesciunt saepe! Sunt dignissimos necessitatibus temporibus rerum blanditiis.</p>
+          <p class="member-description">Meet Prachi Singh, a dedicated MCA student specializing in Data Science and AI. With a deep passion for coding in C++ and Python, Prachi excels in developing robust solutions and algorithms. Her strong database knowledge adds an extra layer of expertise to her skill set. Beyond programming, Prachi's exceptional front-end skills in HTML, CSS, and JavaScript have been instrumental in creating an interactive and engaging experience for users in this project. Get ready to embark on an enlightening journey guided by Prachi's technical prowess and dedication to delivering impactful solutions.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 <section><div class="services py-5">
   <div class="container-fluid">
     <div class="row">
