@@ -2,161 +2,40 @@
 {% load static %}
 {% block content %}
 <style>
+ section .container-body{
+  margin:2rem;
+ }
+ .home{
+  width: 100%;
+  min-height:440px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url({% static 'img/ab.jpg' %}) center/cover no-repeat;
+  display: grid;
+  justify-content: center;
+  align-items: center; 
+ }
+ .home-text{
+  color: #fff;
+  text-align: center;
+}
+ .home-title{
+  font-size: 3.5rem;
 
+}
+.home-subtitle{
+ font-size: 1rem;
+ font-weight: 400;  
+ margin-left: 2rem;
+ margin-right:2rem;
+}
 </style>
-<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class="active" aria-current="true"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item">
-        <img class="img-fluid" src="https://source.unsplash.com/1400x400/?counseling,guidance" class="d-block w-100" alt="...">
-        <div class="container">
-          <div class="carousel-caption text-center">
-            <h1>About Us</h1>
-            <p>We are Mohit Singh and Prachi Singh, a team of passionate college students who have come together to create this project. Our mission is to provide awareness about career counselling.</p>
-            <p><a class="btn btn-lg btn-primary" href="{% url 'signup' %}">Sign up today</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img class="img-fluid" src="https://source.unsplash.com/1400x400/?vision,goals" class="d-block w-100" alt="...">
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>Our Vision</h1>
-            <p>We believe that every student should have access to high-quality career counselling. Our vision is to create a platform that makes 
-            this accessible to everyone, regardless of their background or location.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item active">
-        <img class="img-fluid" src="https://source.unsplash.com/1400x400/?Reseach,Knowledge" class="d-block w-100" alt="...">
-        <div class="container">
-          <div class="carousel-caption text-center">
-            <h1>Our Methodology</h1>
-            <p>We have conducted extensive research on career counselling and have used
-                 this knowledge to create a user-friendly and informative platform. Our team has worked together to design and develop this project using the latest technologies and best practices.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
-          </div>
-        </div>
-      </div>
-</div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+<section class="home" id="home">
+  <div class="home-text containers">
+    <h1 class="home-title">About Us</h1>
+    <p class="home-subtitle">We believe that every student should have access to high-quality career counselling. Our vision is to create a platform that makes this accessible to everyone, regardless of their background or location.</p>
+      
   </div>
+</section>
+<section class="container-body"> 
   
-  <div class="row g-5">
-    <div class="col-md-8">
-      <h3 class="pb-4 mb-4 fst-italic border-bottom my-4 text-center">
-        About Career Apex
-      </h3>
-
-      <article class="blog-post">
-        <h2 class="blog-post-title mb-1">Brief Introduction</h2>
-<p>Our Django project is a comprehensive platform designed to provide high-quality career counseling services to students and professionals. The platform features a user-friendly interface with a navigation bar that includes options for home, contact us, services, courses, and knowledge network.
-
-    The services option includes a drop-down menu with modules for career prediction and resume analyzer, which are designed to help users make informed decisions about their career paths. The career prediction module uses advanced algorithms to provide personalized recommendations based on the user's skills, interests, and preferences. The resume analyzer, on the other hand, evaluates users' resumes and provides suggestions for improvement.
-    
-    The courses option provides users with access to a wide range of online courses designed to enhance their skills and knowledge. The knowledge network option, on the other hand, allows users to connect with industry experts and other professionals in their field.
-    
-    In addition, the platform includes a sign-up and login form, which enables users to create an account and access the full range of services offered by the platform.
-    
-    Overall, our Django project is a powerful tool designed to help users achieve their career goals and make informed decisions about their future.
-    
-    
-    
-     </p>
-        <hr>
-        <h2>Our Team</h2>
-        <p>We are the developers behind this project, and we are proud to introduce ourselves as Mohit Singh and Prachi Singh. We are both students of MCA Data Science and AI from BBD University, and we have worked tirelessly to create this platform.
-
-            Throughout the development process, we have faced numerous challenges and overcome them with our skills and perseverance. We have used our knowledge of programming languages such as HTML, CSS, and JavaScript to build a user-friendly interface that is both aesthetically pleasing and highly functional.
-            
-            As developers, we have collaborated closely to ensure that every feature of the platform is working seamlessly, from the navigation bar to the sign-up and login forms. We have also integrated powerful tools such as career prediction modules, resume analyzers, and knowledge networks to provide our users with the best possible experience.
-            
-            Our goal has always been to create a platform that is useful, innovative, and accessible to all. We believe that our hard work and dedication have paid off, and we are excited to share our project with the world.</p>
-        <h3>Our Methodology</h3>
-       Our methodology for this project involved several stages, each of which was carefully planned and executed to ensure the best possible outcome.
-
-Planning: Our first step was to clearly define the project scope and objectives, as well as identify the target audience and their needs. We then created a detailed project plan, including timelines, milestones, and deliverables.
-
-Research: We conducted extensive research on the latest trends and best practices in web development, user interface design, and data analysis to ensure that our project was up to date and effective.
-
-Design: Based on our research and the project plan, we created a detailed design for the website, including the layout, color scheme, and user interface. We also created wireframes and prototypes to test and refine our design.
-
-Development: Once the design was finalized, we began the development stage, which involved coding the website using the latest web development technologies and frameworks. We also integrated various data analysis tools and libraries into the website to provide advanced functionality and insights.
-
-Testing: Throughout the development stage, we conducted extensive testing to ensure that the website was functional, user-friendly, and free of errors. We also conducted user testing to gather feedback and improve the website.
-
-Deployment: After completing the development and testing stages, we deployed the website to a production environment, making it accessible to the public. We also created documentation and provided training to ensure that the website could be easily maintained and updated in the future.
-
-Maintenance: Finally, we continue to monitor and maintain the website, ensuring that it remains up to date and functional, and making any necessary updates or improvements as needed.
-
-Overall, our methodology was designed to ensure that we delivered a high-quality, user-friendly, and effective website that met the needs of our target audience.
-
-        <h2>Future Goals</h2>
-        <p>Expand the career prediction module: You could enhance the career prediction module by incorporating additional machine learning algorithms and models to improve accuracy. You could also consider incorporating more data sources to enhance the recommendations.
-
-Integrate with more third-party services: If your project currently integrates with any third-party services, you could explore additional integrations to further enhance the functionality of your application.
-
-Enhance user engagement: You could focus on enhancing user engagement by introducing new features and functionality that will encourage users to spend more time on your platform. You could also explore gamification and other techniques to increase user engagement.
-
-Implement advanced analytics: By implementing advanced analytics, you could gain deeper insights into user behavior and preferences, which could help you to make data-driven decisions about future enhancements and improvements.
-
-      </article>
-
-      <article class="blog-post">
-        <img class="img-fluid" src="https://source.unsplash.com/900x400/?Coding" class="d-block w-100" alt="...">
-
-      </article>
-
-      <article class="blog-post">
-        <h2 class="blog-post-title mb-1">New feature</h2>
-
-        <p>Resume Analyser with NLP
-
-            One of the major new features that we've added to our platform is the Resume Analyser with Natural Language Processing (NLP). With this feature, users can easily upload their resumes and get a detailed analysis of their skills, experience, education, and other important factors that recruiters look for in resumes. Our advanced NLP algorithms analyze the text
-             of the resume and provide insights into how well it matches with job requirements and the candidate's profile. This feature will be extremely useful for job seekers who want to make their resumes stand out and get noticed by recruiters.</p>
-
-        <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
-      </article>
-
-      <nav class="blog-pagination" aria-label="Pagination">
-        <a class="btn btn-outline-primary rounded-pill" href="#">Older</a>
-        <a class="btn btn-outline-secondary rounded-pill disabled">Newer</a>
-      </nav>
-
-    </div>
-
-    <div class="col-md-4">
-      <div class="position-sticky" style="top: 2rem;">
-        <div class="p-4 mb-3 bg-body-tertiary rounded">
-            <img class="img-fluid" src="https://source.unsplash.com/400x400/?College Students,Job" class="d-block w-100" alt="...">
-        </div>
-
-        <div class="p-4">
-          <h4 class="fst-italic">Archives</h4>
-          <img class="img-fluid" src="https://source.unsplash.com/400x400/?Reseach,Job" class="d-block w-100" alt="...">
-        </div>
-
-        <div class="p-4">
-          <h4 class="fst-italic">Elsewhere</h4>
-          <ol class="list-unstyled">
-            <li><a href="#">GitHub</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">Facebook</a></li>
-          </ol>
-        </div>
-      </div>
-    </div>
-  </div>
-  {% endblock  %}
+</section>
+{% endblock  %}
