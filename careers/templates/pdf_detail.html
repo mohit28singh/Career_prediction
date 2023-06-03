@@ -144,13 +144,10 @@
 
 <div class="report-card">
     <h2>Resume Analysis</h2>
-    {% if all_fields_present %}
-        <p class="success">Perfect Resume Structure</p>
-    {% else %}
-        {% for message in messages %}
-            <p class="warning"><strong>Our ATS System says:</strong> {% if message %}<span class="blinking">{{ message }}</span></p>
-            {% endif %}
-        {% endfor %}
+    {% for message in messages %}
+        <p class="warning"><strong>Our ATS System says:</strong> {% if message %}<span class="blinking">{{ message }}</span></p>
+        {% endif %}
+    {% endfor %}
 
         <p><strong>Name:</strong> {{ document_name }}</p>
         <p><strong>Email:</strong> {{ extracted_data.Email }}</p>

@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <style>
  section .container-body{
   margin:2rem;
@@ -27,6 +28,196 @@
  margin-left: 2rem;
  margin-right:2rem;
 }
+/* Page Heading */
+.page-heading {
+  background-color: #f4f4f4;
+  padding: 60px 0;
+}
+
+.page-heading h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.page-heading span {
+  font-size: 18px;
+  color: #888;
+}
+
+/* More Info Section */
+.more-info {
+  padding: 60px 0;
+}
+
+.more-info-content h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.more-info-content p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.filled-button {
+  display: inline-block;
+  padding: 10px 25px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+/* Team Section */
+.team {
+  background-color: #f9f9f9;
+  padding: 60px 0;
+}
+
+.section-heading h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.section-heading span {
+  font-size: 18px;
+  color: #888;
+}
+.left-image img{
+  width: 600px;
+}
+.our-team {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  
+}
+.our-team .row{
+  margin-left:2rem;
+}
+.our-team h4 {
+  font-size: 2.6rem;
+  
+}
+
+.team-member {
+  margin-top: 40px;
+  display: flex;
+  
+  flex-direction: column;
+  align-items: center;
+  padding: 13px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+.member-image {
+  width: 170px;
+  height:170px;
+  border-radius: 50%;
+ 
+ 
+  box-shadow: 0px 0px 5px 0px #ccc;
+  transition: all 0.3s ease;
+}
+
+ .member-name {
+  font-size: 21px;
+  font-weight: bold;
+  margin-top: 20px;
+  color:#000;
+}
+
+.member-role {
+  font-size:20px;
+  font-weight:400;
+  margin-top: 10px;
+}
+
+.member-description {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+ 
+  text-indent: 1em;
+}
+
+
+
+
+/* Future Goals Section */
+.future-goals {
+  background-color: #f9f9f9;
+  padding: 80px 0;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-heading h2 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #333;
+}
+
+.section-heading span {
+  display: block;
+  font-size: 18px;
+  font-weight: 400;
+  color: #777;
+}
+
+.row .col-md-4 {
+  margin-bottom: 30px;
+}
+
+.future-goals-item {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.future-goals-item i {
+  font-size: 48px;
+  color: #ff8800;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.future-goals-item h4 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.future-goals-item p {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 0;
+}
+
+/* Card Hover Effect */
+.future-goals-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
 </style>
 <section class="home" id="home">
   <div class="home-text containers">
@@ -37,5 +228,105 @@
 </section>
 <section class="container-body"> 
   
+  <div class="more-info about-info">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="more-info-content">
+            <div class="row">
+              <div class="col-md-6 align-self-center">
+                <div class="right-content">
+                  
+                  <h2>Get to know about <em>our projrct CAREERAPEX</em></h2>
+                  <p>Our Django project is a comprehensive career counseling platform with a user-friendly interface and a navigation bar offering options for home, contact us, services, courses, and knowledge network. It includes career prediction and resume analyzer modules for personalized recommendations and resume improvement. Users can access a variety of online courses to enhance their skills and connect with industry experts through the knowledge network. Sign-up and login forms enable full access to the platform's services. It empowers users to achieve their career goals and make informed decisions.
+                  </p>
+                  
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="left-image">
+                  <img src="{%static 'img/about.png' %}" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+<div class="future-goals">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <h2>Our Future Goals</h2>
+            <span>Discover what we have planned</span>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="future-goals-item">
+            <i class="fa fa-cogs"></i>
+            <h4>Expand the Career Prediction Module</h4>
+            <p>You could enhance the career prediction module by incorporating additional machine learning algorithms and models to improve accuracy. Consider integrating more data sources to enhance the recommendations.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="future-goals-item">
+            <i class="fa fa-link"></i>
+            <h4>Integrate with More Third-Party Services</h4>
+            <p>Continuously expand your application's functionality by exploring and integrating with a variety of third-party services, enhancing user experience and delivering additional value to your users.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="future-goals-item">
+            <i class="fa fa-heart"></i>
+            <h4>Enhance User Engagement</h4>
+            <p>Focus on enhancing user engagement by introducing new features and functionality that encourage users to spend more time on your platform. Consider exploring gamification and other techniques to increase user engagement.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="future-goals-item">
+            <i class="fa fa-chart-bar"></i>
+            <h4>Implement Advanced Analytics</h4>
+            <p>Implement advanced analytics to gain deeper insights into user behavior and preferences. Utilize data-driven decisions to enhance future enhancements and improvements.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<section class="our-team">
+  <div class="container">
+    <h4>Our Team </h4>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="team-member">
+          
+            <img src="{% static 'img/profile2.jpg' %}" alt="Team Member 1" class="member-image">
+            <h3 class="member-name">Mohit Singh</h3>
+          
+          <p class="member-role">Student</p>
+           <p class="member-description">Meet Mohit Singh, an aspiring Data Science and AI enthusiast currently pursuing an MCA degree. With a strong background in Java, C++, Machine Learning, and Natural Language Processing, Mohit possesses a solid foundation in programming and data analysis. Passionate about leveraging technology to drive innovation, Mohit's Career Counseling project combines his expertise in data science with a keen interest in helping individuals make informed career choices. Join him on this exciting journey of exploration and discovery in the world of data-driven career guidance.</p> 
+          
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="team-member">
+          
+            <img src="{% static 'img/profile1.jpg' %}" alt="Team Member 2" class="member-image">
+            <h3 class="member-name">Prachi Singh</h3>
+          
+          <p class="member-role">Student</p>
+          <p class="member-description">Meet Prachi Singh, a dedicated MCA student specializing in Data Science and AI. With a deep passion for coding in C++ and Python, Prachi excels in developing robust solutions and algorithms. Her strong database knowledge adds an extra layer of expertise to her skill set. Beyond programming, Prachi's exceptional front-end skills in HTML, CSS, and JavaScript have been instrumental in creating an interactive and engaging experience for users in this project.Embark on an enlightening journey guided by Prachi's technical expertise and dedication.</p> 
+        </div>
+      </div>
+    </div>
+  </div>
+</section>  
+  
+
 </section>
 {% endblock  %}
