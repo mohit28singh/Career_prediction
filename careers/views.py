@@ -310,7 +310,8 @@ def SignUpPage(request):
         pass2 = request.POST.get('password2')
         
         if pass1 != pass2:
-            return HttpResponse("Passwords do not match")
+             messages.error(request, 'Passwords do not match')
+             return redirect('/')
         
         my_user = User.objects.create_user(uname, email, pass1)
         my_user.save()
