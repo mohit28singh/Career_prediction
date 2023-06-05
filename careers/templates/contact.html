@@ -75,14 +75,21 @@
   }
 </style>
 
+
 <section class="contact-page">
   <div class="contact-container">
     <h1>Contact Us</h1>
     <p>Feel free to reach out to us with any questions or inquiries.</p>
-    <form>
-      <input id="info" type="text" placeholder="Your Name" required>
-      <input id="info"  type="email" placeholder="Your Email" required>
-      <textarea  id="info" placeholder="Your Message" required></textarea>
+    {% if success_message %}
+    <div class="success-message">
+      <p>{{ success_message }}</p>
+    </div>
+    {% endif %}
+    <form action="{% url 'contact' %}" method="post">
+      {% csrf_token %}
+      <input id="info" type="text" name="name" placeholder="Your Name" required>
+      <input id="info"  type="email" name="email" placeholder="Your Email" required>
+      <textarea  id="info" name="message" placeholder="Your Message" required></textarea>
       <button type="submit" class="btn btn-warning">Send Message</button>
     </form>
   </div>

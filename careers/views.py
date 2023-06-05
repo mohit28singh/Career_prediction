@@ -354,8 +354,22 @@ def careerprediction(request):
 def course(request):
     return render(request,"course.html")
 
+from .models import ContactMessage
+
 def contact(request):
-    return render(request,"contact.html")
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+
+        contact_message = ContactMessage.objects.create(name=name, email=email, message=message)
+        print(contact_message)
+
+        success_message = 'Your message has been sent successfully. We will get back to you soon!'
+        return render(request, 'contact.html', {'success_message': success_message})
+
+    return render(request, 'contact.html')
+
 def about(request):
     return render(request, 'about.html')
 @login_required(login_url='/')
