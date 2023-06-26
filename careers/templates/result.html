@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<style>
+  .set{
+    color:blue;
+  }
+</style>
   <center>
     <h1>Results</h1>
     {% if chart_data %}
@@ -12,7 +17,7 @@
     {% endif %}
     <center>
     <h2>To know more about your Career Suggestion Visit<h2/>
-    <a href="{% url 'knowledge' %}">Knowledge Network</a>
+    <a class="set" href="{% url 'knowledge' %}">Knowledge Network</a>
     </center>
   </center>
   

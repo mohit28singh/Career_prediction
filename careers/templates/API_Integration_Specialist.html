@@ -4,9 +4,49 @@
 {% load static %}
 
 {% block content%}
- 
-
-		</div>
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class="active" aria-current="true"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item">
+        <img class="img-fluid" src="https://source.unsplash.com/1400x400/?counseling,guidance" class="d-block w-100" alt="...">
+        <div class="container">
+          <div class="carousel-caption text-center">
+            <h1>About Us</h1>
+            <p>We are Mohit Singh and Prachi Singh, a team of passionate college students who have come together to create this project. Our mission is to provide awareness about career counselling.</p>
+            <p><a class="btn btn-lg btn-primary" href="{% url 'signup' %}">Sign up today</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img class="img-fluid" src="https://source.unsplash.com/1400x400/?vision,goals" class="d-block w-100" alt="...">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Our Vision</h1>
+            <p>We believe that every student should have access to high-quality career counselling. Our vision is to create a platform that makes 
+            this accessible to everyone, regardless of their background or location.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item active">
+        <img class="img-fluid" src="https://source.unsplash.com/1400x400/?Reseach,Knowledge" class="d-block w-100" alt="...">
+        <div class="container">
+          <div class="carousel-caption text-center">
+            <h1>Our Methodology</h1>
+            <p>We have conducted extensive research on career counselling and have used
+                 this knowledge to create a user-friendly and informative platform. Our team has worked together to design and develop this project using the latest technologies and best practices.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+          </div>
+        </div>
+      </div>
+</div> 
+<section style= "margin-top:2rem;">
+    
+</div>
 		<!-- /Hero-area -->
 
 		<!-- Blog -->
@@ -109,8 +149,8 @@
 			</div>
 			<!-- container -->
 
-		</div>
+</div>
 		<!-- /Blog -->
-
+</section>
 		
 {%endblock%}

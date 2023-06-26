@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
 *{
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
   scroll-padding-top: 2rem;
+  font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
 }
 :root{
@@ -35,7 +38,9 @@ section{
 .home{
  width: 100%;
  min-height:440px;
- background: var(--container-color);
+ background:url('img/imagebg1.jpg') ;
+ background-color:rgba(0,0,0,0.5) ;
+ 
  display: grid;
  justify-content: center;
  align-items: center; 

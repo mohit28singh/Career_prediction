@@ -295,6 +295,12 @@ def home(request):
     return render(request, 'main.html', {'user': user})
 def homepage(request):
     return render(request, 'main.html')
+def redirect_to_mohit_linkedin(request):
+    return redirect('https://www.linkedin.com/in/mohit-singh-210036185/')
+
+def redirect_to_prachi_linkedin(request):
+    return redirect('https://www.linkedin.com/in/prachi-singh-9044b31ab/')
+
 
 def SignUpPage(request):
     if request.method == 'POST':
@@ -304,7 +310,8 @@ def SignUpPage(request):
         pass2 = request.POST.get('password2')
         
         if pass1 != pass2:
-            return HttpResponse("Passwords do not match")
+             messages.error(request, 'Passwords do not match')
+             return redirect('/')
         
         my_user = User.objects.create_user(uname, email, pass1)
         my_user.save()
@@ -347,8 +354,36 @@ def careerprediction(request):
 def course(request):
     return render(request,"course.html")
 
+from .models import ContactMessage
+
 def contact(request):
-    return render(request,"contact.html")
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+
+        contact_message = ContactMessage.objects.create(name=name, email=email, message=message)
+        print(contact_message)
+
+        success_message = 'Your message has been sent successfully. We will get back to you soon!'
+        return render(request, 'contact.html', {'success_message': success_message})
+
+    return render(request, 'contact.html')
+from .models import Feedback
+
+def feedback_view(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+        feedback = Feedback(email=email, message=message)
+        feedback.save()
+        messages.success(request, 'Your feedback has been received!')
+        return redirect('/') 
+    return render(request, '/')
+
+def privacy_policy(request):
+    return render(request, 'privacy.html')
+
 def about(request):
     return render(request, 'about.html')
 @login_required(login_url='/')
