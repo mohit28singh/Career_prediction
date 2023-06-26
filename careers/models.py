@@ -16,3 +16,10 @@ class ContactMessage(models.Model):
 
     def __str__(self):
         return self.name
+
+class Feedback(models.Model):
+    email = models.EmailField()
+    message = models.TextField()
+
+    def __str__(self):
+        return self.email

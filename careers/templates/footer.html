@@ -163,19 +163,20 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="/about">About</a></li>
                     <li><a href="#">Services</a></li>
-                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="{%url  'contact' %}">Contact</a></li>
                 </ul>
             </div>
             <div class="footer__3">
                 <h4>Privacy</h4>
                 <ul class="privacy">
-                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href="{%url  'privacy_policy' %}">Privacy Policy</a></li>
                     <li><a href="{%url  'Terms' %}">Terms and Conditions</a></li>
                 </ul>
             </div>
             <div class="footer__4">
                 <h4>Feedback </h4>
-                <form id="contactForm" >
+                <form id="contactForm" method="POST" action="{% url 'feedback' %}">
+                    {% csrf_token %}
                     
                     <div class="contact-form">
                        

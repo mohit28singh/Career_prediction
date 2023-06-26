@@ -128,14 +128,4 @@ LOGIN_URL = 'accounts/login/'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
-X_FRAME_OPTIONS = 'SAMEORIGIN'
-#settings for email notification
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'careerassist.info@gmail.com'  # Your Gmail email address
-EMAIL_HOST_PASSWORD = 'Project123'  # Your Gmail account password
-EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
+

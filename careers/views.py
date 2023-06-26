@@ -369,6 +369,20 @@ def contact(request):
         return render(request, 'contact.html', {'success_message': success_message})
 
     return render(request, 'contact.html')
+from .models import Feedback
+
+def feedback_view(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+        feedback = Feedback(email=email, message=message)
+        feedback.save()
+        messages.success(request, 'Your feedback has been received!')
+        return redirect('/') 
+    return render(request, '/')
+
+def privacy_policy(request):
+    return render(request, 'privacy.html')
 
 def about(request):
     return render(request, 'about.html')
